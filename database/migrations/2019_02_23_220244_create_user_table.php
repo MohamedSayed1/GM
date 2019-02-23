@@ -20,6 +20,7 @@ class CreateUserTable extends Migration {
 			$table->string('name', 300)->nullable();
 			$table->boolean('is_actvie')->nullable();
 			$table->integer('group_id')->nullable()->index('User_gorup_id_idx');
+			$table->string('remember_token', 250)->nullable();
 			$table->timestamps();
 		});
 	}

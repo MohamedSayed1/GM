@@ -19,6 +19,7 @@ class CreateCostsTable extends Migration {
 			$table->integer('type_id')->nullable()->index('Costs_Type_idx');
 			$table->integer('unit_price')->nullable();
 			$table->integer('count')->nullable();
+			$table->integer('currency_pound')->nullable()->index('pound_هي_idx');
 			$table->integer('total')->nullable();
 			$table->timestamps();
 		});

@@ -17,6 +17,7 @@ class AddForeignKeysToSubscribeTable extends Migration {
 			$table->foreign('id_level', 'Level')->references('level_id')->on('level_travel')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('partner_id', 'Partner_ID')->references('partner_id')->on('partner')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('travel_id', 'Travel_ID')->references('travel_id')->on('travel')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('currency_id', 'currency_id')->references('currency_id')->on('currency_type')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 
@@ -33,6 +34,7 @@ class AddForeignKeysToSubscribeTable extends Migration {
 			$table->dropForeign('Level');
 			$table->dropForeign('Partner_ID');
 			$table->dropForeign('Travel_ID');
+			$table->dropForeign('currency_id');
 		});
 	}
 

@@ -20,6 +20,7 @@ class CreateSubscribeTable extends Migration {
 			$table->integer('id_level')->nullable()->index('Level_idx');
 			$table->integer('count_of_travel')->nullable();
 			$table->integer('prices')->nullable();
+			$table->integer('currency_id')->nullable()->index('currency_id_idx');
 			$table->integer('total')->nullable();
 			$table->integer('current_paid')->nullable();
 			$table->integer('remaining_payment')->nullable();

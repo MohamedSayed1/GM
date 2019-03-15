@@ -23,4 +23,19 @@ class UserServices extends Services
         $this->userRepo = new UserRepository();
     }
 
+
+    public function getAllUsers()
+    {
+        return $this->userRepo->GetAll();
+    }
+
+
+
+
+
+
+
+
+
+
 }

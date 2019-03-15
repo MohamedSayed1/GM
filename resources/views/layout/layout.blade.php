@@ -20,23 +20,23 @@
     <!-- start: MAIN CSS -->
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
     <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/bower_components/font-awesome/css/font-awesome.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/assets/fonts/clip-font.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/bower_components/iCheck/skins/all.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/bower_components/sweetalert/dist/sweetalert.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/assets/css/main.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/assets/css/rtl-version.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/assets/css/main-responsive.min.css')}}" />
-    <link type="text/css" rel="stylesheet" media="print" href="{{asset('dashboard/assets/css/print.min.css')}}" />
-    <link type="text/css" rel="stylesheet" id="skin_color" href="{{asset('dashboard/assets/css/theme/light.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('dashboard/assets/css/prof-style-kh.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/font-awesome/css/font-awesome.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/fonts/clip-font.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/iCheck/skins/all.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/sweetalert/dist/sweetalert.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/rtl-version.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main-responsive.min.css')}}" />
+    <link type="text/css" rel="stylesheet" media="print" href="{{asset('template/assets/css/print.min.css')}}" />
+    <link type="text/css" rel="stylesheet" id="skin_color" href="{{asset('template/assets/css/theme/light.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/prof-style-kh.css')}}" />
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link href="{{asset('dashboard/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('dashboard/bower_components/datatables/media/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('template/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('template/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('template/bower_components/datatables/media/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" />
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 </head>
 
@@ -294,7 +294,7 @@
                                         <a href="javascript:;">
                                             <div class="clearfix">
                                                 <div class="thread-image">
-                                                    <img alt="" src="./{{asset('dashboard/assets/images/avatar-2.jpg')}}">
+                                                    <img alt="" src="./{{asset('template/assets/images/avatar-2.jpg')}}">
                                                 </div>
                                                 <div class="thread-content">
                                                     <span class="author">Nicole Bell</span>
@@ -308,7 +308,7 @@
                                         <a href="javascript:;">
                                             <div class="clearfix">
                                                 <div class="thread-image">
-                                                    <img alt="" src="{{asset('dashboard/assets/images/avatar-1.jpg')}}">
+                                                    <img alt="" src="./{{asset('template/assets/images/avatar-1.jpg')}}">
                                                 </div>
                                                 <div class="thread-content">
                                                     <span class="author">Peter Clark</span>
@@ -322,7 +322,7 @@
                                         <a href="javascript:;">
                                             <div class="clearfix">
                                                 <div class="thread-image">
-                                                    <img alt="" src="{{asset('dashboard/assets/images/avatar-3.jpg')}}">
+                                                    <img alt="" src="./{{asset('template/assets/images/avatar-3.jpg')}}">
                                                 </div>
                                                 <div class="thread-content">
                                                     <span class="author">Steven Thompson</span>
@@ -336,7 +336,7 @@
                                         <a href="javascript:;">
                                             <div class="clearfix">
                                                 <div class="thread-image">
-                                                    <img alt="" src="{{asset('dashboard/assets/images/avatar-1.jpg')}}">
+                                                    <img alt="" src="./{{asset('template/assets/images/avatar-1.jpg')}}">
                                                 </div>
                                                 <div class="thread-content">
                                                     <span class="author">Peter Clark</span>
@@ -350,7 +350,7 @@
                                         <a href="javascript:;">
                                             <div class="clearfix">
                                                 <div class="thread-image">
-                                                    <img alt="" src="{{asset('dashboard/assets/images/avatar-5.jpg')}}">
+                                                    <img alt="" src="./{{asset('template/assets/images/avatar-5.jpg')}}">
                                                 </div>
                                                 <div class="thread-content">
                                                     <span class="author">Kenneth Ross</span>
@@ -374,7 +374,7 @@
                 <!-- start: USER DROPDOWN -->
                 <li class="dropdown current-user">
                     <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                        <img src="{{asset('dashboard/assets/images/avatar-1-small.jpg')}}" class="circle-img" alt="">
+                        <img src="{{asset('template/assets/images/avatar-1-small.jpg')}}" class="circle-img" alt="">
                         <span class="username">Peter Clark</span>
                         <i class="clip-chevron-down"></i>
                     </a>
@@ -483,48 +483,57 @@
 </div>
 <!-- start: MAIN JAVASCRIPTS -->
 <!--[if lt IE 9]>
-<script src="{{asset('dashboard/bower_components/respond/dest/respond.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/Flot/excanvas.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/jquery-1.x/dist/jquery.min.js')}}"></script>
+<script src="../../{{asset('template/bower_components/respond/dest/respond.min.js')}}"></script>
+<script src="../../{{asset('template/bower_components/Flot/excanvas.min.js')}}"></script>
+<script src="../../{{asset('template/bower_components/jquery-1.x/dist/jquery.min.js')}}"></script>
 <![endif]-->
 <!--[if gte IE 9]><!-->
-<script type="text/javascript" src="{{asset('dashboard/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!--<![endif]-->
 
-<script type="text/javascript" src="{{asset('dashboard/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/blockUI/jquery.blockUI.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/iCheck/icheck.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/jquery.cookie/jquery.cookie.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/bower_components/sweetalert/dist/sweetalert.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('dashboard/assets/js/min/main.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/blockUI/jquery.blockUI.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/iCheck/icheck.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/jquery.cookie/jquery.cookie.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/sweetalert/dist/sweetalert.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/assets/js/min/main.min.js')}}"></script>
 <!-- end: MAIN JAVASCRIPTS -->
 <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-<script src="{{asset('dashboard/bower_components/Flot/jquery.flot.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/Flot/jquery.flot.pie.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/Flot/jquery.flot.resize.js')}}"></script>
-<script src="{{asset('dashboard/assets/plugin/jquery.sparkline.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/fullcalendar/dist/fullcalendar.min.js')}}"></script>
-<script src="{{asset('dashboard/assets/js/min/index.min.js')}}"></script>
+<script src="{{asset('template/bower_components/Flot/jquery.flot.js')}}"></script>
+<script src="{{asset('template/bower_components/Flot/jquery.flot.pie.js')}}"></script>
+<script src="{{asset('template/bower_components/Flot/jquery.flot.resize.js')}}"></script>
+<script src="{{asset('template/assets/plugin/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('template/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
+<script src="{{asset('template/bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+<script src="{{asset('template/bower_components/moment/min/moment.min.js')}}"></script>
+<script src="{{asset('template/bower_components/fullcalendar/dist/fullcalendar.min.js')}}"></script>
+<script src="{{asset('template/assets/js/min/index.min.js')}}"></script>
 <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
-<script src="{{asset('dashboard/bower_components/bootbox.js/bootbox.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/jquery-mockjax/dist/jquery.mockjax.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/select2/dist/js/select2.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/datatables/media/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('dashboard/bower_components/datatables/media/js/dataTables.bootstrap.js')}}"></script>
-<script src="{{asset('dashboard/assets/js/min/table-data.min.js')}}"></script>
+<script src="{{asset('template/bower_components/bootbox.js/bootbox.js')}}"></script>
+<script src="{{asset('template/bower_components/jquery-mockjax/dist/jquery.mockjax.min.js')}}"></script>
+<script src="{{asset('template/bower_components/select2/dist/js/select2.min.js')}}"></script>
+<script src="{{asset('template/bower_components/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('template/bower_components/datatables/media/js/dataTables.bootstrap.js')}}"></script>
+<script src="{{asset('template/assets/js/min/table-data.min.js')}}"></script>
+<script src="{{asset('template/assets/js/form-elements.js')}}"></script>
 <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
 <script>
     jQuery(document).ready(function() {
         Main.init();
-
         TableData.init();
+    });
+</script>
+<script>
+    //function to initiate Select2
+    jQuery(document).ready(function () {
+        $(".search-select").select2({
+            placeholder: "اسم المندوب",
+            allowClear: true
+        });
     });
 </script>
 

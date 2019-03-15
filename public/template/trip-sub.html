@@ -35,6 +35,8 @@
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
     <link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="bower_components/datatables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 </head>
 
@@ -406,9 +408,9 @@
                         </li>
                         <!-- end: USER DROPDOWN -->
                         <!-- start: PAGE SIDEBAR TOGGLE -->
-                        <li>
+                        <!--<li>
                             <a class="sb-toggle" href="#"><i class="fa fa-outdent"></i></a>
-                        </li>
+                        </li>-->
                         <!-- end: PAGE SIDEBAR TOGGLE -->
                 </ul>
                 <!-- end: TOP NAVIGATION MENU -->
@@ -430,49 +432,25 @@
                 <!-- end: MAIN MENU TOGGLER BUTTON -->
                 <!-- start: MAIN NAVIGATION MENU -->
                 <ul class="main-navigation-menu">
-                    <li class="">
+                    <li >
                         <!--active open-->
                         <a href="index.html">
                             <i class="clip-home-3"></i>
-                            <span class="title"> Dashboard </span><span class="selected"></span>
+                            <span class="title"> الرئيسية  </span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
-                            <i class="clip-screen"></i>
-                            <span class="title"> Layouts </span><i class="icon-arrow"></i>
-                            <span class="selected"></span>
+                        <a href="users.html">
+                            <i class="clip-user"></i>
+                            <span class="title"> ادارة المستخدمين</span>
                         </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="layouts_horizontal_menu1.html">
-                                    <span class="title"> Horizontal Menu </span>
-                                    <span class="badge badge-new">new</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="close-sidebar-left">
-                                    <span class="title"> Sidebar Closed </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="set-boxed-layout">
-                                    <span class="title"> Boxed Layout </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="set-footer-fixed">
-                                    <span class="title"> Footer Fixed </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../clip-one/index.html">
-                                    <span class="title"> LTR Version </span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    
+                    <li class="active">
+                        <a href="trips.html">
+                            <i class="clip-user"></i>
+                            <span class="title">دليل الرحلات</span><span class="selected"></span>
+                        </a>
+                    </li>
                 </ul>
                 <!-- end: MAIN NAVIGATION MENU -->
             </div>
@@ -576,7 +554,7 @@
                             <li class="active">
                                 <i class="clip-home-3"></i>
                                 <a href="#">
-                                    Home
+                                   تفاصيل الرحلة 
                                 </a>
                             </li>
                             
@@ -592,204 +570,73 @@
                             </li>
                         </ol>
                         <div class="page-header">
-                            <h1> الرئيسية </h1>
+                            <h3>دليل الرحلات</h3>
+                            <a href="add-trip.html"><button type="button" class="btn btn-primary">
+                                اضافة رحلة  
+                            </button></a>
                         </div>
                         <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>
                 </div>
                 <!-- end: PAGE HEADER -->
-                <!-- start: PAGE CONTENT -->
-                
                 <div class="row">
-                    <div class="col-sm-7">
+                    <div class="col-md-12">
+                        <!-- start: trip details with subscripers -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <i class="clip-stats"></i> Site Visits
+                                <i class="fa fa-external-link-square"></i> تفاصيل الرحلة بالمناديب  
                                 <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div class="flot-medium-container">
-                                    <div id="placeholder-h1" class="flot-placeholder"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <i class="clip-pie"></i> Acquisition
-                                        <div class="panel-tools">
-                                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                                <i class="fa fa-wrench"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                                <i class="fa fa-refresh"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-close" href="#">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="flot-mini-container">
-                                            <div id="placeholder-h2" class="flot-placeholder"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <i class="clip-bars"></i> Pageviews real-time
-                                        <div class="panel-tools">
-                                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                                <i class="fa fa-wrench"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                                <i class="fa fa-refresh"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-close" href="#">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="flot-mini-container">
-                                            <div id="placeholder-h3" class="flot-placeholder"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="row space12">
-                            <ul class="mini-stats col-sm-12">
-                                <li class="col-sm-4">
-                                    <div class="sparkline_bar_good">
-                                        <span>3,5,9,8,13,11,14</span>+10%
-                                    </div>
-                                    <div class="values">
-                                        <strong>18304</strong> Visits
-                                    </div>
-                                </li>
-                                <li class="col-sm-4">
-                                    <div class="sparkline_bar_neutral">
-                                        <span>20,15,18,14,10,12,15,20</span>0%
-                                    </div>
-                                    <div class="values">
-                                        <strong>3833</strong> Unique Visitors
-                                    </div>
-                                </li>
-                                <li class="col-sm-4">
-                                    <div class="sparkline_bar_bad">
-                                        <span>4,6,10,8,12,21,11</span>+50%
-                                    </div>
-                                    <div class="values">
-                                        <strong>18304</strong> Pageviews
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="row space12">
-                            <div class="col-sm-6">
-                                <div class="easy-pie-chart">
-                                    <span class="bounce number" data-percent="44"> <span class="percent">44</span> </span>
-                                    <div class="label-chart">
-                                        Bounce Rate
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="easy-pie-chart">
-                                    <span class="cpu number" data-percent="82"> <span class="percent">82</span> </span>
-                                    <div class="label-chart">
-                                        New Visits
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <i class="clip-users-2"></i> Users
-                                <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body panel-scroll" style="height:300px">
-                                <table class="table table-striped table-hover" id="sample-table-1">
+                                <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                                     <thead>
                                         <tr>
-                                            <th class="center">Photo</th>
-                                            <th>Full Name</th>
-                                            <th class="hidden-xs">Email</th>
-                                            <th></th>
+                                            <th class="text-right">رقم الرحلة</th>
+                                            <th class="text-right">اسم الرحلة</th>
+                                            <th class="text-right">اسم المندوب</th>
+                                            <th class="text-right">عدد الافراد</th>
+                                            <th class="text-right">درجة الرحلة</th>
+                                            <th class="text-right">اجاملى التكلفة للمندوب</th>
+                                            <th class="text-right">المدفوع نقدا</th>
+                                            <th class="text-right">متبقى</th>
+                                            <th class="text-right">العملة المستخدمة</th>
+                                            <th class="text-right">&shy;</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="center"><img src="assets/images/avatar-1.jpg" alt="image" /></td>
-                                            <td>Peter Clark</td>
-                                            <td class="hidden-xs">
-                                                <a href="#" rel="nofollow" target="_blank">
-                                                    peter@example.com
-                                                </a>
-                                            </td>
+                                            <td>رحلة 1 </td>
+                                            <td>عمرة شعبان </td>
+                                            <td>محسن عبد السلام</td>
+                                            <td>15 فرد </td>
+                                            <td>5 نجوم</td>
+                                            <td>9000 </td>
+                                            <td>8000 </td>
+                                            <td>1000 </td>
+                                            <td>ريال سعودى </td>
                                             <td class="center">
-                                                <div>
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </div>
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
                                                     <div class="btn-group">
                                                         <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
                                                             <i class="fa fa-cog"></i> <span class="caret"></span>
                                                         </a>
                                                         <ul role="menu" class="dropdown-menu pull-right">
                                                             <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
+                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
                                                                     <i class="fa fa-edit"></i> Edit
                                                                 </a>
                                                             </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-share"></i> Share
-                                                                </a>
-                                                            </li>
+                                                            
                                                             <li role="presentation">
                                                                 <a role="menuitem" tabindex="-1" href="#">
                                                                     <i class="fa fa-times"></i> Remove
@@ -801,30 +648,32 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="center"><img src="assets/images/avatar-2.jpg" alt="image" /></td>
-                                            <td>Nicole Bell</td>
-                                            <td class="hidden-xs">
-                                                <a href="#" rel="nofollow" target="_blank">
-                                                    nicole@example.com
-                                                </a>
-                                            </td>
+                                            <td>رحلة 1 </td>
+                                            <td>عمرة شعبان </td>
+                                            <td>محسن عبد السلام</td>
+                                            <td>15 فرد </td>
+                                            <td>5 نجوم</td>
+                                            <td>9000 </td>
+                                            <td>8000 </td>
+                                            <td>1000 </td>
+                                            <td>ريال سعودى </td>
                                             <td class="center">
-                                                <div>
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </div>
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
                                                     <div class="btn-group">
                                                         <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
                                                             <i class="fa fa-cog"></i> <span class="caret"></span>
                                                         </a>
                                                         <ul role="menu" class="dropdown-menu pull-right">
                                                             <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
+                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
                                                                     <i class="fa fa-edit"></i> Edit
                                                                 </a>
                                                             </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-share"></i> Share
-                                                                </a>
-                                                            </li>
+                                                            
                                                             <li role="presentation">
                                                                 <a role="menuitem" tabindex="-1" href="#">
                                                                     <i class="fa fa-times"></i> Remove
@@ -836,100 +685,32 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="center"><img src="assets/images/avatar-3.jpg" alt="image" /></td>
-                                            <td>Steven Thompson</td>
-                                            <td class="hidden-xs">
-                                                <a href="#" rel="nofollow" target="_blank">
-                                                    steven@example.com
-                                                </a>
-                                            </td>
+                                            <td>رحلة 1 </td>
+                                            <td>عمرة شعبان </td>
+                                            <td>محسن عبد السلام</td>
+                                            <td>15 فرد </td>
+                                            <td>5 نجوم</td>
+                                            <td>9000 </td>
+                                            <td>8000 </td>
+                                            <td>1000 </td>
+                                            <td>ريال سعودى </td>
                                             <td class="center">
-                                                <div>
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
-                                                        </a>
-                                                        <ul role="menu" class="dropdown-menu pull-right">
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-edit"></i> Edit
-                                                                </a>
-                                                            </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-share"></i> Share
-                                                                </a>
-                                                            </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-times"></i> Remove
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="center"><img src="assets/images/avatar-5.jpg" alt="image" /></td>
-                                            <td>Kenneth Ross</td>
-                                            <td class="hidden-xs">
-                                                <a href="#" rel="nofollow" target="_blank">
-                                                    kenneth@example.com
-                                                </a>
-                                            </td>
-                                            <td class="center">
-                                                <div>
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
                                                     <div class="btn-group">
                                                         <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
                                                             <i class="fa fa-cog"></i> <span class="caret"></span>
                                                         </a>
                                                         <ul role="menu" class="dropdown-menu pull-right">
                                                             <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
+                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
                                                                     <i class="fa fa-edit"></i> Edit
                                                                 </a>
                                                             </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-share"></i> Share
-                                                                </a>
-                                                            </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-times"></i> Remove
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="center"><img src="assets/images/avatar-4.jpg" alt="image" /></td>
-                                            <td>Ella Patterson</td>
-                                            <td class="hidden-xs">
-                                                <a href="#" rel="nofollow" target="_blank">
-                                                    ella@example.com
-                                                </a>
-                                            </td>
-                                            <td class="center">
-                                                <div>
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
-                                                        </a>
-                                                        <ul role="menu" class="dropdown-menu pull-right">
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-edit"></i> Edit
-                                                                </a>
-                                                            </li>
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-share"></i> Share
-                                                                </a>
-                                                            </li>
+                                                            
                                                             <li role="presentation">
                                                                 <a role="menuitem" tabindex="-1" href="#">
                                                                     <i class="fa fa-times"></i> Remove
@@ -944,232 +725,10 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <i class="clip-checkbox"></i> To Do
-                                <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body panel-scroll" style="height:300px">
-                                <ul class="todo">
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-warning"> tommorow</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc">Staff Meeting</span>
-                                            <span class="label label-warning"> tommorow</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> New frontend layout</span>
-                                            <span class="label label-success"> this week</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-success"> this week</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> New frontend layout</span>
-                                            <span class="label label-info"> this month</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-info"> this month</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-warning"> tommorow</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <!-- end: trip details with subscripers -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <i class="clip-calendar"></i> Calendar
-                                <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-expand" href="#">
-                                        <i class="fa fa-resize-full"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div id='calendar'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <i class="clip-bubble-4"></i> Chats
-                                        <div class="panel-tools">
-                                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                                <i class="fa fa-wrench"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                                <i class="fa fa-refresh"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-expand" href="#">
-                                                <i class="fa fa-resize-full"></i>
-                                            </a>
-                                            <a class="btn btn-xs btn-link panel-close" href="#">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body panel-scroll" style="height:460px">
-                                        <ol class="discussion">
-                                            <li class="other">
-                                                <div class="avatar">
-                                                    <img alt="" src="assets/images/avatar-4.jpg">
-                                                </div>
-                                                <div class="messages">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                    </p>
-                                                    <span class="time"> 51 min </span>
-                                                </div>
-                                            </li>
-                                            <li class="self">
-                                                <div class="avatar">
-                                                    <img alt="" src="assets/images/avatar-1.jpg">
-                                                </div>
-                                                <div class="messages">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                    </p>
-                                                    <span class="time"> 37 mins </span>
-                                                </div>
-                                            </li>
-                                            <li class="other">
-                                                <div class="avatar">
-                                                    <img alt="" src="assets/images/avatar-3.jpg">
-                                                </div>
-                                                <div class="messages">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li class="self">
-                                                <div class="avatar">
-                                                    <img alt="" src="assets/images/avatar-1.jpg">
-                                                </div>
-                                                <div class="messages">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li class="other">
-                                                <div class="avatar">
-                                                    <img alt="" src="assets/images/avatar-4.jpg">
-                                                </div>
-                                                <div class="messages">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="chat-form">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control input-mask-date" placeholder="Type a message here...">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-teal" type="button">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- end: PAGE CONTENT-->
             </div>
         </div>
@@ -1245,13 +804,25 @@
     <script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="assets/js/min/index.min.js"></script>
     <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-
+    <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
+    <script src="bower_components/bootbox.js/bootbox.js"></script>
+    <script src="bower_components/jquery-mockjax/dist/jquery.mockjax.min.js"></script>
+    <script src="bower_components/select2/dist/js/select2.min.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables/media/js/dataTables.bootstrap.js"></script>
+    <script src="assets/js/min/table-data.min.js"></script>
+    <script src="assets/js/min/table-data2.min.js"></script>
+    <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
     <script>
         jQuery(document).ready(function() {
             Main.init();
+            TableData.init();
             Index.init();
+            
         });
     </script>
+
+    
 
 </body>
 

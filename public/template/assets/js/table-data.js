@@ -26,7 +26,7 @@ var TableData = function () {
             // set the initial value
             "iDisplayLength": 10,
         });
-        $('#sample_1_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#sample_1_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "بحث");
         // modify table search input
         $('#sample_1_wrapper .dataTables_length select').addClass("m-wrap small");
         // modify table per page dropdown

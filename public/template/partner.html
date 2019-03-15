@@ -432,20 +432,54 @@
                 <!-- end: MAIN MENU TOGGLER BUTTON -->
                 <!-- start: MAIN NAVIGATION MENU -->
                 <ul class="main-navigation-menu">
-                    <li class="active">
+                    <li >
                         <!--active open-->
                         <a href="index.html">
                             <i class="clip-home-3"></i>
-                            <span class="title"> الرئيسية  </span><span class="selected"></span>
+                            <span class="title"> الرئيسية  </span>
                         </a>
                     </li>
                     <li>
                         <a href="users.html">
                             <i class="clip-user"></i>
-                            <span class="title"> ادارة المستخدمين   </span>
+                            <span class="title"> ادارة المستخدمين</span>
                         </a>
                     </li>
-                    
+                    <li class="active">
+                        <a href="javascript:void(0)">
+                            <i class="clip-screen"></i>
+                            <span class="title">دليل الرحلات</span><i class="icon-arrow"></i>
+                            <span class="selected"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="trips.html">
+                                    <span class="title">الرحلات</span>
+                                    <!--<span class="badge badge-new">new</span>-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-trip.html" class="close-sidebar-left">
+                                    <span class="title"> اضافة رحلة </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="trip-sub.html" class="set-boxed-layout">
+                                    <span class="title">  تفاصيل الرحلة بالمناديب  </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-trip-sub.html" class="set-footer-fixed">
+                                    <span class="title">اضافة تفاصيل الرحلة</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="">
+                                    <span class="title"> LTR Version </span>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </li>
                 </ul>
                 <!-- end: MAIN NAVIGATION MENU -->
             </div>
@@ -547,9 +581,9 @@
                         <!-- start: PAGE TITLE & BREADCRUMB -->
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="clip-home-3"></i>
+                                <i class="clip-link"></i>
                                 <a href="#">
-                                    Home
+                                    ادارة العملاء 
                                 </a>
                             </li>
                             
@@ -565,18 +599,142 @@
                             </li>
                         </ol>
                         <div class="page-header">
-                            <h3> الرئيسية </h3>
+                            <h3>دليل العملاء</h3>
+                            <a href="add-partner.html"><button type="button" class="btn btn-primary">
+                                اضافة عميل  
+                            </button></a>
                         </div>
                         <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>
                 </div>
                 <!-- end: PAGE HEADER -->
-                <!-- start: PAGE CONTENT -->
-                <!--//---------------------------------------------------------------------------------------------------------------->
-                <!--//---------------------------------------------------------------------------------------------------------------->
-                <!--//*//////////////////////////////////////put the content here///////////////////////////////////////////////////-->
-                <!--//---------------------------------------------------------------------------------------------------------------->
-                <!--//---------------------------------------------------------------------------------------------------------------->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- start: trips Details-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i> بيانات العملاء 
+                                <div class="panel-tools">
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-right">اسم العميل</th>
+                                            <th class="text-right">رقم التليفون</th>
+                                            <th class="text-right">&shy;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>محسن عبد السلام </td>
+                                            <td>010 1021 4571</td>
+                                            
+                                            <td class="center">
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </div>
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
+                                                        </a>
+                                                        <ul role="menu" class="dropdown-menu pull-right">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
+                                                                    <i class="fa fa-edit"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            
+                                                            <li role="presentation">
+                                                                <a role="menuitem" tabindex="-1" href="#">
+                                                                    <i class="fa fa-times"></i> Remove
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>محسن عبد السلام </td>
+                                            <td>010 1021 4571</td>
+                                            
+                                            <td class="center">
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </div>
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
+                                                        </a>
+                                                        <ul role="menu" class="dropdown-menu pull-right">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
+                                                                    <i class="fa fa-edit"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            
+                                                            <li role="presentation">
+                                                                <a role="menuitem" tabindex="-1" href="#">
+                                                                    <i class="fa fa-times"></i> Remove
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>محسن عبد السلام </td>
+                                            <td>010 1021 4571</td>
+                                            
+                                            <td class="center">
+                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </div>
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
+                                                        </a>
+                                                        <ul role="menu" class="dropdown-menu pull-right">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
+                                                                    <i class="fa fa-edit"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            
+                                                            <li role="presentation">
+                                                                <a role="menuitem" tabindex="-1" href="#">
+                                                                    <i class="fa fa-times"></i> Remove
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                       
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end: trips Details -->
+                        
+                    </div>
+                </div>
                 
                 <!-- end: PAGE CONTENT-->
             </div>
@@ -660,14 +818,18 @@
     <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="bower_components/datatables/media/js/dataTables.bootstrap.js"></script>
     <script src="assets/js/min/table-data.min.js"></script>
+    <script src="assets/js/min/table-data2.min.js"></script>
     <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
     <script>
         jQuery(document).ready(function() {
             Main.init();
-            
             TableData.init();
+            Index.init();
+            
         });
     </script>
+
+    
 
 </body>
 

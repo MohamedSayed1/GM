@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('dashboard', function () {
+Route::get('dashboard/admin', function () {
     return view('admin.index');
 });
+
+Route::get('dashboard/admin/users','adminUsersController@viewUser');

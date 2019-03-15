@@ -432,6 +432,7 @@
                 <!-- end: MAIN MENU TOGGLER BUTTON -->
                 <!-- start: MAIN NAVIGATION MENU -->
                 <ul class="main-navigation-menu">
+                    <ul class="main-navigation-menu">
                     <li >
                         <!--active open-->
                         <a href="index.html">
@@ -439,12 +440,48 @@
                             <span class="title"> الرئيسية  </span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="users.html">
                             <i class="clip-user"></i>
-                            <span class="title"> ادارة المستخدمين</span><span class="selected"></span>
+                            <span class="title"> ادارة المستخدمين</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a href="javascript:void(0)">
+                            <i class="clip-screen"></i>
+                            <span class="title">دليل الرحلات</span><i class="icon-arrow"></i>
+                            <span class="selected"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="trips.html">
+                                    <span class="title">الرحلات</span>
+                                    <!--<span class="badge badge-new">new</span>-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-trip.html" class="close-sidebar-left">
+                                    <span class="title"> اضافة رحلة </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="trip-sub.html" class="set-boxed-layout">
+                                    <span class="title">  تفاصيل الرحلة بالمناديب  </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-trip-sub.html" class="set-footer-fixed">
+                                    <span class="title">اضافة تفاصيل الرحلة</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="">
+                                    <span class="title"> LTR Version </span>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </li>
+                </ul>
                     
                 </ul>
                 <!-- end: MAIN NAVIGATION MENU -->
@@ -467,7 +504,7 @@
                                     Style Selector
                                 </div>
                                 <div class="box-title">
-                                    Choose Your Layout Style
+                                    اختار شكل النظام 
                                 </div>
                                 <div class="input-box">
                                     <div class="input">
@@ -549,7 +586,7 @@
                             <li class="active">
                                 <i class="clip-home-3"></i>
                                 <a href="#">
-                                    ادارة المستخدمين 
+                                   اضافة تفاصيل الرحلة 
                                 </a>
                             </li>
                             
@@ -565,141 +602,124 @@
                             </li>
                         </ol>
                         <div class="page-header">
-                            <h3> ادارة المستخدمين  </h3>
-                            <a href="add-user.html"><button type="button" class="btn btn-primary">
-                                اضافة مستخدم 
-                            </button></a>
+                            <h3> اضافة تفاصيل الرحلة  </h3>
                         </div>
                         <!-- end: PAGE TITLE & BREADCRUMB -->
+                        
                     </div>
                 </div>
                 <!-- end: PAGE HEADER -->
                 <div class="row">
-                    <div class="col-md-12">
-                        <!-- start: DYNAMIC TABLE PANEL -->
+                    <div class="col-sm-12">
+                        <!-- start: TEXT FIELDS PANEL -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <i class="fa fa-external-link-square"></i> Dynamic Table
+                                <i class="fa fa-external-link-square"></i>ادخل بيانات الرحلة 
                                 <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
-                                    <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                                    </a>
+                                    
+                                    
+                                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                                        <i class="fa fa-resize-full"></i>
+                                    </a>
+                                    
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-right">اسم المستخدم </th>
-                                            <th class="text-right">نوع المستخدم </th>
-                                            <th class="text-right">الحالة </th>
-                                            <th class="text-right">&shy;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>محسن عبد السلام </td>
-                                            <td>مدير </td>
-                                            <td class="center"><a href="#">ِِActive</a></td>
-                                            <td class="center">
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                                    <a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
-                                                </div>
-                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
-                                                        </a>
-                                                        <ul role="menu" class="dropdown-menu pull-right">
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-edit"></i> Edit
-                                                                </a>
-                                                            </li>
-                                                            
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-times"></i> Remove
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>محسن عبد السلام </td>
-                                            <td>مدير </td>
-                                            <td class="center"><a href="#">ِِActive</a></td>
-                                            <td class="center">
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                                    <a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
-                                                </div>
-                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
-                                                        </a>
-                                                        <ul role="menu" class="dropdown-menu pull-right">
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-edit"></i> Edit
-                                                                </a>
-                                                            </li>
-                                                            
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-times"></i> Remove
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>محسن عبد السلام </td>
-                                            <td>مدير </td>
-                                            <td class="center"><a href="#">ِِActive</a></td>
-                                            <td class="center">
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                                    <a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
-                                                </div>
-                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
-                                                        </a>
-                                                        <ul role="menu" class="dropdown-menu pull-right">
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-edit"></i> Edit
-                                                                </a>
-                                                            </li>
-                                                            
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-times"></i> Remove
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            اسم المندوب 
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <!--<select id="form-field-select-1" class="form-control">
+                                                <option value="">محسن عبد السلام</option>
+                                                <option value="">محسن عبد السلام</option>
+                                            </select>-->
+                                            <select id="form-field-select-3" class="form-control search-select">
+                                                <option value="">&nbsp;</option>
+                                                <option value="AL">محسن عبد السلام</option>
+                                                <option value="AK">محسن عبد السلام</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            اسم الرحلة 
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <select id="form-field-select-1" class="form-control">
+                                                <option value="">رحلة 1</option>
+                                                <option value="">رحلة 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                           عدد الافراد
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <input type="text" placeholder="عدد الافراد" id="form-field-1" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            درجة الرحلة
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <input type="text" placeholder="درجة الرحلة" id="form-field-2" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            اجمالى المندوب    
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <input type="text" placeholder="اجمالى المندوب" id="form-field-2" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            المدفوع
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <input type="text" placeholder="المدفوع" id="form-field-2" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            الباقى
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <input type="text" placeholder="الباقى" id="form-field-2" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            العملة
+                                        </label>
+                                        <div class="col-sm-5">
+                                            <select id="form-field-select-1" class="form-control">
+                                                <option value="">جنيه مصرى</option>
+                                                <option value="">ريال سعودى </option>
+                                                <option value="">دولار</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2" >
+                                            <a href="#"><button type="button" class="btn btn-primary">
+                                                حفظ 
+                                            </button></a>   
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <!-- end: DYNAMIC TABLE PANEL -->
+                        <!-- end: TEXT FIELDS PANEL -->
                     </div>
                 </div>
-                
                 <!-- end: PAGE CONTENT-->
             </div>
         </div>
@@ -782,17 +802,24 @@
     <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="bower_components/datatables/media/js/dataTables.bootstrap.js"></script>
     <script src="assets/js/min/table-data.min.js"></script>
+    <script src="assets/js/form-elements.js"></script>
     <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
     <script>
         jQuery(document).ready(function() {
             Main.init();
-            TableData.init();
-            Index.init();
             
+            TableData.init();
         });
     </script>
-
-    
+    <script>
+        //function to initiate Select2
+        jQuery(document).ready(function () {
+            $(".search-select").select2({
+                placeholder: "اسم المندوب",
+                allowClear: true
+            });
+        });
+    </script>
 
 </body>
 

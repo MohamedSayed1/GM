@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @section('title')
-    Al-Arady ElMokadasa Management System
+    الارادي المقدسه
 @endsection
 @section('sidebar')
     @include('admin.sidebar')

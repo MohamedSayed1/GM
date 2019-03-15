@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>الاراضي المقدسه- تسجيل الدخول</title>
+    <link rel="shortcut icon" href="" />
+    <!-- start: META -->
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="Al-Arady ElMokadasa Management System" name="description" />
+    <meta content="Al-Arady ElMokadasa Management System" name="AMS" />
+    <!-- end: META -->
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/font-awesome/css/font-awesome.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/fonts/clip-font.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/iCheck/skins/all.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/sweetalert/dist/sweetalert.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/rtl-version.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main-responsive.min.css')}}" />
+    <link type="text/css" rel="stylesheet" media="print" href="{{asset('template/assets/css/print.min.css')}}" />
+    <link type="text/css" rel="stylesheet" id="skin_color" href="{{asset('template/assets/css/theme/light.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/prof-style-kh.css')}}" />
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <link href="{{asset('template/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('template/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('template/bower_components/datatables/media/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" />
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+</head>
+
+<body class="rtl login example2">
+
+<div class="main-login col-sm-4 col-sm-offset-4">
+    <div class="logo">
+        الاراضى المقدسة
+    </div>
+    <!-- start: LOGIN BOX -->
+    <div class="box-login">
+        <h3>سجل الدخول الى حسابك</h3>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+    </div>
+    @endif
+
+        <form class="form-login" action="{{url('login')}}" method="post">
+
+            <fieldset>
+                <div class="form-group">
+                                <span class="input-icon">
+                                    <input type="text" class="form-control" name="username" placeholder="اسم المستخدم ">
+                                </span>
+                </div>
+                <div class="form-group form-actions">
+                                <span class="input-icon">
+                                    <input type="password" class="form-control password" name="password" placeholder="كلمة السر">
+
+                                </span>
+                </div>
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-bricky pull-left font-dro ">
+                        <i class="fa fa-arrow-circle-left"></i> &shy; تسجيل الدخول
+                    </button>
+
+
+                    <label for="remember" class="checkbox-inline  pull-right rtl font-dro ">
+                        <input type="checkbox" class="grey remember check-in font-dro" id="remember" name="remember" >
+                        اجعلنى  على قيد تسجيل الدخول
+                    </label>
+
+                </div> <br>
+                <!-- <div class="new-account rtl font-dro">
+                    ليس لديك حساب
+                    <a href="#" class="register rtl font-dro">
+                        انشاء حساب من هنا
+                    </a>
+                </div> -->
+            </fieldset>
+        </form>
+    </div>
+    <!-- end: LOGIN BOX -->
+
+    <!-- start: COPYRIGHT -->
+    <div class="copyright">
+        <script>
+            document.write(new Date().getFullYear())
+        </script> &copy; Al-Arady ElMokadasa Management System By AMS
+    </div>
+    <!-- end: COPYRIGHT -->
+</div>
+
+<!-- start: MAIN JAVASCRIPTS -->
+<!--[if lt IE 9]>
+<script src="{{asset('template/bower_components/respond/dest/respond.min.js')}}"></script>
+<script src="{{asset('template/bower_components/Flot/excanvas.min.js')}}"></script>
+<script src="{{asset('template/bower_components/jquery-1.x/dist/jquery.min.js')}}"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script type="text/javascript" src="{{asset('template/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="{{asset('template/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/blockUI/jquery.blockUI.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/iCheck/icheck.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/jquery.cookie/jquery.cookie.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/bower_components/sweetalert/dist/sweetalert.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('template/assets/js/min/main.min.js')}}"></script>
+<!-- end: MAIN JAVASCRIPTS -->
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+
+<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+<script>
+    jQuery(document).ready(function() {
+        Main.init();
+
+    });
+</script>
+
+</body>
+
+</html>

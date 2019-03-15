@@ -53,7 +53,7 @@
             </button>
             <!-- end: RESPONSIVE MENU TOGGLER -->
             <!-- start: LOGO -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#">
                 الاراضى المقدسة
             </a>
             <!-- end: LOGO -->
@@ -375,32 +375,13 @@
                 <li class="dropdown current-user">
                     <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
                         <img src="{{asset('template/assets/images/avatar-1-small.jpg')}}" class="circle-img" alt="">
-                        <span class="username">Peter Clark</span>
+                        <span class="username">test</span>
                         <i class="clip-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
+
                         <li>
-                            <a href="pages_user_profile.html">
-                                <i class="clip-user-2"></i> &nbsp;My Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages_calendar.html">
-                                <i class="clip-calendar"></i> &nbsp;My Calendar
-                            </a>
-                        <li>
-                            <a href="pages_messages.html">
-                                <i class="clip-bubble-4"></i> &nbsp;My Messages (3)
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="utility_lock_screen.html">
-                                <i class="clip-locked"></i> &nbsp;Lock Screen
-                            </a>
-                        </li>
-                        <li>
-                            <a href="login_example1.html">
+                            <a href="{{url('logout')}}">
                                 <i class="clip-exit"></i> &nbsp;Log Out
                             </a>
                         </li>
@@ -535,6 +516,10 @@
             allowClear: true
         });
     });
+    $(document).ready( function() {
+        $('#masge').delay(5000).fadeOut();
+    });
+
 </script>
 
 </body>

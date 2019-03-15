@@ -23,7 +23,7 @@ class UserRepository
         $users->password    = bcrypt($userData['password']);
         $users->name        = $userData['name'];
         $users->name        = $userData['name'];
-        $users->is_actvie   = isset($userData['is_actvie'])?$userData['is_actvie']:1;
+        $users->is_actvie   = isset($userData['is_active'])?$userData['is_active']:1;
         $users->group_id    = isset($userData['group_id'])?$userData['group_id']:2;
 
         return $users->save();
@@ -37,7 +37,7 @@ class UserRepository
         $users->username    = $userData['username'];
         $users->name        = $userData['name'];
         $users->name        = $userData['name'];
-        $users->is_actvie   = $userData['is_actvie'];
+        $users->is_actvie   = $userData['is_active'];
         $users->group_id    = $userData['group_id'];
 
         return $users->save();

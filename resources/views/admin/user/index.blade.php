@@ -115,12 +115,27 @@
                     </ol>
                     <div class="page-header">
                         <h3> ادارة المستخدمين  </h3>
-                        <a href="#"><button type="button" class="btn btn-primary">
+                        <a href="{{url('dashboard/admin/users/add')}}"><button type="button" class="btn btn-primary">
                                 اضافة مستخدم
                             </button></a>
                     </div>
                     <!-- end: PAGE TITLE & BREADCRUMB -->
                 </div>
+            </div>
+            <div id="masge">
+                @if(session()->has('$massage'))
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-ok"></span>    {{ session()->get('$massage') }}
+                    </div>
+                @endif
+
+                @if(session()->has('$errors'))
+                    <div class="alert alert-warning" role="alert">
+                        <span class="glyphicon glyphicon-remove"></span>   {{ session()->get('$errors') }}
+                    </div>
+                @endif
+
+
             </div>
             <!-- end: PAGE HEADER -->
             <div class="row">
@@ -128,7 +143,7 @@
                     <!-- start: DYNAMIC TABLE PANEL -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-external-link-square"></i> Dynamic Table
+                            <i class="fa fa-external-link-square"></i>
                             <div class="panel-tools">
                                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
@@ -157,8 +172,8 @@
 
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                            <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                            <a href="{{url('dashboard/admin/users/updated/'.$user->id)}}" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="تعديل"><i class="fa fa-edit"></i></a>
+                                            <a href="{{url('dashboard/admin/users/updated/password/'.$user->id)}}" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="تعديل كلمه المرور"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
                                         <div class="visible-xs visible-sm hidden-md hidden-lg">
                                             <div class="btn-group">

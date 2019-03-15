@@ -1,9 +1,7 @@
-@extends('layout.layout')
+@extends('admin.index')
+
 @section('title')
-    الاراضي المقدسة
-@endsection
-@section('sidebar')
-    @include('admin.sidebar')
+    {{$title}}
 @endsection
 
 
@@ -99,8 +97,8 @@
             <ol class="breadcrumb">
                 <li class="active">
                     <i class="clip-home-3"></i>
-                    <a href="#">
-                        Home
+                    <a href="{{url('dashboard/admin/users')}}">
+                        ادارة المستخدمين
                     </a>
                 </li>
 
@@ -116,13 +114,103 @@
                 </li>
             </ol>
             <div class="page-header">
-                <h3> الرئيسية </h3>
+                <h3> ادارة المستخدمين  </h3>
+
             </div>
             <!-- end: PAGE TITLE & BREADCRUMB -->
         </div>
     </div>
+    <!-- end: PAGE HEADER -->
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- start: TEXT FIELDS PANEL -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-external-link-square"></i>ادخل بيانات المستخدم
+                    <div class="panel-tools">
+                        <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                        </a>
 
 
+                        <a class="btn btn-xs btn-link panel-expand" href="#">
+                            <i class="fa fa-resize-full"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="panel-body">
+                  <div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                  </div>
+                    @endif
+                    <form role="form" class="form-horizontal" action="{{url('dashboard/admin/users/add')}}" method="post">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="form-field-1">
+                                اسم الدخول
+                            </label>
+                            <div class="col-sm-5">
+                                <input type="text" name="username" value="{{old('username')}}" placeholder="اسم الدخول" id="form-field-1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="form-field-1">
+                                اسم المستخدم
+                            </label>
+                            <div class="col-sm-5">
+                                <input type="text" name="name" value="{{old('name')}}" placeholder="اسم المستخدم" id="form-field-1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="form-field-2">
+                                كلمة المرور
+                            </label>
+                            <div class="col-sm-5">
+                                <input type="password"  name="password" value="{{old('password')}}" placeholder="كلمة المرور " id="form-field-2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="form-field-2">
+                                صلاحية المستخدم
+                            </label>
+                            <div class="col-sm-5">
+                                <select name="group_id" id="form-field-select-1" class="form-control">
+                                    <option value="1" {{old('group_id')==1?'selected':''}}>مدير النظام </option>
+                                    <option value="2" {{old('group_id')==2?'selected':''}}>محرر</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="form-field-2">
+                                الحالة
+                            </label>
+                            <div class="col-sm-5">
+                                <select name="is_active" id="form-field-select-1" class="form-control">
+                                    <option value="1" {{old('is_active')==1?'selected':''}}>نشط </option>
+                                    <option value="0" {{old('is_active')==0?'selected':''}}>غير نشط</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2" >
+                                <button type="submit" class="btn btn-primary">
+                                        اضافة مستخدم
+                                    </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- end: TEXT FIELDS PANEL -->
+        </div>
+    </div>
 
 
 @endsection

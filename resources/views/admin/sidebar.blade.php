@@ -30,23 +30,23 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="trips.html">
+                        <a href="{{url('dashboard/admin/travels')}}">
                             <span class="title">الرحلات</span>
                             <!--<span class="badge badge-new">new</span>-->
                         </a>
                     </li>
                     <li>
-                        <a href="add-trip.html" class="">
+                        <a href="{{url('dashboard/admin/travel/add')}}" class="">
                             <span class="title"> اضافة رحلة </span>
                         </a>
                     </li>
                     <li>
-                        <a href="trip-sub.html" class="">
+                        <a href="{{(url('dashboard/admin/subscribe/all'))}}" class="">
                             <span class="title">  تفاصيل الرحلة بالمناديب  </span>
                         </a>
                     </li>
                     <li>
-                        <a href="add-trip-sub.html" class="">
+                        <a href="{{URL('dashboard/admin/subscribe/add')}}" class="">
                             <span class="title">اضافة تفاصيل الرحلة</span>
                         </a>
                     </li>

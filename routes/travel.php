@@ -7,10 +7,6 @@
  */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //Travel table
 Route::get('dashboard/admin/travel/add','AdminTravelController@addTravel');
 Route::post('dashboard/admin/travel/add','AdminTravelController@processAddTravel');

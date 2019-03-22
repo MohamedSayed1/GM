@@ -32,7 +32,17 @@ class TravelServices extends  Services
             'is_active'     => 'required|boolean'
         ];
 
-        $validator = Validator::make($request->all(),$rules);
+        $messages = [
+            'travel_name.required'=>' برجاء ادخال اسم الرحله',
+            'start_day.required'=>' برجاء ادخال تاريخ بداية الرحله',
+
+            'end_day.required'=>' برجاء ادخال تاريخ نهاية الرحله',
+            'transportaion.required'=>'برجاء ادخال ,وسيلة المواصلات',
+            'hotel_name.required'=>'برجاء ادخال اسم الفندق',
+            'is_active.required'=>'يجب تحديد هل الرحله متاحه ام غير متاحه'
+            ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator->fails())
         {
@@ -53,10 +63,20 @@ class TravelServices extends  Services
            'end_day'       => 'required',
            'transportaion'=>'required',
            'hotel_name'    =>  'required',
-           'is_active'     => 'boolean'
+           'is_active'     => 'required|boolean'
+       ];
+       $messages = [
+           'travel_name.required'=>' برجاء ادخال اسم الرحله',
+           'start_day.required'=>' برجاء ادخال تاريخ بداية الرحله',
+
+           'end_day.required'=>' برجاء ادخال تاريخ نهاية الرحله',
+           'transportaion.required'=>'برجاء ادخال ,وسيلة المواصلات',
+           'hotel_name.required'=>'برجاء ادخال اسم الفندق',
+           'is_active.required'=>'يجب تحديد هل الرحله متاحه ام غير متاحه'
        ];
 
-       $validator = Validator::make($request->all(),$rules);
+
+       $validator = Validator::make($request->all(),$rules,$messages);
 
        if($validator->fails())
        {

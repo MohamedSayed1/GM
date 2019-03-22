@@ -35,8 +35,21 @@ public function __construct()
          'remaining_payment'    =>  'required'
 
      ];
+        $messages = [
+            'travel_id.required'=>' برجاء ادخال الرحله ',
+            'partner_id.required'=>' برجاء ادخال الشريك',
+            'id_level.required'=>'مستوى الرحله',
+            'count_of_travel.required'=>'عدد المسافرين',
+            'currency_id.required'=>'العمله',
 
-     $validator = Validator::make($request->all(),$rules);
+
+            'current_paid.required'=>'الدفوع حاليا',
+            'remaining_payment.required'=>'الباقى',
+
+        ];
+
+
+        $validator = Validator::make($request->all(),$rules,$messages);
 
      if($validator->fails())
      {

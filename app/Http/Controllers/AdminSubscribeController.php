@@ -60,17 +60,19 @@ class adminSubscribeController extends Controller
      */
       public  function processAddSubscribe(Request $request){
         if($this->subscribeService->addSubscribe($request))
-            return redirect()->back()
-                ->with('$massage', 'تم اضافه  بنجاح');
+            return redirect('dashboard/admin/subscribe/all')
+                ->with('$message', 'تم اضافه بيانات الرحله بنجاح');
 
         $errors = $this->subscribeService->errors();
-           return redirect()->back() ->with('$errors','برجاء ادخال بيانات صحيحة');
+           return redirect()->back()
+               ->withInput($request->all())
+               ->withErrors($errors);
     }
     public function getSubscribeById($id=0){
          $subscribe= $this->subscribeService->getSubscribeById($id);
          if($subscribe)
              echo'<pre>';
-             print_r($subscribe) ;
+             print_r($subscribe);
 
 
 

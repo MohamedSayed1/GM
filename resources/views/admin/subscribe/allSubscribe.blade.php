@@ -128,6 +128,21 @@
                         <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>
                 </div>
+                <div id="masge">
+                    @if(session()->has('$message'))
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>    {{ session()->get('$message') }}
+                        </div>
+                    @endif
+
+                    @if(session()->has('$errors'))
+                        <div class="alert alert-warning" role="alert">
+                            <span class="glyphicon glyphicon-remove"></span>   {{ session()->get('$errors') }}
+                        </div>
+                    @endif
+
+
+                </div>
                 <!-- end: PAGE HEADER -->
                 <div class="row">
                     <div class="col-md-12">

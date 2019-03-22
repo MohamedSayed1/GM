@@ -42,37 +42,55 @@ class AdminTravelController extends Controller
      */
    public  function processAddTravel(Request $request){
           if($this->travelServices->addTravel($request))
-              return 'تمت الاضافه بنجاح';
+              return redirect('dashboard/admin/travels')
+                  ->with('$message', 'تم اضافه بيانات الرحله بنجاح');
           else
-              return $this->travelServices->errors();
+              $errors = $this->travelServices->errors();
+           return redirect()
+           ->back()
+           ->withInput($request->all())
+           ->withErrors($errors);
+
    }
 
    public function updateTravel($id=0){
        $travels= new travel();
        $travel=$travels->find($id);
-       if($travel)
+       if($travel){
 
            return view('admin.travel.updateTravel')
                    ->with('travel',$travel)
-                   ->with('title','تعديل الرحله');
-       return redirect()->back() ->with('$errors','برجاء ادخال بيانات صحيحة');
+                   ->with('title','تعديل الرحله');}
+
+       return redirect()->back()
+           ->with('$errors','برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك');
    }
-   public function processUpdateTravel(Request $request){
-      if( $this->travelServices->updateTravel($request))
-         return  'تم التعديل بنجاح';
-      else
-          return $this->travelServices->errors();
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function processUpdateTravel(Request $request){
+        if( $this->travelServices->updateTravel($request))
+            return redirect('dashboard/admin/travels')
+                ->with('$message','تم التعديل بنجاح');
+
+     else{
+        $errors = $this->travelServices->errors();
+        return redirect()
+            ->back()
+            ->withInput($request->all())
+            ->withErrors($errors);}
 
 
-   }
+    }
    public function getTravels(){
        $travels=$this->travelServices->getTravels();
-       if(count($travels)>0)
+
            return view('admin.travel.travels')
                ->with('travels',$travels)
                ->with('title','الرحلات');
-       else
-           return false;
+
 
    }
    public function getTravelById($id=0){
@@ -86,7 +104,7 @@ class AdminTravelController extends Controller
   }
    public function deleteTravel($id=0){
         if($this->travelServices->deleteTravel($id))
-            return 'تم حذف الرحله';
+            return redirect()->back();
         return $this->travelServices->errors();
     }
     public function updateActive($id,$status){

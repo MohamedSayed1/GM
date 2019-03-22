@@ -24,6 +24,17 @@
                     </div>
                 </div>
                 <div class="panel-body">
+                    <div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                    </div>
+                    @endif
                     <form role="form" class="form-horizontal" action="{{url('dashboard/admin/travel/update')}}" method="post">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-1">

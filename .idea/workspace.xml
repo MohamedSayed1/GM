@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794b3997-6f17-410a-9539-85f48f69bb9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminTravelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminTravelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gm/travel/Services/TravelServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/gm/travel/Services/TravelServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/travel/addTravel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/travel/addTravel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/travel/travels.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/travel/travels.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/travel/updateTravel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/travel/updateTravel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/travel.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/travel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +15,17 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -39,7 +45,6 @@
         <option value="$PROJECT_DIR$/app/gm/travel/Model/Subscribe.php" />
         <option value="$PROJECT_DIR$/app/gm/travel/Model/Level_Travel.php" />
         <option value="$PROJECT_DIR$/app/gm/Services.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/gm/travel/Repository/LevelTravelRepository.php" />
         <option value="$PROJECT_DIR$/app/gm/travel/Repository/PartnerRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/test.php" />
@@ -64,6 +69,7 @@
         <option value="$PROJECT_DIR$/resources/views/layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/travel/addTravel.blade.php" />
         <option value="$PROJECT_DIR$/routes/travel.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -155,7 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/xethron/laravel-4-generators" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="20" />
     <option name="width" value="1380" />
     <option name="height" value="745" />
@@ -175,11 +181,6 @@
             <path>
               <item name="gm" type="b2602c69:ProjectViewProjectNode" />
               <item name="gm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gm" type="b2602c69:ProjectViewProjectNode" />
@@ -251,16 +252,18 @@
       <workItem from="1553200831151" duration="806000" />
       <workItem from="1553264208257" duration="272000" />
       <workItem from="1553265268449" duration="2202000" />
+      <workItem from="1553270583209" duration="502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42333000" />
+    <option name="totallyTimeSpent" value="42835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15167785" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15369128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -308,13 +311,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Notifications/ResetPassword.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Passwords/PasswordBroker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3036" />
@@ -666,6 +662,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>

@@ -16,8 +16,8 @@
                     <span class="title"> الرئيسية  </span>
                 </a>
             </li>
-            <li>
-                <a href="partner.html">
+            <li class="{{ Request::is('dashboard/admin/partner/view*') ? 'active' : '' }}">
+                <a href="{{url('dashboard/admin/partner/view')}}">
                     <i class="clip-spinner"></i>
                     <span class="title">ادارة العملاء</span>
                 </a>
@@ -56,12 +56,6 @@
                         </a>
                     </li>-->
                 </ul>
-            </li>
-            <li>
-                <a href="currency.html">
-                    <i class="clip-spinner"></i>
-                    <span class="title">العملة</span>
-                </a>
             </li>
             <li class="{{ Request::is('dashboard/admin/users*') ? 'active' : '' }}">
                 <a href="{{url('dashboard/admin/users')}}">

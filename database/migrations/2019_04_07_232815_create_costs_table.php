@@ -16,10 +16,9 @@ class CreateCostsTable extends Migration {
 		{
 			$table->integer('costs_id', true);
 			$table->integer('travel_id')->nullable()->index('Travel_Costs_id_idx');
-			$table->integer('type_id')->nullable()->index('Costs_Type_idx');
 			$table->float('unit_price', 10, 0)->nullable();
 			$table->integer('count')->nullable();
-			$table->integer('currency_pound')->nullable()->index('pound_هي_idx');
+			$table->float('pound', 10, 0)->nullable()->default(1);
 			$table->float('total', 10, 0)->nullable();
 			$table->timestamps();
 		});

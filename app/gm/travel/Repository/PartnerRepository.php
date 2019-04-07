@@ -20,8 +20,6 @@ class PartnerRepository
 
         $partner->name     = $partnerData['name'];
         $partner->phone    = $partnerData['phone'];
-        $partner->address  = $partnerData['address'];
-        $partner->mail     = $partnerData['mail'];
 
         return $partner->save();
     }
@@ -34,8 +32,6 @@ class PartnerRepository
 
         $partner->name     = $partnerData['name'];
         $partner->phone    = $partnerData['phone'];
-        $partner->address  = $partnerData['address'];
-        $partner->mail     = $partnerData['mail'];
 
         return $partner->save();
 

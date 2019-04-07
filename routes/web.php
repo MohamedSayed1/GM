@@ -37,3 +37,9 @@ Route::get('dashboard/admin/users/updated/{id}','adminUsersController@updatedVie
 Route::post('dashboard/admin/users/updated','adminUsersController@updatedProcess');
 Route::get('dashboard/admin/users/updated/password/{id}','adminUsersController@updatedPassView');
 Route::post('dashboard/admin/users/updated/password','adminUsersController@updatedPassProcess');
+
+// partner
+
+Route::get('dashboard/admin/partner/view','adminPartnerControllers@viewPartner');
+Route::get('dashboard/admin/partner/view/add','adminPartnerControllers@addPartner');
+Route::post('dashboard/admin/partner/view/add','adminPartnerControllers@processAdd');

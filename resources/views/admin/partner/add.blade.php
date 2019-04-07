@@ -1,11 +1,10 @@
 @extends('admin.index')
-
 @section('title')
     {{$title}}
 @endsection
 
-
 @section('content')
+
 
     <div class="row">
         <div class="col-sm-12">
@@ -63,21 +62,21 @@
                         Backgrounds for Boxed Version
                     </div>
                     <div class="images boxed-patterns">
-                        <a id="bg_style_1" href="#"><img alt="" src="{{asset('dashboard/assets/images/bg.png')}}"></a>
-                        <a id="bg_style_2" href="#"><img alt="" src="{{asset('dashboard/assets/images/bg_2.png')}}"></a>
-                        <a id="bg_style_3" href="#"><img alt="" src="{{asset('dashboard/assets/images/bg_3.png')}}"></a>
-                        <a id="bg_style_4" href="#"><img alt="" src="{{asset('dashboard/assets/images/bg_4.png')}}"></a>
-                        <a id="bg_style_5" href="#"><img alt="" src="{{asset('dashboard/assets/images/bg_5.png')}}"></a>
+                        <a id="bg_style_1" href="#"><img alt="" src="assets/images/bg.png"></a>
+                        <a id="bg_style_2" href="#"><img alt="" src="assets/images/bg_2.png"></a>
+                        <a id="bg_style_3" href="#"><img alt="" src="assets/images/bg_3.png"></a>
+                        <a id="bg_style_4" href="#"><img alt="" src="assets/images/bg_4.png"></a>
+                        <a id="bg_style_5" href="#"><img alt="" src="assets/images/bg_5.png"></a>
                     </div>
                     <div class="box-title">
                         5 Predefined Color Schemes
                     </div>
                     <div class="images icons-color">
-                        <a id="light" href="#"><img class="active" alt="" src="{{asset('dashboard/assets/images/lightgrey.png')}}"></a>
-                        <a id="dark" href="#"><img alt="" src="{{asset('dashboard/assets/images/darkgrey.png')}}"></a>
-                        <a id="black-and-white" href="#"><img alt="" src="{{asset('dashboard/assets/images/blackandwhite.png')}}"></a>
-                        <a id="navy" href="#"><img alt="" src="{{asset('dashboard/assets/images/navy.png')}}"></a>
-                        <a id="green" href="#"><img alt="" src="{{asset('dashboard/assets/images/green.png')}}"></a>
+                        <a id="light" href="#"><img class="active" alt="" src="assets/images/lightgrey.png"></a>
+                        <a id="dark" href="#"><img alt="" src="assets/images/darkgrey.png"></a>
+                        <a id="black-and-white" href="#"><img alt="" src="assets/images/blackandwhite.png"></a>
+                        <a id="navy" href="#"><img alt="" src="assets/images/navy.png"></a>
+                        <a id="green" href="#"><img alt="" src="assets/images/green.png"></a>
                     </div>
                     <div style="height:25px;line-height:25px; text-align: center">
                         <a class="clear_style" href="#">
@@ -97,8 +96,8 @@
             <ol class="breadcrumb">
                 <li class="active">
                     <i class="clip-home-3"></i>
-                    <a href="{{url('dashboard/admin/users')}}">
-                        ادارة المستخدمين
+                    <a href="#">
+                        اضافة عميل
                     </a>
                 </li>
 
@@ -114,10 +113,10 @@
                 </li>
             </ol>
             <div class="page-header">
-                <h3> ادارة المستخدمين  </h3>
-
+                <h3> اضافة عميل  </h3>
             </div>
             <!-- end: PAGE TITLE & BREADCRUMB -->
+
         </div>
     </div>
     <!-- end: PAGE HEADER -->
@@ -126,8 +125,9 @@
             <!-- start: TEXT FIELDS PANEL -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-external-link-square"></i>ادخل بيانات المستخدم
+                    <i class="fa fa-external-link-square"></i>ادخل بيانات العميل
                     <div class="panel-tools">
+
                         <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                         </a>
 
@@ -138,8 +138,8 @@
 
                     </div>
                 </div>
-                <div class="panel-body">
 
+                <div class="panel-body">
                     @if ($errors->any())
                         <div>
                             <div class="alert alert-danger">
@@ -149,60 +149,31 @@
                                     @endforeach
                                 </ul>
                             </div>
-                         </div>
+                        </div>
                     @endif
-                    <form role="form" class="form-horizontal" action="{{url('dashboard/admin/users/add')}}" method="post">
+                    <form role="form" class="form-horizontal" method="post" action="{{url('dashboard/admin/partner/view/add')}}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-1">
-                                اسم الدخول
+                                اسم العميل
                             </label>
                             <div class="col-sm-5">
-                                <input type="text" name="username" value="{{old('username')}}" placeholder="اسم الدخول" id="form-field-1" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="form-field-1">
-                                اسم المستخدم
-                            </label>
-                            <div class="col-sm-5">
-                                <input type="text" name="name" value="{{old('name')}}" placeholder="اسم المستخدم" id="form-field-1" class="form-control">
+                                <input type="text" name="name" value="{{old('name')}}" placeholder="اسم العميل" id="form-field-1" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-2">
-                                كلمة المرور
+                                الرقم التليفون
                             </label>
                             <div class="col-sm-5">
-                                <input type="password"  name="password" value="{{old('password')}}" placeholder="كلمة المرور " id="form-field-2" class="form-control">
+                                <input type="text" name="phone" value="{{old('phone')}}" placeholder="رقم التلفون" id="form-field-2" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="form-field-2">
-                                صلاحية المستخدم
-                            </label>
-                            <div class="col-sm-5">
-                                <select name="group_id" id="form-field-select-1" class="form-control">
-                                    <option value="1" {{old('group_id')==1?'selected':''}}>مدير النظام </option>
-                                    <option value="2" {{old('group_id')==2?'selected':''}}>محرر</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="form-field-2">
-                                الحالة
-                            </label>
-                            <div class="col-sm-5">
-                                <select name="is_active" id="form-field-select-1" class="form-control">
-                                    <option value="1" {{old('is_active')==1?'selected':''}}>نشط </option>
-                                    <option value="0" {{old('is_active')==0?'selected':''}}>غير نشط</option>
-                                </select>
-                            </div>
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        </div>
+
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group">
                             <div class="col-sm-2" >
-                                <button type="submit" class="btn btn-primary">
-                                        اضافة مستخدم
+                               <button type="submit" class="btn btn-primary">
+                                        حفظ
                                     </button>
                             </div>
                         </div>
@@ -212,6 +183,5 @@
             <!-- end: TEXT FIELDS PANEL -->
         </div>
     </div>
-
 
 @endsection

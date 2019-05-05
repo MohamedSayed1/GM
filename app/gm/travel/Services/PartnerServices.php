@@ -24,6 +24,11 @@ class PartnerServices extends Services
         $this->partnerRepo = new PartnerRepository();
     }
 
+    public function getByid($id)
+    {
+        return $this->partnerRepo->getByid($id);
+    }
+
     public function getAll()
     {
         return $this->partnerRepo->GetAllPartner();
@@ -33,7 +38,7 @@ class PartnerServices extends Services
     {
         $rules = [
             'name'               =>'required|min:3|max:249',
-            'phone'             =>'required|digits:11'
+            'phone'              =>'required|unique:partner|digits:11'
 
         ];
 
@@ -43,6 +48,7 @@ class PartnerServices extends Services
             'password.min'=>'يجب ان لا يقل اسم العميل علي 3 احرف',
             'phone.required'=>'برجاء ادخال رقم تلفون العميل',
             'phone.digits'=>'يجب ان يكون رقم التلفون 11 رقم',
+            'phone.unique'=>'هذا الرقم موجود بالفعل',
         ];
 
         // vaild
@@ -58,6 +64,43 @@ class PartnerServices extends Services
         // insert data
 
         if($this->partnerRepo->AddNewPartner($data))
+            return true;
+
+
+        // set errors
+        $this->setError('Error Saving to database');
+        return false;
+    }
+    public function updated($data)
+    {
+        $rules = [
+            'name'               =>'required|min:3|max:249',
+            'phone'              =>'required|digits:11|unique:partner,phone,'.$data['id'].',partner_id',
+
+        ];
+
+        $messages = [
+            'name.required'=>'برجاء ادخال اسم العميل',
+            'name.max'=>'اسم العميل يجب ان يكون اقل من 249',
+            'password.min'=>'يجب ان لا يقل اسم العميل علي 3 احرف',
+            'phone.required'=>'برجاء ادخال رقم تلفون العميل',
+            'phone.digits'=>'يجب ان يكون رقم التلفون 11 رقم',
+            'phone.unique'=>'هذا الرقم موجود بالفعل',
+        ];
+
+        // vaild
+        $validator = Validator::make($data,$rules,$messages);
+
+        if($validator->fails())
+        {
+            // set erros
+            $this->setError($validator->errors()->all());
+            return false;
+        }
+
+        // insert data
+
+        if($this->partnerRepo->UpdatedPartner($data))
             return true;
 
 

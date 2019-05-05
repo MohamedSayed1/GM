@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
@@ -18,23 +18,23 @@
     <meta content="Al-Arady ElMokadasa Management System" name="AMS" />
     <!-- end: META -->
     <!-- start: MAIN CSS -->
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
-    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
+    <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/> -->
+    <!--  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500/" /> -->
     <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/font-awesome/css/font-awesome.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('template/assets/fonts/clip-font.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/iCheck/skins/all.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/sweetalert/dist/sweetalert.css')}}" />
+    <!-- <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/iCheck/skins/all.css')}}" /> -->
+    <!-- <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" /> -->
+    <link type="text/css" rel="stylesheet" href="{{asset('template/bower_components/sweetalert/dist/sweetalert.css')}}" /><!--  -->
     <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/rtl-version.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main-responsive.min.css')}}" />
     <link type="text/css" rel="stylesheet" media="print" href="{{asset('template/assets/css/print.min.css')}}" />
-    <link type="text/css" rel="stylesheet" id="skin_color" href="{{asset('template/assets/css/theme/light.min.css')}}" />
+    <link type="text/css" rel="stylesheet" id="skin_color" href="{{asset('template/assets/css/theme/light.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/prof-style-kh.css')}}" />
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link href="{{asset('template/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
+    <!-- <link href="{{asset('template/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" /> -->
     <link href="{{asset('template/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet" />
     <link href="{{asset('template/bower_components/datatables/media/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" />
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
@@ -61,325 +61,17 @@
         <div class="navbar-tools">
             <!-- start: TOP NAVIGATION MENU -->
             <ul class="nav navbar-right">
-                <!-- start: TO-DO DROPDOWN -->
-                <li class="dropdown">
-                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                        <i class="clip-list-5"></i>
-                        <span class="badge"> 12</span>
-                    </a>
-                    <ul class="dropdown-menu todo">
-                        <li>
-                            <span class="dropdown-menu-title"> You have 12 pending tasks</span>
-                        </li>
-                        <li>
-                            <div class="drop-down-wrapper">
-                                <ul>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-warning"> tommorow</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc">Staff Meeting</span>
-                                            <span class="label label-warning"> tommorow</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> New frontend layout</span>
-                                            <span class="label label-success"> this week</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-success"> this week</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> New frontend layout</span>
-                                            <span class="label label-info"> this month</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-info"> this month</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
-                                            <span class="label label-danger" style="opacity: 1;"> today</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="todo-actions" href="javascript:void(0)">
-                                            <i class="fa fa-square-o"></i>
-                                            <span class="desc"> Hire developers</span>
-                                            <span class="label label-warning"> tommorow</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="view-all">
-                            <a href="javascript:void(0)">
-                                See all tasks <i class="fa fa-arrow-circle-o-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- end: TO-DO DROPDOWN-->
-                <!-- start: NOTIFICATION DROPDOWN -->
-                <li class="dropdown">
-                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                        <i class="clip-notification-2"></i>
-                        <span class="badge"> 11</span>
-                    </a>
-                    <ul class="dropdown-menu notifications">
-                        <li>
-                            <span class="dropdown-menu-title"> You have 11 notifications</span>
-                        </li>
-                        <li>
-                            <div class="drop-down-wrapper">
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                            <span class="message"> New user registration</span>
-                                            <span class="time"> 1 min</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                            <span class="message"> New comment</span>
-                                            <span class="time"> 7 min</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                            <span class="message"> New comment</span>
-                                            <span class="time"> 8 min</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                            <span class="message"> New comment</span>
-                                            <span class="time"> 16 min</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                            <span class="message"> New user registration</span>
-                                            <span class="time"> 36 min</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-warning"><i class="fa fa-shopping-cart"></i></span>
-                                            <span class="message"> 2 items sold</span>
-                                            <span class="time"> 1 hour</span>
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-danger"><i class="fa fa-user"></i></span>
-                                            <span class="message"> User deleted account</span>
-                                            <span class="time"> 2 hour</span>
-                                        </a>
-                                    </li>
-                                    <li class="warning">
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-danger"><i class="fa fa-shopping-cart"></i></span>
-                                            <span class="message"> Transaction was canceled</span>
-                                            <span class="time"> 6 hour</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                            <span class="message"> New comment</span>
-                                            <span class="time"> yesterday</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                            <span class="message"> New user registration</span>
-                                            <span class="time"> yesterday</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                            <span class="message"> New user registration</span>
-                                            <span class="time"> yesterday</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                            <span class="message"> New comment</span>
-                                            <span class="time"> yesterday</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                            <span class="message"> New comment</span>
-                                            <span class="time"> yesterday</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="view-all">
-                            <a href="javascript:void(0)">
-                                See all notifications <i class="fa fa-arrow-circle-o-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- end: NOTIFICATION DROPDOWN -->
-                <!-- start: MESSAGE DROPDOWN -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#">
-                        <i class="clip-bubble-3"></i>
-                        <span class="badge"> 9</span>
-                    </a>
-                    <ul class="dropdown-menu posts">
-                        <li>
-                            <span class="dropdown-menu-title"> You have 9 messages</span>
-                        </li>
-                        <li>
-                            <div class="drop-down-wrapper">
-                                <ul>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="clearfix">
-                                                <div class="thread-image">
-                                                    <img alt="" src="./{{asset('template/assets/images/avatar-2.jpg')}}">
-                                                </div>
-                                                <div class="thread-content">
-                                                    <span class="author">Nicole Bell</span>
-                                                    <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                    <span class="time"> Just Now</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="clearfix">
-                                                <div class="thread-image">
-                                                    <img alt="" src="./{{asset('template/assets/images/avatar-1.jpg')}}">
-                                                </div>
-                                                <div class="thread-content">
-                                                    <span class="author">Peter Clark</span>
-                                                    <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                    <span class="time">2 mins</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="clearfix">
-                                                <div class="thread-image">
-                                                    <img alt="" src="./{{asset('template/assets/images/avatar-3.jpg')}}">
-                                                </div>
-                                                <div class="thread-content">
-                                                    <span class="author">Steven Thompson</span>
-                                                    <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                    <span class="time">8 hrs</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="clearfix">
-                                                <div class="thread-image">
-                                                    <img alt="" src="./{{asset('template/assets/images/avatar-1.jpg')}}">
-                                                </div>
-                                                <div class="thread-content">
-                                                    <span class="author">Peter Clark</span>
-                                                    <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                    <span class="time">9 hrs</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="clearfix">
-                                                <div class="thread-image">
-                                                    <img alt="" src="./{{asset('template/assets/images/avatar-5.jpg')}}">
-                                                </div>
-                                                <div class="thread-content">
-                                                    <span class="author">Kenneth Ross</span>
-                                                    <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                    <span class="time">14 hrs</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="view-all">
-                            <a href="pages_messages.html">
-                                See all messages <i class="fa fa-arrow-circle-o-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <!-- end: MESSAGE DROPDOWN -->
                 <!-- start: USER DROPDOWN -->
                 <li class="dropdown current-user">
                     <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
                         <img src="{{asset('template/assets/images/avatar-1-small.jpg')}}" class="circle-img" alt="">
-                        <span class="username">test</span>
+                        <span class="username">Peter Clark</span>
                         <i class="clip-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-
+                 <li>
                         <li>
                             <a href="{{url('logout')}}">
                                 <i class="clip-exit"></i> &nbsp;Log Out
@@ -402,21 +94,16 @@
 <!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
-        @yield('sidebar')
+    @yield('sidebar')
+
     <!-- start: PAGE -->
     <div class="main-content">
 
         <!-- end: SPANEL CONFIGURATION MODAL FORM -->
         <div class="container">
             <!-- start: PAGE HEADER -->
-         @yield('content')
-            <!-- end: PAGE HEADER -->
-            <!-- start: PAGE CONTENT -->
-            <!--//---------------------------------------------------------------------------------------------------------------->
-            <!--//---------------------------------------------------------------------------------------------------------------->
-            <!--//*//////////////////////////////////////put the content here///////////////////////////////////////////////////-->
-            <!--//---------------------------------------------------------------------------------------------------------------->
-            <!--//---------------------------------------------------------------------------------------------------------------->
+
+           @yield('content')
 
             <!-- end: PAGE CONTENT-->
         </div>
@@ -464,9 +151,9 @@
 </div>
 <!-- start: MAIN JAVASCRIPTS -->
 <!--[if lt IE 9]>
-<script src="../../{{asset('template/bower_components/respond/dest/respond.min.js')}}"></script>
-<script src="../../{{asset('template/bower_components/Flot/excanvas.min.js')}}"></script>
-<script src="../../{{asset('template/bower_components/jquery-1.x/dist/jquery.min.js')}}"></script>
+<script src="{{asset('template/bower_components/respond/dest/respond.min.js')}}"></script>
+<script src="{{asset('template/bower_components/Flot/excanvas.min.js')}}"></script>
+<script src="{{asset('template/bower_components/jquery-1.x/dist/jquery.min.js')}}"></script>
 <![endif]-->
 <!--[if gte IE 9]><!-->
 <script type="text/javascript" src="{{asset('template/bower_components/jquery/dist/jquery.min.js')}}"></script>
@@ -498,14 +185,23 @@
 <script src="{{asset('template/bower_components/jquery-mockjax/dist/jquery.mockjax.min.js')}}"></script>
 <script src="{{asset('template/bower_components/select2/dist/js/select2.min.js')}}"></script>
 <script src="{{asset('template/bower_components/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('template/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('template/bower_components/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+<script src="{{asset('template/bower_components/jszip/dist/jszip.min.js')}}"></script>
+<script src="{{asset('template/bower_components/pdfmake/build/pdfmake.min.js')}}"></script>
+<script src="{{asset('template/bower_components/pdfmake/build/vfs_fonts.js')}}"></script>
+<script src="{{asset('template/bower_components/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('template/bower_components/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('template/bower_components/datatables/media/js/dataTables.bootstrap.js')}}"></script>
 <script src="{{asset('template/assets/js/min/table-data.min.js')}}"></script>
+<script src="{{asset('template/assets/js/min/table-export.min.js')}}"></script>
 <script src="{{asset('template/assets/js/form-elements.js')}}"></script>
 <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
 <script>
     jQuery(document).ready(function() {
         Main.init();
         TableData.init();
+        TableExport.init();
     });
 </script>
 <script>
@@ -519,7 +215,6 @@
     $(document).ready( function() {
         $('#masge').delay(5000).fadeOut();
     });
-
 </script>
 
 </body>

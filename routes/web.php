@@ -18,12 +18,17 @@ Route::get('login','LoginControllers@viewLogin');
 Route::get('logout','LoginControllers@logout');
 
 
+Route::get('dashboard', function () {
+    return view('layout.layout');
+});
 
 
 
 /// end login///
 
 
+Route::namespace('Admin')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
 
 Route::get('dashboard/admin', function () {
@@ -43,3 +48,10 @@ Route::post('dashboard/admin/users/updated/password','adminUsersController@updat
 Route::get('dashboard/admin/partner/view','adminPartnerControllers@viewPartner');
 Route::get('dashboard/admin/partner/view/add','adminPartnerControllers@addPartner');
 Route::post('dashboard/admin/partner/view/add','adminPartnerControllers@processAdd');
+
+// updated
+Route::get('dashboard/admin/partner/view/updated/{id}','adminPartnerControllers@updated');
+Route::post('dashboard/admin/partner/view/updated','adminPartnerControllers@UpdatedProcess');
+
+
+});

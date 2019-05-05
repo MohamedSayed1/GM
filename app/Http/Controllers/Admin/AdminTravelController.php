@@ -6,11 +6,12 @@
  * Time: 5:57 AM
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 
 use App\gm\travel\Model\travel;
 use App\gm\travel\Services\TravelServices;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 

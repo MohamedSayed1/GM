@@ -6,11 +6,12 @@
  * Time: 12:26 AM
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 
 use App\gm\users\Model\user_group;
 use App\gm\users\Services\UserServices;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class adminUsersController extends Controller

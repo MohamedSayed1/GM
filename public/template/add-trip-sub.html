@@ -18,8 +18,8 @@
     <meta content="Al-Arady ElMokadasa Management System" name="AMS" />
     <!-- end: META -->
     <!-- start: MAIN CSS -->
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/>
-    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
+    <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/> -->
+      
     <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="assets/fonts/clip-font.min.css" />
@@ -610,11 +610,13 @@
                 </div>
                 <!-- end: PAGE HEADER -->
                 <div class="row">
+
+                    <!-- // add-cost -->
                     <div class="col-sm-12">
                         <!-- start: TEXT FIELDS PANEL -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <i class="fa fa-external-link-square"></i>ادخل بيانات الرحلة 
+                                <i class="fa fa-external-link-square"></i> ادخل  التفاصيل   
                                 <div class="panel-tools">
                                     <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                                     </a>
@@ -630,14 +632,20 @@
                                 <form role="form" class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label" for="form-field-1">
-                                            اسم المندوب 
+                                            الرحلة    
                                         </label>
-                                        <div class="col-sm-5">
-                                            <!--<select id="form-field-select-1" class="form-control">
-                                                <option value="">محسن عبد السلام</option>
-                                                <option value="">محسن عبد السلام</option>
-                                            </select>-->
-                                            <select id="form-field-select-3" class="form-control search-select">
+                                        <div class="col-sm-4">
+                                            <select id="form-field-select-3" class="form-control search-select-trip">
+                                                <option value="">&nbsp;</option>
+                                                <option value="AL">محسن عبد السلام</option>
+                                                <option value="AK">محسن عبد السلام</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            المندوب    
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <select id="form-field-select-3" class="form-control search-select-sub">
                                                 <option value="">&nbsp;</option>
                                                 <option value="AL">محسن عبد السلام</option>
                                                 <option value="AK">محسن عبد السلام</option>
@@ -645,73 +653,39 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="form-field-1">
-                                            اسم الرحلة 
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            عدد الافراد   
                                         </label>
-                                        <div class="col-sm-5">
-                                            <select id="form-field-select-1" class="form-control">
-                                                <option value="">رحلة 1</option>
-                                                <option value="">رحلة 2</option>
-                                            </select>
+                                        <div class="col-sm-4">
+                                            <input type="number" placeholder="0" id="form-field-2" class="form-control">
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            سعر الفرد     
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" placeholder="0" id="form-field-2" class="form-control">    
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label" for="form-field-2">
-                                           عدد الافراد
+                                            سعر العملة بالجنيه    
                                         </label>
-                                        <div class="col-sm-5">
-                                            <input type="text" placeholder="عدد الافراد" id="form-field-1" class="form-control">
+                                        <div class="col-sm-4">
+                                            <input type="number" placeholder="0" id="form-field-2" class="form-control">
                                         </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label class="col-sm-2 control-label" for="form-field-2">
-                                            درجة الرحلة
+                                            المدفوع       
                                         </label>
-                                        <div class="col-sm-5">
-                                            <input type="text" placeholder="درجة الرحلة" id="form-field-2" class="form-control">
+                                        <div class="col-sm-4">
+                                            <input type="number" placeholder="0" id="form-field-2" class="form-control">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="form-field-2">
-                                            اجمالى المندوب    
-                                        </label>
-                                        <div class="col-sm-5">
-                                            <input type="text" placeholder="اجمالى المندوب" id="form-field-2" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="form-field-2">
-                                            المدفوع
-                                        </label>
-                                        <div class="col-sm-5">
-                                            <input type="text" placeholder="المدفوع" id="form-field-2" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="form-field-2">
-                                            الباقى
-                                        </label>
-                                        <div class="col-sm-5">
-                                            <input type="text" placeholder="الباقى" id="form-field-2" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="form-field-2">
-                                            العملة
-                                        </label>
-                                        <div class="col-sm-5">
-                                            <select id="form-field-select-1" class="form-control">
-                                                <option value="">جنيه مصرى</option>
-                                                <option value="">ريال سعودى </option>
-                                                <option value="">دولار</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-2" >
-                                            <a href="#"><button type="button" class="btn btn-primary">
-                                                حفظ 
-                                            </button></a>   
+                                        <div class="col-sm-2 col-sm-offset-2" >
+                                            <a href="#"><button type="submit" class="btn btn-primary">
+                                                اضافة    
+                                            </button></a>
                                         </div>
                                     </div>
                                 </form>
@@ -719,6 +693,11 @@
                         </div>
                         <!-- end: TEXT FIELDS PANEL -->
                     </div>
+
+
+
+
+                    
                 </div>
                 <!-- end: PAGE CONTENT-->
             </div>
@@ -814,7 +793,11 @@
     <script>
         //function to initiate Select2
         jQuery(document).ready(function () {
-            $(".search-select").select2({
+            $(".search-select-trip").select2({
+                placeholder: "الرحلة ",
+                allowClear: true
+            });
+            $(".search-select-sub").select2({
                 placeholder: "اسم المندوب",
                 allowClear: true
             });

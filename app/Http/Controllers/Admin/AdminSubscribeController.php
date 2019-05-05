@@ -6,7 +6,7 @@
  * Time: 2:18 AM
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 
 use App\gm\travel\Model\Currency_type;
@@ -14,6 +14,7 @@ use App\gm\travel\Repository\LevelTravelRepository;
 use App\gm\travel\Repository\PartnerRepository;
 use App\gm\travel\Services\subscribeServices;
 use App\gm\travel\Services\TravelServices;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class adminSubscribeController extends Controller

@@ -6,7 +6,7 @@
  * Time: 05:06 ص
  */
 
-
+Route::namespace('Admin')->group(function () {
 //Travel table
 Route::get('dashboard/admin/travel/add','AdminTravelController@addTravel');
 Route::post('dashboard/admin/travel/add','AdminTravelController@processAddTravel');
@@ -26,3 +26,5 @@ Route::get('dashboard/admin/subscribe/add','adminSubscribeController@AddSubscrib
 Route::post('dashboard/admin/subscribe/add','adminSubscribeController@processAddSubscribe');
 Route::get('dashboard/admin/subscribe/all','adminSubscribeController@getAllSubscribes');
 Route::get('getSubscribeById/{id}','adminSubscribeController@getSubscribeById');
+
+});

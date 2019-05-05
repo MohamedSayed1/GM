@@ -6,10 +6,11 @@
  * Time: 12:24 AM
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 
 use App\gm\travel\Services\PartnerServices;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class adminPartnerControllers extends Controller
@@ -45,6 +46,45 @@ class adminPartnerControllers extends Controller
 
             return redirect('dashboard/admin/partner/view')
                 ->with('$massage','تم بنجاح اضافه عميل');
+
+
+
+        $errors = $this->partnerSer->errors();
+        return redirect()
+            ->back()
+            ->withInput($request->all())
+            ->withErrors($errors);
+    }
+
+    public function updated($id)
+    {
+        // check if found
+
+        $partner = $this->partnerSer->getByid($id);
+
+        if(!empty($partner))
+        {
+            // found Data
+
+            return view('admin.partner.updated')
+                ->with('partner',$partner)
+                ->with('title','الاراضي المقدسه || تعديل عميل');
+        }
+
+
+        return redirect()
+            ->back()
+            ->with('$errors','برجاء تحديد عميل موجود بالفعل');
+
+    }
+    public function UpdatedProcess(Request $request)
+    {
+        $data = $request->all();
+
+        if($this->partnerSer->updated($data))
+
+            return redirect('dashboard/admin/partner/view')
+                ->with('$massage','تم تعديل العميل بنجاح  ');
 
 
 

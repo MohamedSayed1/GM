@@ -31,12 +31,16 @@
     <link type="text/css" rel="stylesheet" href="assets/css/main-responsive.min.css" />
     <link type="text/css" rel="stylesheet" media="print" href="assets/css/print.min.css" />
     <link type="text/css" rel="stylesheet" id="skin_color" href="assets/css/theme/light.css" />
-    <link type="text/css" rel="stylesheet" href="assets/css/prof-style-kh.css" />
+    
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
     <!-- <link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" /> -->
     <link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
     <link href="bower_components/datatables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="bower_components/datatables.net-buttons-dt/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="assets/css/prof-style-kh.css" />
+    
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 </head>
 
@@ -110,7 +114,7 @@
                 <!-- end: MAIN MENU TOGGLER BUTTON -->
                 <!-- start: MAIN NAVIGATION MENU -->
                 <ul class="main-navigation-menu">
-                    <li  class="active">
+                    <li >
                         <!--active open-->
                         <a href="index.html">
                             <i class="clip-home-3"></i>
@@ -156,7 +160,7 @@
                             
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:void(0)">
                             <i class="clip-link"></i>
                             <span class="title">تكاليف الرحلات </span><i class="icon-arrow"></i>
@@ -172,7 +176,7 @@
                             </li>                            
                         </ul>
                     </li>
-                    <li>
+                    <li >
                         <a href="costs.html">
                             <i class="fa  fa-money"></i>
                             <span class="title">المصاريف </span>
@@ -209,18 +213,203 @@
                         
                         
                         <div class="page-header">
-                            <h3> الرئيسية </h3>
+                            <h3>المصاريف </h3>
                         </div>
                         <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>
                 </div>
                 <!-- end: PAGE HEADER -->
                 <!-- start: PAGE CONTENT -->
-                <!--//---------------------------------------------------------------------------------------------------------------->
-                <!--//---------------------------------------------------------------------------------------------------------------->
-                <!--//*//////////////////////////////////////put the content here///////////////////////////////////////////////////-->
-                <!--//---------------------------------------------------------------------------------------------------------------->
-                <!--//---------------------------------------------------------------------------------------------------------------->
+                <div class="row">
+                    <!-- // add-cost -->
+                    <div class="col-sm-12">
+                        <!-- start: TEXT FIELDS PANEL -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i> ادخل  التفاصيل   
+                                <div class="panel-tools">
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                                    </a>
+                                    
+                                    
+                                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                                        <i class="fa fa-resize-full"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            البيان   
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="text" placeholder="البيان " id="form-field-1" class="form-control">
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            العدد   
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" placeholder="0 " id="form-field-1" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            القيمة   
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" placeholder="0" id="form-field-2" class="form-control">
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            التاريخ    
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="date" placeholder="dd-mm-yyyy" id="form-field-2" class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-2 col-sm-offset-2" >
+                                            <a href="#"><button type="submit" class="btn btn-primary">
+                                                اضافة  التكلفة  
+                                            </button></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end: TEXT FIELDS PANEL -->
+                    </div>
+                    <!-- // cost-Report -->
+                    <div class="col-sm-12">
+                        <!-- start: TEXT FIELDS PANEL -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i> تقرير عن المصروفات  في فترة معينة      
+                                <div class="panel-tools">
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                                    </a>                                    
+                                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                                        <i class="fa fa-resize-full"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" class="form-horizontal">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            من تاريخ     
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="date" placeholder="dd-mm-yyyy" id="form-field-2" class="form-control">
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-field-2">
+                                            الى تاريخ     
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="date" placeholder="dd-mm-yyyy" id="form-field-2" class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-2 col-sm-offset-2" >
+                                            <a href="#"><button type="submit" class="btn btn-primary">
+                                                بحث فى هذه الفترة    
+                                            </button></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end: TEXT FIELDS PANEL -->
+                    </div>
+                    <!-- // Cost Data TAble -->
+                    <div class="col-sm-12">
+                        <!-- start: TEXT FIELDS PANEL -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i> جدول البيانات      
+                                <div class="panel-tools">
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                                    </a>                                    
+                                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                                        <i class="fa fa-resize-full"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <br/>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover  table-full-width" id="sample-table-2">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-to-export text-right">البيان </th>
+                                                <th class="col-to-export text-right">عدد </th>
+                                                <th class="col-to-export text-right">القيمة </th>
+                                                <th class="col-to-export text-right">الاجمالى  </th>
+                                                <th class="col-to-export text-right">التاريخ  </th>
+                                                <th class="col-to-export text-right"> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>اسم او وصف التكلفة المالية </td>
+                                                <td>121</td>
+                                                <td>500</td>
+                                                <td>500000</td>
+                                                <td>dd/mm/yyyy</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-xs btn-teal tab-btn tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs  btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>اسم او وصف التكلفة المالية </td>
+                                                <td>121</td>
+                                                <td>500</td>
+                                                <td>500000</td>
+                                                <td>dd/mm/yyyy</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-xs btn-teal tab-btn tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs  btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>اسم او وصف التكلفة المالية </td>
+                                                <td>121</td>
+                                                <td>500</td>
+                                                <td>500000</td>
+                                                <td>dd/mm/yyyy</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-xs btn-teal tab-btn tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs  btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>اسم او وصف التكلفة المالية </td>
+                                                <td>121</td>
+                                                <td>500</td>
+                                                <td>500000</td>
+                                                <td>dd/mm/yyyy</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-xs btn-teal tab-btn tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-xs  btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end: TEXT FIELDS PANEL -->
+                    </div>
+                </div>
                 
                 <!-- end: PAGE CONTENT-->
             </div>
@@ -317,7 +506,6 @@
     <script>
         jQuery(document).ready(function() {
             Main.init();
-            TableData.init();
             TableExport.init();
         });
     </script>
@@ -329,6 +517,7 @@
                 allowClear: true
             });
         });
+
     </script>
 
 </body>

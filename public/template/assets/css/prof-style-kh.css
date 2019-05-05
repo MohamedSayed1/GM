@@ -1,11 +1,25 @@
 /* Start Framework*/
+@font-face {
+    font-family: Droid;
+    src: url(../fonts/droidsansarabic.934405b6.eot);
+    src: url(../fonts/droidsansarabic.934405b6.eot?#iefix) format("embedded-opentype"),url(../fonts/droidsansarabic.ba625d01.woff) format("woff"),url(../fonts/droidsansarabic.4ec3ddfc.ttf) format("truetype"),url(../fonts/droidsansarabic.592767a8.svg#droidsansarabic) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+* {
+    font-family: Droid ;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 , .page-header h1, body h1, body h2, body h3 , .btn, .btn-icon .badge, .logo, .navbar>.container .navbar-brand {
+  
+    font-family: Droid ;
+}
 .h3{margin-top: 30px; font-weight: 500; color:#007AFF }
 body, p , h1, h2, h3, h4, h5, h6, span , a, {
-    font-family: 'DroidArabicKufiRegular' !important; 
+    font-family: Droid !important; 
 }
 
 body {
-  font-family: 'DroidArabicKufiRegular'; 
+  font-family: Droid; 
   background-color: #f1f4f7
 
 }
@@ -14,7 +28,7 @@ body {
   direction: rtl;
 }
 .font-dro {
-  font-family: 'DroidArabicKufiRegular' !important; 
+  font-family: Droid !important; 
 }
 /* End Framework*/
 
@@ -65,7 +79,7 @@ span.input-icon>input {
   padding-right: 25px;
   padding-left: 6px;
   direction: rtl;
-  font-family: 'DroidArabicKufiRegular' !important;
+  font-family: Droid !important;
 }
 .checkbox-inline, .checkbox-inline+.checkbox-inline, .radio-inline, .radio-inline+.radio-inline {
     margin: 5px 20px 10px 0!important;
@@ -279,7 +293,7 @@ body {
 }
 
 .navbar {
-  font-family: 'DroidArabicKufiRegular' !important;
+  font-family: Droid !important;
 }
 
 
@@ -388,14 +402,14 @@ body {
   z-index: 1000;
   padding: 14px 20px;  
   background-color: #062e57;
-  font-family: 'DroidArabicKufiRegular'; 
+  font-family: Droid; 
   box-shadow: -1px 6px 1px -3px #c5c5c5;
 }
 .search-head {
   margin-top:30vh;
   padding: 3px;  
   background-color: #092746;
-  font-family: 'DroidArabicKufiRegular'; 
+  font-family: Droid; 
   font-size: 20px;
   text-align: center;
   color: #fff;
@@ -504,7 +518,7 @@ select {
 }
 
 .teacher-cart {
-  font-family: 'DroidArabicKufiRegular';
+  font-family: Droid;
   border:1px solid #ddd;
   transition: all .45s ease-in-out;
   margin-bottom: 30px;
@@ -523,7 +537,7 @@ select {
   height: 170px;
   width: 100%;
   color: #fff;
-  font-family: 'DroidArabicKufiRegular';
+  font-family: Droid;
 }
 .link {
   position: absolute;
@@ -643,7 +657,7 @@ select {
 .checkbox label, .radio label {
   padding-right: 20px;
   
-  font-family: 'DroidArabicKufiRegular' ;
+  font-family: Droid ;
   color: #3a83ff;
 }
 .stat-no {
@@ -694,7 +708,7 @@ select {
 /*//////////////////////////////////////*/
 .teacher-section {
   padding:40px 20px;
-  font-family: 'DroidArabicKufiRegular';
+  font-family: Droid;
 }
 
 .subject-container {
@@ -724,7 +738,7 @@ select {
   height: 220px;
   width: 100%;
   color: #fff;
-  font-family: 'DroidArabicKufiRegular';
+  font-family: Droid;
 }
 
 .details {
@@ -818,7 +832,7 @@ select {
   height: 100%
 }
 .container {
-  font-family: 'DroidArabicKufiRegular'
+  font-family: Droid
 }
 .to {
   margin-top: 20px;
@@ -1142,7 +1156,7 @@ ul.so-tab-responsive.nav-tabs li.active a , ul.so-tab-responsive.nav-tabs li.act
     
 }
 .page-no-cont , .page-no-name {
-  font-family: 'DroidArabicKufiRegular'; 
+  font-family: Droid; 
   
   margin-bottom: 20px
 }
@@ -1196,7 +1210,7 @@ ul.so-tab-responsive.nav-tabs li.active a , ul.so-tab-responsive.nav-tabs li.act
 .quest-search .form-group select {
     background-color: #fff !important;
     border-color: #fff !important;
-    font-family: 'DroidArabicKufiRegular'
+    font-family: Droid
 }
 .blue-btn:hover , .blue-btn:focus   {
     color: #fff;
@@ -1207,7 +1221,7 @@ ul.so-tab-responsive.nav-tabs li.active a , ul.so-tab-responsive.nav-tabs li.act
     margin-bottom: 15px !important;
 }
 .logo-per {
-  font-family: 'DroidArabicKufiRegular';
+  font-family: Droid;
     
 }
 .form-group {
@@ -1296,14 +1310,73 @@ text-align: right;
 .select2-container--default .select2-selection--single .select2-selection__rendered{
     text-align: right;
 }
+.logo, .navbar>.container .navbar-brand {
+  padding: 16px 10px 12px;
+}
+.brand-img {
+  height: 30px;
+    margin-top: -7px;
+}
+ul.main-navigation-menu li>ul.sub-menu {
+  margin: 0 0;    
+}
 
 
+.navbar>.container .navbar-brand {
+    font-size: 21px;
+}
+ul.main-navigation-menu>li>a {
+    border: 0;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    padding: 10px 15px;
+    position: relative;
+    text-decoration: none;
+    /*border-bottom: 1px solid #DDD;*/
+    border-top: 2px solid #FFF;
+    border-top-color: #badafd;
+}
+.form-group:first-of-type {
+  margin-top: 10px;
+}
+.table-responsive {
+    min-height: .01%;
+     overflow-x: unset !important;
+}
 
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border:0;
+    background-color: transparent;
+    background: transparent;
+    background: transparent;
+    background: transparent;
+    background: transparent;
+    background: transparent;
+    background: transparent;
 
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 2px;
+}
+.buttons-pdf , .buttons-excel , .buttons-csv , .buttons-copy {
+  display: none !important;
+}
 
+/*table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+    left: 8px !important;
+}
 
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+    padding-left: 30px !important;
+    padding-right: 10px !important;
+}*/
 
-
+.tab-btn {
+  border-radius: 3px !important;
+}
 
 
 

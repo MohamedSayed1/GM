@@ -31,12 +31,14 @@
     <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/main-responsive.min.css')}}" />
     <link type="text/css" rel="stylesheet" media="print" href="{{asset('template/assets/css/print.min.css')}}" />
     <link type="text/css" rel="stylesheet" id="skin_color" href="{{asset('template/assets/css/theme/light.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/prof-style-kh.css')}}" />
+
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
     <!-- <link href="{{asset('template/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" /> -->
     <link href="{{asset('template/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet" />
     <link href="{{asset('template/bower_components/datatables/media/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="{{asset('template/assets/css/prof-style-kh.css')}}" />
+    @yield('css')
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 </head>
 
@@ -66,8 +68,7 @@
                 <!-- start: USER DROPDOWN -->
                 <li class="dropdown current-user">
                     <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                        <img src="{{asset('template/assets/images/avatar-1-small.jpg')}}" class="circle-img" alt="">
-                        <span class="username">Peter Clark</span>
+                        <span class="username">{{\Auth::user()->name}}</span>
                         <i class="clip-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
@@ -197,6 +198,13 @@
 <script src="{{asset('template/assets/js/min/table-export.min.js')}}"></script>
 <script src="{{asset('template/assets/js/form-elements.js')}}"></script>
 <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
+
+
+<!--<script src="{{asset('template/sweetalert.min.js')}}"></script>-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+@include('sweet::alert')
 <script>
     jQuery(document).ready(function() {
         Main.init();
@@ -216,7 +224,7 @@
         $('#masge').delay(5000).fadeOut();
     });
 </script>
-
+@yield('script')
 </body>
 
 </html>

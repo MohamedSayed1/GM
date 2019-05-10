@@ -43,10 +43,10 @@ class adminPartnerControllers extends Controller
         $data = $request->all();
 
         if($this->partnerSer->addNew($data))
-
-            return redirect('dashboard/admin/partner/view')
-                ->with('$massage','تم بنجاح اضافه عميل');
-
+        {
+            alert()->success('تم الاضافه ');
+            return redirect('dashboard/admin/partner/view');
+        }
 
 
         $errors = $this->partnerSer->errors();
@@ -82,9 +82,12 @@ class adminPartnerControllers extends Controller
         $data = $request->all();
 
         if($this->partnerSer->updated($data))
+        {
+            alert()->success('تم التعديل ');
+            return redirect('dashboard/admin/partner/view');
+        }
 
-            return redirect('dashboard/admin/partner/view')
-                ->with('$massage','تم تعديل العميل بنجاح  ');
+
 
 
 

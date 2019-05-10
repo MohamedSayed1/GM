@@ -78,8 +78,8 @@
             </li>
 
 
-            <li>
-                <a href="#">
+            <li class="{{ Request::is('dashboard/admin/outlay/view*') ? 'active' : '' }}">
+                <a href="{{url('dashboard/admin/outlay/view')}}">
                     <i class="fa  fa-money"></i>
                     <span class="title">المصاريف </span>
                     <span class="selected"></span>

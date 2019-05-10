@@ -49,9 +49,11 @@ class adminUsersController extends Controller
         $data = $request->all();
 
         if ($this->userServices->addNewUser($data))
-            return redirect('dashboard/admin/users')
-                ->with('$massage', 'تم اضافه مستخدم بنجاح');
+        {
+            alert()->success('تم اضافه مستخدم جديد بنجاح ');
+            return redirect('dashboard/admin/users');
 
+        }
 
         $errors = $this->userServices->errors();
         return redirect()
@@ -74,16 +76,17 @@ class adminUsersController extends Controller
 
         return redirect()
             ->back()
-            ->with('$errors', ' برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك');
+            ->withErrors( [' برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك']);
     }
 
     public function updatedProcess(Request $request)
     {
         $data = $request->all();
 
-        if($this->userServices->updated($data))
-            return redirect('dashboard/admin/users')
-                ->with('$massage','تم تعديل المستخدم بنجاح');
+        if($this->userServices->updated($data)) {
+            alert()->success('تم تعديل المستخدم بنجاح');
+            return redirect('dashboard/admin/users');
+        }
 
 
 
@@ -106,17 +109,17 @@ class adminUsersController extends Controller
 
         return redirect()
             ->back()
-            ->with('$errors', ' برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك');
+            ->withErrors([' برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك']);
     }
 
     public function updatedPassProcess(Request $request)
     {
         $data = $request->all();
 
-        if($this->userServices->updatedPassw($data))
-            return redirect('dashboard/admin/users')
-                ->with('$massage','تم تعديل المستخدم بنجاح');
-
+        if($this->userServices->updatedPassw($data)) {
+            alert()->success('تم تعديل المستخدم بنجاح');
+            return redirect('dashboard/admin/users');
+        }
 
 
         $errors = $this->userServices->errors();

@@ -45,4 +45,6 @@ class LevelTravelRepository
     {
         return Level_Travel::orderBy('updated_at', 'DESC')->get();
     }
+
+
 }

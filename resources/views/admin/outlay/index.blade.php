@@ -54,7 +54,7 @@
                                 العدد
                             </label>
                             <div class="col-sm-4">
-                                <input type="number" placeholder="0" name="count" value="{{old('count')}}" id="form-field-1" class="form-control">
+                                <input type="number" placeholder="0" name="count" value="{{old('count')}}" id="form-field-1" class="form-control rcount">
                             </div>
                         </div>
                         <div class="form-group">
@@ -62,8 +62,9 @@
                                 القيمة
                             </label>
                             <div class="col-sm-4">
-                                <input type="text" placeholder="0" name="value"  value="{{old('value')}}" id="form-field-2" class="form-control">
+                                <input type="text" placeholder="0" name="value"  value="{{old('value')}}" id="form-field-2" class="form-control rvalue">
                             </div>
+
                             <label class="col-sm-2 control-label" for="form-field-2">
                                 التاريخ
                             </label>
@@ -194,3 +195,4 @@
 
 
 @endsection
+

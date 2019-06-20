@@ -17,10 +17,7 @@ class CreateTravelTable extends Migration {
 			$table->integer('travel_id', true);
 			$table->string('travel_name', 300)->nullable();
 			$table->date('start_day')->nullable();
-			$table->date('end_day')->nullable();
-			$table->string('transportaion', 300)->nullable();
-			$table->string('hotel_name', 300)->nullable();
-			$table->boolean('is_active')->nullable();
+			$table->date('end_date')->nullable();
 			$table->timestamps();
 		});
 	}

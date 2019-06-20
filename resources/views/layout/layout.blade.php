@@ -200,10 +200,7 @@
 <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
 
 
-<!--<script src="{{asset('template/sweetalert.min.js')}}"></script>-->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+<script src="{{asset('template/sweetalert.min.js')}}"></script>
 @include('sweet::alert')
 <script>
     jQuery(document).ready(function() {

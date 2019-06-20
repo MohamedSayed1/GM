@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: msaye
+ * User: msayed
  * Date: 2/24/2019
  * Time: 11:42 PM
  */
@@ -11,6 +11,7 @@ namespace App\gm\users\Repository;
 
 use App\User;
 use Illuminate\Support\Facades\DB;
+
 
 class UserRepository
 {

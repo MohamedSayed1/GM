@@ -1377,8 +1377,20 @@ table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sor
 .tab-btn {
   border-radius: 3px !important;
 }
-
-
+.btn-bricky2 {
+  color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-bricky2:hover {
+  color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+.footer-fixed .footer {
+    background-color: #374761 !important;
+    /*border-top-color: #16a8e3 !important;*/
+}
 
 
 

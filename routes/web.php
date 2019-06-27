@@ -21,8 +21,6 @@ Route::get('logout','LoginControllers@logout');
 
 
 
-Route::get('dashboard','test@add');
-
 /// end login///
 
 

@@ -19,28 +19,32 @@
     <!-- end: META -->
     <!-- start: MAIN CSS -->
     <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/> -->
-      
+   <!--  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500/" /> -->
     <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="assets/fonts/clip-font.min.css" />
-    <link type="text/css" rel="stylesheet" href="bower_components/iCheck/skins/all.css" />
-    <link type="text/css" rel="stylesheet" href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" />
-    <link type="text/css" rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="bower_components/iCheck/skins/all.css" /> -->
+    <!-- <link type="text/css" rel="stylesheet" href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" /> -->
+    <link type="text/css" rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" /><!--  -->
     <link type="text/css" rel="stylesheet" href="assets/css/main.min.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/rtl-version.min.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/main-responsive.min.css" />
     <link type="text/css" rel="stylesheet" media="print" href="assets/css/print.min.css" />
-    <link type="text/css" rel="stylesheet" id="skin_color" href="assets/css/theme/light.min.css" />
-    <link type="text/css" rel="stylesheet" href="assets/css/prof-style-kh.css" />
+    <link type="text/css" rel="stylesheet" id="skin_color" href="assets/css/theme/light.css" />
+    
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
+    <!-- <link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" /> -->
     <link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
     <link href="bower_components/datatables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="bower_components/datatables.net-buttons-dt/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="assets/css/prof-style-kh.css" />
+    
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 </head>
 
-<body class="rtl">
+<body class="rtl footer-fixed">
 
     <!-- start: HEADER -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -61,315 +65,7 @@
             <div class="navbar-tools">
                 <!-- start: TOP NAVIGATION MENU -->
                 <ul class="nav navbar-right">
-                    <!-- start: TO-DO DROPDOWN -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                            <i class="clip-list-5"></i>
-                            <span class="badge"> 12</span>
-                        </a>
-                        <ul class="dropdown-menu todo">
-                            <li>
-                                <span class="dropdown-menu-title"> You have 12 pending tasks</span>
-                            </li>
-                            <li>
-                                <div class="drop-down-wrapper">
-                                    <ul>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
-                                                <span class="label label-danger" style="opacity: 1;"> today</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
-                                                <span class="label label-danger" style="opacity: 1;"> today</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc"> Hire developers</span>
-                                                <span class="label label-warning"> tommorow</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc">Staff Meeting</span>
-                                                <span class="label label-warning"> tommorow</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc"> New frontend layout</span>
-                                                <span class="label label-success"> this week</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc"> Hire developers</span>
-                                                <span class="label label-success"> this week</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc"> New frontend layout</span>
-                                                <span class="label label-info"> this month</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc"> Hire developers</span>
-                                                <span class="label label-info"> this month</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
-                                                <span class="label label-danger" style="opacity: 1;"> today</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
-                                                <span class="label label-danger" style="opacity: 1;"> today</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="todo-actions" href="javascript:void(0)">
-                                                <i class="fa fa-square-o"></i>
-                                                <span class="desc"> Hire developers</span>
-                                                <span class="label label-warning"> tommorow</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="view-all">
-                                <a href="javascript:void(0)">
-                                See all tasks <i class="fa fa-arrow-circle-o-right"></i>
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end: TO-DO DROPDOWN-->
-                    <!-- start: NOTIFICATION DROPDOWN -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                            <i class="clip-notification-2"></i>
-                            <span class="badge"> 11</span>
-                        </a>
-                        <ul class="dropdown-menu notifications">
-                            <li>
-                                <span class="dropdown-menu-title"> You have 11 notifications</span>
-                            </li>
-                            <li>
-                                <div class="drop-down-wrapper">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                                <span class="message"> New user registration</span>
-                                                <span class="time"> 1 min</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                                <span class="message"> New comment</span>
-                                                <span class="time"> 7 min</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                                <span class="message"> New comment</span>
-                                                <span class="time"> 8 min</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                                <span class="message"> New comment</span>
-                                                <span class="time"> 16 min</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                                <span class="message"> New user registration</span>
-                                                <span class="time"> 36 min</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-warning"><i class="fa fa-shopping-cart"></i></span>
-                                                <span class="message"> 2 items sold</span>
-                                                <span class="time"> 1 hour</span>
-                                            </a>
-                                        </li>
-                                        <li class="warning">
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-danger"><i class="fa fa-user"></i></span>
-                                                <span class="message"> User deleted account</span>
-                                                <span class="time"> 2 hour</span>
-                                            </a>
-                                        </li>
-                                        <li class="warning">
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-danger"><i class="fa fa-shopping-cart"></i></span>
-                                                <span class="message"> Transaction was canceled</span>
-                                                <span class="time"> 6 hour</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                                <span class="message"> New comment</span>
-                                                <span class="time"> yesterday</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                                <span class="message"> New user registration</span>
-                                                <span class="time"> yesterday</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-primary"><i class="fa fa-user"></i></span>
-                                                <span class="message"> New user registration</span>
-                                                <span class="time"> yesterday</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                                <span class="message"> New comment</span>
-                                                <span class="time"> yesterday</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="label label-success"><i class="fa fa-comment"></i></span>
-                                                <span class="message"> New comment</span>
-                                                <span class="time"> yesterday</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="view-all">
-                                <a href="javascript:void(0)">
-                                See all notifications <i class="fa fa-arrow-circle-o-right"></i>
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end: NOTIFICATION DROPDOWN -->
-                    <!-- start: MESSAGE DROPDOWN -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#">
-                            <i class="clip-bubble-3"></i>
-                            <span class="badge"> 9</span>
-                        </a>
-                        <ul class="dropdown-menu posts">
-                            <li>
-                                <span class="dropdown-menu-title"> You have 9 messages</span>
-                            </li>
-                            <li>
-                                <div class="drop-down-wrapper">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img alt="" src="./assets/images/avatar-2.jpg">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Nicole Bell</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                        <span class="time"> Just Now</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img alt="" src="./assets/images/avatar-1.jpg">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Peter Clark</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                        <span class="time">2 mins</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img alt="" src="./assets/images/avatar-3.jpg">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Steven Thompson</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                        <span class="time">8 hrs</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img alt="" src="./assets/images/avatar-1.jpg">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Peter Clark</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                        <span class="time">9 hrs</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img alt="" src="./assets/images/avatar-5.jpg">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Kenneth Ross</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-                                                        <span class="time">14 hrs</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="view-all">
-                                <a href="pages_messages.html">
-                                See all messages <i class="fa fa-arrow-circle-o-right"></i>
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <!-- end: MESSAGE DROPDOWN -->
                     <!-- start: USER DROPDOWN -->
                     <li class="dropdown current-user">
@@ -385,20 +81,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="pages_calendar.html">
-                                    <i class="clip-calendar"></i> &nbsp;My Calendar
-                                </a>
-                                <li>
-                                    <a href="pages_messages.html">
-                                        <i class="clip-bubble-4"></i> &nbsp;My Messages (3)
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="utility_lock_screen.html">
-                                        <i class="clip-locked"></i> &nbsp;Lock Screen
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="login_example1.html">
                                         <i class="clip-exit"></i> &nbsp;Log Out
@@ -437,18 +119,81 @@
                         <a href="index.html">
                             <i class="clip-home-3"></i>
                             <span class="title"> الرئيسية  </span>
+                            <span class="selected"></span>
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
-                            <i class="clip-user"></i>
-                            <span class="title"> ادارة المستخدمين</span>
+                        <a href="partner.html">
+                            <i class="clip-spinner"></i>
+                            <span class="title">ادارة العملاء</span>
+                            <span class="selected"></span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="trips.html">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="clip-link"></i>
+                            <span class="title">دليل الرحلات</span><i class="icon-arrow"></i>
+                            <span class="selected"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="trips.html">
+                                    <span class="title">الرحلات</span>
+                                    <!--<span class="badge badge-new">new</span>-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-trip.html" class="">
+                                    <span class="title"> اضافة رحلة </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="trip-sub.html" class="">
+                                    <span class="title">  تفاصيل الرحلة بالمناديب  </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-trip-sub.html" class="">
+                                    <span class="title">اضافة تفاصيل الرحلة</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:void(0)">
+                            <i class="clip-link"></i>
+                            <span class="title">تكاليف الرحلات </span><i class="icon-arrow"></i>
+                            
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="trip-costs.html">
+                                    <span class="title">دليل تكلفة الرحلة </span>
+
+                                    
+                                </a>
+                            </li>                            
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="costs.html">
+                            <i class="fa  fa-money"></i>
+                            <span class="title">المصاريف </span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="currency.html">
+                            <i class="clip-spinner"></i>
+                            <span class="title">العملة</span>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="users.html">
                             <i class="clip-user"></i>
-                            <span class="title">دليل الرحلات</span><span class="selected"></span>
+                            <span class="title"> ادارة المستخدمين   </span>
+                            <span class="selected"></span>
                         </a>
                     </li>
                 </ul>
@@ -465,115 +210,10 @@
                 <!-- start: PAGE HEADER -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <!-- start: STYLE SELECTOR BOX -->
-                        <div id="style_selector" class="hidden-xs close-style">
-                            <div id="style_selector_container" style="display:block">
-                                <div class="style-main-title">
-                                    Style Selector
-                                </div>
-                                <div class="box-title">
-                                    Choose Your Layout Style
-                                </div>
-                                <div class="input-box">
-                                    <div class="input">
-                                        <select name="layout">
-                    <option value="default">Wide</option>
-                    <option value="boxed">Boxed</option>
-                </select>
-                                    </div>
-                                </div>
-                                <div class="box-title">
-                                    Choose Your Orientation
-                                </div>
-                                <div class="input-box">
-                                    <div class="input">
-                                        <select name="orientation">
-                    <option value="default">Default</option>
-                    <option value="rtl">RTL</option>
-                </select>
-                                    </div>
-                                </div>
-                                <div class="box-title">
-                                    Choose Your Header Style
-                                </div>
-                                <div class="input-box">
-                                    <div class="input">
-                                        <select name="header">
-                    <option value="fixed">Fixed</option>
-                    <option value="default">Default</option>
-                </select>
-                                    </div>
-                                </div>
-                                <div class="box-title">
-                                    Choose Your Footer Style
-                                </div>
-                                <div class="input-box">
-                                    <div class="input">
-                                        <select name="footer">
-                    <option value="default">Default</option>
-                    <option value="fixed">Fixed</option>
-                </select>
-                                    </div>
-                                </div>
-                                <div class="box-title">
-                                    Backgrounds for Boxed Version
-                                </div>
-                                <div class="images boxed-patterns">
-                                    <a id="bg_style_1" href="#"><img alt="" src="assets/images/bg.png"></a>
-                                    <a id="bg_style_2" href="#"><img alt="" src="assets/images/bg_2.png"></a>
-                                    <a id="bg_style_3" href="#"><img alt="" src="assets/images/bg_3.png"></a>
-                                    <a id="bg_style_4" href="#"><img alt="" src="assets/images/bg_4.png"></a>
-                                    <a id="bg_style_5" href="#"><img alt="" src="assets/images/bg_5.png"></a>
-                                </div>
-                                <div class="box-title">
-                                    5 Predefined Color Schemes
-                                </div>
-                                <div class="images icons-color">
-                                    <a id="light" href="#"><img class="active" alt="" src="assets/images/lightgrey.png"></a>
-                                    <a id="dark" href="#"><img alt="" src="assets/images/darkgrey.png"></a>
-                                    <a id="black-and-white" href="#"><img alt="" src="assets/images/blackandwhite.png"></a>
-                                    <a id="navy" href="#"><img alt="" src="assets/images/navy.png"></a>
-                                    <a id="green" href="#"><img alt="" src="assets/images/green.png"></a>
-                                </div>
-                                <div style="height:25px;line-height:25px; text-align: center">
-                                    <a class="clear_style" href="#">
-                Clear Styles
-            </a>
-                                    <a class="save_style" href="#">
-                Save Styles
-            </a>
-                                </div>
-                            </div>
-                            <div class="style-toggle open">
-                                <i class="fa fa-cog fa-spin"></i>
-                            </div>
-                        </div>
-                        <!-- end: STYLE SELECTOR BOX -->
-                        <!-- start: PAGE TITLE & BREADCRUMB -->
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="clip-home-3"></i>
-                                <a href="#">
-                                   تفاصيل الرحلة 
-                                </a>
-                            </li>
-                            
-                            <li class="search-box">
-                                <form class="sidebar-search">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Start Searching...">
-                                        <button class="submit">
-                                            <i class="clip-search-3"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </li>
-                        </ol>
+                        
                         <div class="page-header">
                             <h3>دليل الرحلات</h3>
-                            <a href="add-trip.html"><button type="button" class="btn btn-primary">
-                                اضافة رحلة  
-                            </button></a>
+                            
                         </div>
                         <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>
@@ -662,6 +302,60 @@
                         </div>
                         <!-- end: TEXT FIELDS PANEL -->
                     </div>
+                    <div class="col-sm-12">
+                        <!-- start: TEXT FIELDS PANEL -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i> كشف حساب عميل فى رحلة    
+                                <div class="panel-tools">
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                                    </a>
+                                    
+                                    
+                                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                                        <i class="fa fa-resize-full"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            الرحلة    
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <select id="form-field-select-3" class="form-control search-select-trip">
+                                                <option value="">&nbsp;</option>
+                                                <option value="AL">محسن عبد السلام</option>
+                                                <option value="AK">محسن عبد السلام</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-sm-2 control-label" for="form-field-1">
+                                            المندوب    
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <select id="form-field-select-3" class="form-control search-select-sub">
+                                                <option value="">&nbsp;</option>
+                                                <option value="AL">محسن عبد السلام</option>
+                                                <option value="AK">محسن عبد السلام</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-2 col-sm-offset-2" >
+                                            <a href="#"><button type="submit" class="btn btn-primary">
+                                                بحث     
+                                            </button></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end: TEXT FIELDS PANEL -->
+                    </div>
                     <div class="col-md-12">
                         <!-- start: trip details with subscripers -->
                         <div class="panel panel-default">
@@ -676,62 +370,65 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-right">اسم الرحلة </th>
-                                            <th class="text-right">تاريخ الرحلة </th>
-                                            <th class="text-right">اسم العميل </th>
-                                            <th class="text-right">عدد الافراد </th>
-                                            <th class="text-right">سعر الفرد </th>
-                                            <th class="text-right">سعر العملة </th>
-                                            <th class="text-right">الاجمالى </th>
-                                            <th class="text-right">المدفوع </th>
-                                            <th class="text-right">الباقى </th>                                            
-                                            <th class="text-right">&shy;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>رحلة 1 </td>
-                                            <td>عمرة شعبان </td>
-                                            <td>محسن عبد السلام</td>
-                                            <td>15 فرد </td>
-                                            <td>5 نجوم</td>
-                                            <td>9000 </td>
-                                            <td>8000 </td>
-                                            <td>1000 </td>
-                                            <td>ريال سعودى </td>
-                                            <td class="center">
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                                    <a href="update-pass.html" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                                    <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
-                                                </div>
-                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-                                                            <i class="fa fa-cog"></i> <span class="caret"></span>
-                                                        </a>
-                                                        <ul role="menu" class="dropdown-menu pull-right">
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="update-pass.html">
-                                                                    <i class="fa fa-edit"></i> Edit
-                                                                </a>
-                                                            </li>
-                                                            
-                                                            <li role="presentation">
-                                                                <a role="menuitem" tabindex="-1" href="#">
-                                                                    <i class="fa fa-times"></i> Remove
-                                                                </a>
-                                                            </li>
-                                                        </ul>
+                                <br/>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover  table-full-width" id="sample_1">
+                                        <thead>
+                                            <tr>
+                                                <th class=" text-right">اسم الرحلة </th>
+                                                <th class=" text-right">تاريخ الرحلة </th>
+                                                <th class=" text-right">اسم العميل </th>
+                                                <th class=" text-right">عدد الافراد </th>
+                                                <th class=" text-right">سعر الفرد </th>
+                                                <th class=" text-right">سعر العملة </th>
+                                                <th class=" text-right">الاجمالى </th>
+                                                <th class=" text-right">المدفوع </th>
+                                                <th class=" text-right">الباقى </th>                               
+                                                <th class=" text-right">&shy;</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> 1 </td>
+                                                <td>عمرة شعبان </td>
+                                                <td>محسن عبد السلام</td>
+                                                <td>15 فرد </td>
+                                                <td>5 نجوم</td>
+                                                <td>9000 </td>
+                                                <td>8000 </td>
+                                                <td>1000 </td>
+                                                <td>1</td>
+                                                <td class="center">
+                                                    <div class="">
+                                                        <a href="update-pass.html" class="btn btn-xs tab-btn btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                        
+                                                        <a href="#" class="btn btn-xs btn-bricky2 tab-btn tooltips" data-placement="top" data-original-title="طباعة  كشف الحساب  "><i class=" clip-stackoverflow"></i></a>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 1 </td>
+                                                <td>عمرة شعبان </td>
+                                                <td>محسن عبد السلام</td>
+                                                <td>15 فرد </td>
+                                                <td>5 نجوم</td>
+                                                <td>9000 </td>
+                                                <td>8000 </td>
+                                                <td>1000 </td>
+                                                <td>1</td>
+                                                <td class="center">
+                                                    <div class="">
+                                                        <a href="update-pass.html" class="btn btn-xs tab-btn btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                                        
+                                                        <a href="#" class="btn btn-xs btn-bricky2 tab-btn tooltips" data-placement="top" data-original-title="طباعة  كشف الحساب  "><i class=" clip-stackoverflow"></i></a>
+                                                    </div>
+                                                    
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                         <!-- end: trip details with subscripers -->
@@ -818,20 +515,57 @@
     <script src="bower_components/jquery-mockjax/dist/jquery.mockjax.min.js"></script>
     <script src="bower_components/select2/dist/js/select2.min.js"></script>
     <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="bower_components/jszip/dist/jszip.min.js"></script>
+    <script src="bower_components/pdfmake/build/pdfmake.min.js"></script>
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="bower_components/datatables/media/js/dataTables.bootstrap.js"></script>
     <script src="assets/js/min/table-data.min.js"></script>
-    <script src="assets/js/min/table-data2.min.js"></script>
+    <script src="assets/js/min/table-export.min.js"></script>
+    <script src="assets/js/form-elements.js"></script>
     <!-- start: JAVASCRIPTS REQUIRED FOR DATA TABLES-->
     <script>
         jQuery(document).ready(function() {
             Main.init();
+            TableExport.init();
             TableData.init();
-            Index.init();
-            
         });
     </script>
-
-    
+    <script>
+        //function to initiate Select2
+        jQuery(document).ready(function () {
+            $(".search-select-trip").select2({
+                placeholder: "اختر الرحلة ",
+                allowClear: true
+            });
+        });
+        jQuery(document).ready(function () {
+            $(".search-select-sub").select2({
+                placeholder: "اختر المندوب  ",
+                allowClear: true
+            });
+        });
+    </script>
+    <script>
+        /*table = $('#sample-table-2').DataTable( {
+            retrieve: true,
+            order: [[ 0, 'desc' ]]
+        } );*/
+        /*if ( $.fn.dataTable.isDataTable( '#sample-table-2' ) ) {
+            table = $('#sample-table-2').DataTable();
+        }
+        else {
+            table = $('#sample-table-2').DataTable( {
+               order: [[ 0, 'desc' ]]
+            } );
+        }*/
+        /*$('#sample-table-2').dataTable( {
+            order: [[ 0, 'asc' ]]
+        } );*/
+    </script>
 
 </body>
 

@@ -8,13 +8,14 @@
 
 Route::namespace('Admin')->group(function () {
 //Travel table
-Route::get('dashboard/admin/travel/add','AdminTravelController@addTravel');
+//Route::get('dashboard/admin/travel/add','AdminTravelController@addTravel');
 Route::post('dashboard/admin/travel/add','AdminTravelController@processAddTravel');
+Route::get('dashboard/admin/travel/add','AdminTravelController@getTravels');
 Route::get('dashboard/admin/travel/update/{id}','AdminTravelController@updateTravel');
 Route::post('dashboard/admin/travel/update','AdminTravelController@processUpdateTravel');
 
 Route::get('dashboard/admin/travel/delete/{id}','AdminTravelController@deleteTravel');
-Route::get('dashboard/admin/travels','AdminTravelController@getTravels');
+Route::get('dashboard/admin/travels/all','AdminTravelController@getTravels');
 
 Route::get('getTravelById/{id}','AdminTravelController@getTravelById');
 Route::get('count','AdminTravelController@count');
@@ -28,3 +29,4 @@ Route::get('dashboard/admin/subscribe/all','adminSubscribeController@getAllSubsc
 Route::get('getSubscribeById/{id}','adminSubscribeController@getSubscribeById');
 
 });
+

@@ -18,6 +18,7 @@ Route::get('/','LoginControllers@viewLogin');
 Route::post('login','LoginControllers@processLogin');
 Route::get('login','LoginControllers@viewLogin');
 Route::get('logout','LoginControllers@logout');
+Route::get('testtest','test@add');
 
 
 

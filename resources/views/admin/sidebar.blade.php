@@ -32,16 +32,12 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="{{url('dashboard/admin/travels')}}">
+                        <a href="{{url('dashboard/admin/travels/all')}}">
                             <span class="title">الرحلات</span>
                             <!--<span class="badge badge-new">new</span>-->
                         </a>
                     </li>
-                    <li>
-                        <a href="{{url('dashboard/admin/travel/add')}}" class="">
-                            <span class="title"> اضافة رحلة </span>
-                        </a>
-                    </li>
+
                     <li class="{{ Request::is('dashboard/admin/travels/subscribe/*') ? 'active' : '' }}">
                         <a href="{{(url('dashboard/admin/travels/subscribe/index'))}}" class="">
                             <span class="title">  تفاصيل الرحلة بالمناديب  </span>

@@ -20,10 +20,8 @@ class TravelRepository extends Repositories
         $travel = new travel();
         $travel->travel_name = $data['travel_name'];
         $travel->start_day = $data['start_day'];
-        $travel->end_day = $data['end_day'];
-        $travel->transportaion = $data['transportaion'];
-        $travel->hotel_name = $data['hotel_name'];
-        $travel->is_active = $data['is_active'];
+
+
         if ($travel->save())
             return true;
         return false;
@@ -34,10 +32,7 @@ class TravelRepository extends Repositories
         $travel = travel::find($data['travel_id']);
         $travel->travel_name = $data['travel_name'];
         $travel->start_day = $data['start_day'];
-        $travel->end_day = $data['end_day'];
-        $travel->transportaion = $data['transportaion'];
-        $travel->hotel_name = $data['hotel_name'];
-        $travel->is_active = $data['is_active'];
+
         if ($travel->save())
             return true;
         return false;

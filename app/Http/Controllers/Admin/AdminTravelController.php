@@ -32,10 +32,7 @@ class AdminTravelController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-  public function AddTravel(){
-    return view('admin.travel.addTravel')
-               ->with('title','اضافة رحله');
-  }
+
 
     /**
      * @param Request $request
@@ -43,7 +40,8 @@ class AdminTravelController extends Controller
      */
    public  function processAddTravel(Request $request){
           if($this->travelServices->addTravel($request))
-              return redirect('dashboard/admin/travels')
+
+              return redirect()->back()
                   ->with('$message', 'تم اضافه بيانات الرحله بنجاح');
           else
               $errors = $this->travelServices->errors();

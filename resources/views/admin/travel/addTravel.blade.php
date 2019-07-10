@@ -38,6 +38,7 @@
 
 
                     <form role="form" class="form-horizontal" action="{{url('dashboard/admin/travel/add')}}" method="post">
+
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-1">
                                 اسم الرحلة

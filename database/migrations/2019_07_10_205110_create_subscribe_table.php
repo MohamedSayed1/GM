@@ -22,6 +22,7 @@ class CreateSubscribeTable extends Migration {
 			$table->float('pound', 10, 0)->nullable()->default(1);
 			$table->float('total', 10, 0)->nullable();
 			$table->float('current_paid', 10, 0)->nullable();
+			$table->float('remaining', 10, 0)->nullable();
 			$table->timestamps();
 		});
 	}

@@ -15,10 +15,10 @@ use Validator;
 
 class subscribeServices extends  Services
 {
- private $subscribeRepository;
+ private $subRepo;
     public function __construct()
     {
-        $this->subscribeRepository= new subscribeRepository();
+        $this->subRepo= new subscribeRepository();
     }
 
     public function addSubscribe($request)
@@ -57,7 +57,7 @@ class subscribeServices extends  Services
          $this->setError($validator->errors()->all());
          return false;
      }
-     if($this->subscribeRepository->addSubscribe($request->all())){
+     if($this->subRepo->addSubscribe($request->all())){
          return true;
      }
      else{
@@ -65,17 +65,10 @@ class subscribeServices extends  Services
          return false;}
      }
 
-     public function getSubscribeById($id)
-     {
-        $subscribe=$this->subscribeRepository->getSubscribeById($id);
-           if($subscribe)
-               return $subscribe;
-            $this->setError('not found');
 
-     }
 
      public function getSubscribes()
      {
-        return $this->subscribeRepository->getSubscribes();
+        return $this->subRepo->getSubscribes();
      }
 }

@@ -17,112 +17,130 @@ use Illuminate\Http\Request;
 
 class AdminTravelController extends Controller
 {
-  private $travelServices;
+    private $travelServices;
 
     /**
      * TravelControllers constructor.
      *
      */
-  public function __construct()
-  {
-      $this->travelServices=new TravelServices();
-  }
+    public function __construct()
+    {
+        $this->travelServices = new TravelServices();
+    }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
 
-
     /**
      * @param Request $request
      * @return string
      */
-   public  function processAddTravel(Request $request){
-          if($this->travelServices->addTravel($request))
+    public function processAddTravel(Request $request)
+    {
+        if ($this->travelServices->addTravel($request)) {
 
-              return redirect()->back()
-                  ->with('$message', 'تم اضافه بيانات الرحله بنجاح');
-          else
-              $errors = $this->travelServices->errors();
-           return redirect()
-           ->back()
-           ->withInput($request->all())
-           ->withErrors($errors);
+            alert()->success('تم الامر');
+            return redirect()->back()
+                ->with('$message', 'تم اضافه بيانات الرحله بنجاح');
 
-   }
+        } else
+            $errors = $this->travelServices->errors();
+        return redirect()
+            ->back()
+            ->withInput($request->all())
+            ->withErrors($errors);
 
-   public function updateTravel($id=0){
-       $travels= new travel();
-       $travel=$travels->find($id);
-       if($travel){
+    }
 
-           return view('admin.travel.updateTravel')
-                   ->with('travel',$travel)
-                   ->with('title','تعديل الرحله');}
+    public function updateTravel($id = 0)
+    {
+        $travels = new travel();
+        $travel = $travels->find($id);
+        if ($travel) {
+            return view('admin.travel.updateTravel')
+                ->with('travel', $travel)
+                ->with('title', 'تعديل الرحله');
+        }
 
-       return redirect()->back()
-           ->with('$errors','برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك');
-   }
+        return redirect()->back()
+            ->with('$errors', 'برجاء اختيار مستخدم موجود بالفعل حتي نتمكن من مساعدتك');
+    }
 
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function processUpdateTravel(Request $request){
-        if( $this->travelServices->updateTravel($request))
-            return redirect('dashboard/admin/travels')
-                ->with('$message','تم التعديل بنجاح');
+    public function processUpdateTravel(Request $request)
+    {
+        if ($this->travelServices->updateTravel($request))
+        {
+            alert()->success('تم الامر');
 
-     else{
-        $errors = $this->travelServices->errors();
-        return redirect()
-            ->back()
-            ->withInput($request->all())
-            ->withErrors($errors);}
+            return redirect('dashboard/admin/travels/all')
+                ->with('$message', 'تم التعديل بنجاح');
+        }
+        else {
+            $errors = $this->travelServices->errors();
+            return redirect()
+                ->back()
+                ->withInput($request->all())
+                ->withErrors($errors);
+        }
 
 
     }
-   public function getTravels(){
-       $travels=$this->travelServices->getTravels();
 
-           return view('admin.travel.travels')
-               ->with('travels',$travels)
-               ->with('title','الرحلات');
+    public function getTravels()
+    {
+        $travels = $this->travelServices->getTravels();
+
+        return view('admin.travel.travels')
+            ->with('travels', $travels)
+            ->with('title', 'الرحلات');
 
 
-   }
-   public function getTravelById($id=0){
-    $travel=$this->travelServices->getTravelById($id);
-    if($travel)
-        return view('travelById')->with('travel',$travel);
-    return 'not found';
-   }
-   public function count(){
-       return $this->travelServices->countOfTravels();
-  }
-   public function deleteTravel($id=0){
-        if($this->travelServices->deleteTravel($id))
+    }
+
+    public function getTravelById($id = 0)
+    {
+        $travel = $this->travelServices->getTravelById($id);
+        if ($travel)
+            return view('travelById')->with('travel', $travel);
+        return 'not found';
+    }
+
+    public function count()
+    {
+        return $this->travelServices->countOfTravels();
+    }
+
+    public function deleteTravel($id = 0)
+    {
+        if ($this->travelServices->deleteTravel($id))
             return redirect()->back();
         return $this->travelServices->errors();
     }
-    public function updateActive($id,$status){
-       if($this->travelServices->updateActive($id,$status))
-           return back();
-       return $this->travelServices->errors();
+
+    public function updateActive($id, $status)
+    {
+        if ($this->travelServices->updateActive($id, $status))
+            return back();
+        return $this->travelServices->errors();
     }
-    public function search(Request $request){
-        $travel=$this->travelServices->searchTravel($request);
-        if(count($travel)>0)
+
+    public function search(Request $request)
+    {
+        $travel = $this->travelServices->searchTravel($request);
+        if (count($travel) > 0)
             return view('dashboard.admin.searchCourses')
-                ->with('travel',$travel);
-        $errors=$this->travelServices->errors();
-          return redirect()->back()
+                ->with('travel', $travel);
+        $errors = $this->travelServices->errors();
+        return redirect()->back()
             ->withInput($request->all())
             ->withErrors($errors);
     }
 
 
-
-
-    }
+}

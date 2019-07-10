@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794b3997-6f17-410a-9539-85f48f69bb9a" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminTravelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminTravelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/test.php" afterDir="false" />
@@ -13,6 +14,20 @@
       <change beforePath="$PROJECT_DIR$/resources/views/admin/travel/updateTravel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/travel/updateTravel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/travel.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/travel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_costs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_outlay_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_partner_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_payment_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_subscribe_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_travel_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_user_group_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111527_create_user_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111530_add_foreign_keys_to_costs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111530_add_foreign_keys_to_payment_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111530_add_foreign_keys_to_subscribe_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_20_111530_add_foreign_keys_to_user_table.php" beforeDir="false" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +87,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/travel.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="289">
               <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="39" />
+=======
+            <state relative-caret-position="543">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
               <folding>
                 <element signature="e#6#91#0#PHP" expanded="true" />
               </folding>
@@ -305,11 +325,18 @@
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
     </include_path>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="323" />
     <option name="y" value="23" />
     <option name="width" value="957" />
     <option name="height" value="738" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="20" />
+    <option name="width" value="1380" />
+    <option name="height" value="745" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -343,6 +370,7 @@
               <item name="GM" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="gm" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="travel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -352,12 +380,16 @@
               <item name="gm" type="462c0819:PsiDirectoryNode" />
               <item name="travel" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
             </path>
             <path>
               <item name="GM" type="b2602c69:ProjectViewProjectNode" />
               <item name="GM" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="gm" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="travel" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -436,6 +468,10 @@
               <item name="GM" type="b2602c69:ProjectViewProjectNode" />
               <item name="GM" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
             </path>
           </expand>
           <select />
@@ -548,17 +584,28 @@
       <workItem from="1561658633554" duration="1624000" />
       <workItem from="1561660279819" duration="792000" />
       <workItem from="1561661093714" duration="2467000" />
+<<<<<<< HEAD
       <workItem from="1562778046671" duration="1033000" />
       <workItem from="1562785753125" duration="10044000" />
+=======
+      <workItem from="1562778046671" duration="2924000" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="125207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
+=======
+    <option name="totallyTimeSpent" value="117054000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -634,18 +681,6 @@
           <caret line="88" column="32" lean-forward="true" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/costs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="500" column="62" selection-start-line="500" selection-start-column="62" selection-end-line="500" selection-end-column="62" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -882,6 +917,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/gm/travel/Repository/TravelRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -907,6 +943,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/template/costs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="511" column="12" lean-forward="true" selection-start-line="511" selection-start-column="12" selection-end-line="511" selection-end-column="12" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Sub/SubscribeControllers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+>>>>>>> 30a5b1f35a8d5ebb8d75c4415a4c245a9ee9acf0
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>

@@ -232,7 +232,7 @@
                                 <a href="{{url('dashboard/admin/travel/delete/'.$travel->travel_id)}}" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
                             </div>
                         <td class="center">
-                            
+
                             <div class="visible-xs visible-sm hidden-md hidden-lg">
                                 <div class="btn-group">
                                     <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">

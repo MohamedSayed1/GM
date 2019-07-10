@@ -18,9 +18,7 @@ class CreatePaymentTable extends Migration {
 			$table->integer('id_sub')->nullable()->index('sub_pay_id');
 			$table->integer('id_travel')->nullable()->index('Travel_Payment_id');
 			$table->integer('id_partner')->nullable()->index('Partner_Pay_id');
-			$table->float('dues', 10, 0)->nullable();
 			$table->float('pay_new', 10, 0)->nullable();
-			$table->float('remaining_payment', 10, 0)->nullable();
 			$table->date('date')->nullable();
 			$table->dateTime('created-at')->nullable();
 			$table->dateTime('updated_at')->nullable();

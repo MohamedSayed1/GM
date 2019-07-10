@@ -13,6 +13,7 @@ use App\gm\Repositories;
 use App\gm\travel\Model\Subscribe;
 use Illuminate\Support\Facades\DB;
 
+
 class subscribeRepository extends Repositories
 {
     //create new subscribe
@@ -45,18 +46,21 @@ public function addSubscribe($data){
 
            ->first();
    }
-    public function getSubscribes(){
-        $s=  DB::table('subscribe')
-            ->leftjoin('travel','travel.travel_id','=','subscribe.travel_id')
-            ->leftjoin('partner','partner.partner_id','=','subscribe.partner_id')
-            ->leftjoin('level_travel','level_travel.level_id','=','subscribe.id_level')
-            ->leftjoin('currency_type','currency_type.currency_id','=','subscribe.currency_id')
-            ->select(['subscribe.*','travel.travel_name As الرحله','partner.name As الشريك','level_travel.lavel_name As المستوى'
-                ,'currency_type.currency_name As العمله'])
 
+    /**
+     * @return mixed
+     */
+    public function getSubscribes(){
+
+        return  DB::table('subscribe')
+            ->join('travel','travel.travel_id','=','subscribe.travel_id')
+            ->join('partner','partner.partner_id','=','subscribe.partner_id')
+            ->select('subscribe.*','travel.travel_name','partner.name')
+            ->orderBy('updated_at', 'DESC')
             ->get();
-        return $s;
     }
+
+
 
 
 

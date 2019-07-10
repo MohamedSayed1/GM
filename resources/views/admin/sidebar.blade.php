@@ -24,7 +24,7 @@
                     <span class="selected"></span>
                 </a>
             </li>
-            <li>
+            <li class="{{ Request::is('dashboard/admin/travels*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <i class="clip-link"></i>
                     <span class="title">دليل الرحلات</span><i class="icon-arrow"></i>
@@ -42,8 +42,8 @@
                             <span class="title"> اضافة رحلة </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{(url('dashboard/admin/subscribe/all'))}}" class="">
+                    <li class="{{ Request::is('dashboard/admin/travels/subscribe/*') ? 'active' : '' }}">
+                        <a href="{{(url('dashboard/admin/travels/subscribe/index'))}}" class="">
                             <span class="title">  تفاصيل الرحلة بالمناديب  </span>
                         </a>
                     </li>

@@ -16,12 +16,13 @@ use Validator;
 class subscribeServices extends  Services
 {
  private $subscribeRepository;
-public function __construct()
-{
-    $this->subscribeRepository= new subscribeRepository();
-}
+    public function __construct()
+    {
+        $this->subscribeRepository= new subscribeRepository();
+    }
 
-    public function addSubscribe($request){
+    public function addSubscribe($request)
+    {
 
      $rules = [
          'travel_id'   => 'required',
@@ -62,16 +63,19 @@ public function __construct()
      else{
          $this->setError('Error');
          return false;}
- }
- public function getSubscribeById($id){
-    $subscribe=$this->subscribeRepository->getSubscribeById($id);
-       if($subscribe)
-           return $subscribe;
-        $this->setError('not found');
+     }
 
- }
+     public function getSubscribeById($id)
+     {
+        $subscribe=$this->subscribeRepository->getSubscribeById($id);
+           if($subscribe)
+               return $subscribe;
+            $this->setError('not found');
 
- public function getSubscribes(){
-    return $this->subscribeRepository->getSubscribes();
- }
+     }
+
+     public function getSubscribes()
+     {
+        return $this->subscribeRepository->getSubscribes();
+     }
 }

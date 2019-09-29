@@ -146,8 +146,9 @@
                             @endforeach
                         </ul>
                     </div>
-            </div>
+
             @endif
+            </div>
 
             <form role="form" class="form-horizontal" action="{{url('dashboard/admin/travel/add')}}" method="post">
                     <div class="form-group">
@@ -213,7 +214,7 @@
                         <th class="text-right">رقم الرحلة</th>
                         <th class="text-right">اسم الرحلة</th>
                         <th class="text-right">ناريخ القيام</th>
-                        <th class="text-right">تاريخ العودة</th>
+                        <th class="text-right">التعديل</th>
 
                         <th class="text-right">&shy;</th>
                     </tr>
@@ -229,7 +230,6 @@
                         <td class="center">
                             <div class="visible-md visible-lg hidden-sm hidden-xs">
                                 <a href="{{url('dashboard/admin/travel/update/'.$travel->travel_id)}}" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                <a href="{{url('dashboard/admin/travel/delete/'.$travel->travel_id)}}" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
                             </div>
                         <td class="center">
 

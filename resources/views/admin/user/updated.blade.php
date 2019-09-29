@@ -126,7 +126,7 @@
             <!-- start: TEXT FIELDS PANEL -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-external-link-square"></i>ادخل بيانات المستخدم
+                    <i class="fa fa-external-link-square"></i>تعديل بيانات المستخدم
                     <div class="panel-tools">
                         <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                         </a>

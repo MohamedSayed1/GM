@@ -59,5 +59,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'sweetalert' => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+        'jwt.auth'=> 'Tymon\JWTAuth\Middleware\GetUserFromToken',
+        'jwt.refresh'=> 'Tymon\JWTAuth\Middleware\RefreshToken',
     ];
 }

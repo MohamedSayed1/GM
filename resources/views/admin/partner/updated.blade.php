@@ -113,7 +113,7 @@
                 </li>
             </ol>
             <div class="page-header">
-                <h3> اضافة عميل  </h3>
+                <h3> تعديل بيانات العميل  </h3>
             </div>
             <!-- end: PAGE TITLE & BREADCRUMB -->
 

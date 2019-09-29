@@ -31,7 +31,7 @@
                     <span class="selected"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li>
+                    <li class="{{ Request::is('dashboard/admin/travels/all/*') ? 'active' : '' }}">
                         <a href="{{url('dashboard/admin/travels/all')}}">
                             <span class="title">الرحلات</span>
                             <!--<span class="badge badge-new">new</span>-->
@@ -43,11 +43,7 @@
                             <span class="title">  تفاصيل الرحلة بالمناديب  </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{URL('dashboard/admin/subscribe/add')}}" class="">
-                            <span class="title">اضافة تفاصيل الرحلة</span>
-                        </a>
-                    </li>
+
                     <!--<li>
                         <a href="">
                             <span class="title"> LTR Version </span>

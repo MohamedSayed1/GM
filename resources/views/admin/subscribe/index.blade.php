@@ -37,17 +37,17 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" class="form-horizontal">
+                    <form role="form" class="form-horizontal" method="post" action="{{url('dashboard/admin/travels/subscribe/add')}}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-1">
                                 الرحلة
                             </label>
                             @if(isset($travels))
                                 <div class="col-sm-4">
-                                    <select id="form-field-select-3" class="form-control search-select-trip">
-                                        <option value="">&nbsp;</option>
+                                    <select name="travel_id" id="form-field-select-3" class="form-control search-select-trip">
+                                        <option value="">اختار  الرحله</option>
                                         @foreach($travels as $tra)
-                                            <option value="{{$tra->travel_id}}"> الاسم : {{$tra->travel_name }} التاريخ
+                                            <option value="{{$tra->travel_id}}" {{old('travel_id')==$tra->travel_id?'selected':''}}> الاسم : {{$tra->travel_name }} التاريخ
                                                 || {{$tra->start_day}}</option>
                                         @endforeach
                                     </select>
@@ -58,10 +58,10 @@
                             </label>
                             @if(isset($partners))
                                 <div class="col-sm-4">
-                                    <select id="form-field-select-3" class="form-control search-select-sub">
-                                        <option value="">&nbsp;</option>
+                                    <select name="partner_id" id="form-field-select-3" class="form-control search-select-sub">
+                                        <option value="">اختار المندوب </option>
                                         @foreach($partners as $partner)
-                                            <option value="{{$partner->partner_id}}"> اسم العميل : {{$partner->name}} ||
+                                            <option value="{{$partner->partner_id}}" {{old('partner_id')==$partner->partner_id?'selected':''}}> اسم العميل : {{$partner->name}} ||
                                                 رقم التلفون : {{$partner->phone}}</option>
                                         @endforeach
 
@@ -74,29 +74,30 @@
                                 عدد الافراد
                             </label>
                             <div class="col-sm-4">
-                                <input type="number" placeholder="0" id="form-field-2" class="form-control">
+                                <input type="number" name="count_of_travel" value="{{old('count_of_travel')}}" placeholder="0" id="form-field-2" class="form-control">
                             </div>
                             <label class="col-sm-2 control-label" for="form-field-2">
                                 سعر الفرد
                             </label>
                             <div class="col-sm-4">
-                                <input type="number" placeholder="0" id="form-field-2" class="form-control">
+                                <input type="number" step="0.01" name="prices" value="{{old('prices')}}" placeholder="0" id="form-field-2" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="form-field-2">
+                            <label class="col-sm-2 control-label"  for="form-field-2">
                                 سعر العملة بالجنيه
                             </label>
                             <div class="col-sm-4">
-                                <input type="number" placeholder="0" id="form-field-2" class="form-control">
+                                <input type="number" name="pound" step="0.01"  value="{{old('pound')}}" placeholder="0" id="form-field-2" class="form-control">
                             </div>
                             <label class="col-sm-2 control-label" for="form-field-2">
                                 المدفوع
                             </label>
                             <div class="col-sm-4">
-                                <input type="number" placeholder="0" id="form-field-2" class="form-control">
+                                <input type="number" name="current_paid" step="0.01" value="{{old('current_paid')}}" placeholder="0" id="form-field-2" class="form-control">
                             </div>
                         </div>
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                         <div class="form-group">
                             <div class="col-sm-2 col-sm-offset-2">
@@ -129,15 +130,15 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" class="form-horizontal">
+                    <form role="form" action="{{url('dashboard/admin/travels/subscribe/gettravel')}}" method="post" class="form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-1">
                                 الرحلة
                             </label>
                             @if(isset($travels))
                                 <div class="col-sm-4">
-                                    <select id="form-field-select-3" class="form-control search-select-trip">
-                                        <option value="">&nbsp;</option>
+                                    <select id="form-field-select-3" name="travel-selected" class="form-control search-select-trip">
+                                        <option value="0">&nbsp;اختار الرحله</option>
                                         @foreach($travels as $tra)
                                             <option value="{{$tra->travel_id}}"> الاسم : {{$tra->travel_name }} التاريخ
                                                 || {{$tra->start_day}}</option>
@@ -148,20 +149,13 @@
                             <label class="col-sm-2 control-label" for="form-field-1">
                                 المندوب
                             </label>
-                            @if(isset($partners))
                                 <div class="col-sm-4">
-                                    <select id="form-field-select-3" class="form-control search-select-sub">
+                                    <select id="parrent_idhere"  name="id_state" class="form-control search-select-sub">
                                         <option value="">&nbsp;</option>
-                                        @foreach($partners as $partner)
-                                            <option value="{{$partner->partner_id}}"> اسم العميل : {{$partner->name}} ||
-                                                رقم التلفون : {{$partner->phone}}</option>
-                                        @endforeach
-
                                     </select>
                                 </div>
-                            @endif
                         </div>
-
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group">
                             <div class="col-sm-2 col-sm-offset-2">
                                 <a href="#">
@@ -247,6 +241,36 @@
             <!-- end: trip details with subscripers -->
         </div>
     </div>
+
+
+@endsection
+
+@section('script')
+    <script type="text/javascript">
+        $("select[name='travel-selected']").change(function() {
+            var travel_id = $(this).val();
+            $.get('{{url("dashboard/admin/travels/subscribe/gettravel")}}/'+travel_id,function (data) {
+                $('#parrent_idhere').empty();
+                $.each(data,function (key, value) {
+                        console.log(key);
+                        console.log(value);
+                    $('#parrent_idhere').append(
+                        ' <option value="'+  value +'">'+ key+'</option>'
+                    );
+
+
+                })
+
+                }
+
+
+            );
+        });
+
+
+
+
+    </script>
 
 
 @endsection

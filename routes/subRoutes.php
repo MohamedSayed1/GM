@@ -11,6 +11,8 @@ Route::namespace('Admin\Sub')->group(function () {
 
 
         Route::get('/travels/subscribe/index', 'SubscribeControllers@index');
+        Route::get('/travels/subscribe/gettravel/{id?}', 'SubscribeControllers@getTravelByTravelID');
+        Route::post('/travels/subscribe/add', 'SubscribeControllers@addNewSub');
 
 
     }); // end Prefix route

@@ -55,7 +55,39 @@ class SubscribeControllers extends Controller
 
     public function pranterAccount(Request $request)
     {
-
+        return $request->all();
     }
+
+    public function addNewSub(Request $request)
+    {
+        $data = $request->all();
+
+         if($this->subSer->addSubscribe($data))
+         {
+             alert()->success('تم الاضافه بنجاح ');
+             return redirect('dashboard/admin/travels/subscribe/index');
+
+         }
+
+        $errors = $this->subSer->errors();
+        return redirect()
+            ->back()
+            ->withInput($request->all())
+            ->withErrors($errors);
+    }
+
+    // get partner By Travel -> id (( used to Selected Option in index
+
+    public function getTravelByTravelID($id)
+    {
+       $travel = $this->subSer->getParnterNameAndId($id);
+        if(count($travel)!=0)
+        {
+
+            return response()->json($travel);
+        }
+        return response()->json($travel);
+    }
+
 
 }

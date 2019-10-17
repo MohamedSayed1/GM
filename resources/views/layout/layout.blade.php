@@ -16,6 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta content="Al-Arady ElMokadasa Management System" name="description" />
     <meta content="Al-Arady ElMokadasa Management System" name="AMS" />
+    <meta name="_token" content="{{ csrf_token() }}">
     <!-- end: META -->
     <!-- start: MAIN CSS -->
     <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css"/> -->

@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Admin\Sub;
 
 
+use App\gm\Partner_payment;
 use App\gm\travel\Services\PartnerServices;
 use App\gm\travel\Services\subscribeServices;
 use App\gm\travel\Services\TravelServices;
@@ -13,7 +14,7 @@ use Illuminate\Http\Request;
 class SubscribeControllers extends Controller
 {
     // Connected With Subscribe
-
+use Partner_payment;
     private $subSer;
     private $travSer;
     private $parSer;
@@ -61,7 +62,6 @@ class SubscribeControllers extends Controller
     public function addNewSub(Request $request)
     {
         $data = $request->all();
-
          if($this->subSer->addSubscribe($data))
          {
              alert()->success('تم الاضافه بنجاح ');

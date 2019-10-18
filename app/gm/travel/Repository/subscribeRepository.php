@@ -45,7 +45,7 @@ class subscribeRepository extends Repositories
         $sub->prices          = $data['prices'];
         $sub->pound           = $data['pound'];
         $sub->total           = $data['total'];
-        $sub->remaining       = isset($data['remaining'])?$data['remaining']:null;
+        $sub->paid            = isset($data['paid'])?$data['paid']:0;
         $sub->current_paid    = isset($data['current_paid'])?$data['current_paid']:0;
         if($sub->save())
         {

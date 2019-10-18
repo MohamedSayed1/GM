@@ -55,12 +55,23 @@ class subscribeServices extends  Services
         $data['pound'] = isset($data['pound'])?$data['pound'] :1;
         $data['total'] = $data['count_of_travel'] * $data['prices'] *$data['pound'] ;
 
-        if($data['current_paid']!=null)
-        {
-            $data['remaining'] = $data['total'] - $data['current_paid'] ;
+        // check current paid
+        if($data['current_paid']!=null) {
+          $checkPaid = $data['total'] - $data['current_paid'];
+
+            if ($checkPaid > 0)
+            {
+                $data['paid'] = 0;
+            }
+            elseif ($checkPaid == 0)
+            {
+                $data['paid'] = 1;
+            }
+            else {
+                $this->setError('المدفوع قيمته اكبر من الاجمالي !!!');
+                return false;
+            }
         }
-
-
 
         if($this->subRepo->addNew($data))
             return true;

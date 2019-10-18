@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="{{url('dashboard/admin/travels/subscribe/gettravel')}}" method="post" class="form-horizontal">
+                    <form role="form" action="{{url('dashboard/admin/travels/subscribe/payment/partner/report')}}" method="post" class="form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-field-1">
                                 الرحلة
@@ -214,22 +214,22 @@
                                         <td>{{$sub->pound == 1?'':$sub->pound}}</td>
                                         <td>{{$sub->total}}</td>
                                         <td>{{$sub->current_paid}}</td>
-                                        <td>{{$sub->remaining}}</td>
+                                        <td>{{$sub->paid==0?'لم يستكمل الدفع':'تم الدفع'}}</td>
                                         <td class="center">
                                             <div class="">
-                                                <a href="update-pass.html" class="btn btn-xs tab-btn btn-teal tooltips"
+                                                <a href="{{url('dashboard/admin/travels/subscribe/reports/'.$sub->travel_id)}}" class="btn btn-xs tab-btn btn-teal tooltips"
                                                    data-placement="top" data-original-title="Edit"><i
                                                             class="fa fa-edit"></i></a>
-
-                                                <a href="#" class="btn btn-xs btn-bricky2 tab-btn tooltips"
-                                                   data-placement="top" data-original-title="طباعة  كشف الحساب  "><i
+                                                @if($sub->paid==0)
+                                                <a href="{{url('dashboard/admin/travels/subscribe/payment/'.$sub->travel_id.'/'.$sub->partner_id)}}" class="btn btn-xs btn-bricky2 tab-btn tooltips"
+                                                   data-placement="top" data-original-title="اضافه دفع جديد"><i
                                                             class=" clip-stackoverflow"></i></a>
+                                                    @endif
                                             </div>
 
                                         </td>
                                     </tr>
                                 @endforeach
-
 
                             @endif
 

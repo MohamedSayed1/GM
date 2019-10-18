@@ -6,6 +6,7 @@
  * Time: 05:06 ص
  */
 
+Route::group(['middleware' => ['CheckAuth']], function () {
 Route::namespace('Admin')->group(function () {
 //Travel table
 //Route::get('dashboard/admin/travel/add','AdminTravelController@addTravel');
@@ -23,10 +24,13 @@ Route::get('deleteTravel/{id}','AdminTravelController@deleteTravel');
 Route::get('updateActive/{id}/{status}','AdminTravelController@updateActive');
 
 //subscribe table
+    /**
 Route::get('dashboard/admin/subscribe/add','adminSubscribeController@AddSubscribe');
 Route::post('dashboard/admin/subscribe/add','adminSubscribeController@processAddSubscribe');
 Route::get('dashboard/admin/subscribe/all','adminSubscribeController@getAllSubscribes');
 Route::get('getSubscribeById/{id}','adminSubscribeController@getSubscribeById');
+**/
+});
 
 });
 

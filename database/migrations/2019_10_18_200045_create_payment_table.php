@@ -15,13 +15,11 @@ class CreatePaymentTable extends Migration {
 		Schema::create('payment', function(Blueprint $table)
 		{
 			$table->integer('pay_id', true);
-			$table->integer('id_sub')->nullable()->index('sub_pay_id');
 			$table->integer('id_travel')->nullable()->index('Travel_Payment_id');
 			$table->integer('id_partner')->nullable()->index('Partner_Pay_id');
 			$table->float('pay_new', 10, 0)->nullable();
 			$table->date('date')->nullable();
-			$table->dateTime('created-at')->nullable();
-			$table->dateTime('updated_at')->nullable();
+			$table->timestamps();
 		});
 	}
 

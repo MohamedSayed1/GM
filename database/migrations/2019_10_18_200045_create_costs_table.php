@@ -16,6 +16,7 @@ class CreateCostsTable extends Migration {
 		{
 			$table->integer('costs_id', true);
 			$table->integer('travel_id')->nullable()->index('Travel_Costs_id_idx');
+			$table->string('name_costs', 300)->nullable();
 			$table->float('unit_price', 10, 0)->nullable();
 			$table->integer('count')->nullable();
 			$table->float('pound', 10, 0)->nullable()->default(1);

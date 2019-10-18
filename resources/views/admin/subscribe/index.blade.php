@@ -197,7 +197,6 @@
                                 <th class=" text-right">سعر الفرد</th>
                                 <th class=" text-right">سعر العملة</th>
                                 <th class=" text-right">الاجمالى</th>
-                                <th class=" text-right">المدفوع</th>
                                 <th class=" text-right">الباقى</th>
                                 <th class=" text-right">&shy;</th>
                             </tr>
@@ -213,7 +212,6 @@
                                         <td>{{$sub->prices}}</td>
                                         <td>{{$sub->pound == 1?'':$sub->pound}}</td>
                                         <td>{{$sub->total}}</td>
-                                        <td>{{$sub->current_paid}}</td>
                                         <td>{{$sub->paid==0?'لم يستكمل الدفع':'تم الدفع'}}</td>
                                         <td class="center">
                                             <div class="">

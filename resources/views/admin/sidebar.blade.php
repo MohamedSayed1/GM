@@ -52,15 +52,16 @@
                 </ul>
             </li>
 
-            <li>
+
+            <li class="{{ Request::is('dashboard/admin/costs*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <i class="clip-link"></i>
                     <span class="title">تكاليف الرحلات </span><i class="icon-arrow"></i>
 
                 </a>
                 <ul class="sub-menu">
-                    <li>
-                        <a href="#">
+                    <li class="{{ Request::is('dashboard/admin/costs/*') ? 'active' : '' }}">
+                        <a href="{{url('dashboard/admin/costs/index')}}">
                             <span class="title">دليل تكلفة الرحلة </span>
 
 

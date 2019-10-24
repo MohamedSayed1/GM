@@ -48,9 +48,9 @@
     </div>
     <div class="header">
         <h3>اسم الرحله </h3>
-        <h3>{{$sub->name}} </h3>
-        <h3>اسم المندوب </h3>
         <h3>{{$sub->travel_name}}</h3>
+        <h3>اسم المندوب </h3>
+        <h3>{{$sub->name}} </h3>
     </div>
     <div class="report-body">
         <table>

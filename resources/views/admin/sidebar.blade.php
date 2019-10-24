@@ -40,7 +40,7 @@
 
                     <li class="{{ Request::is('dashboard/admin/travels/subscribe/*') ? 'active' : '' }}">
                         <a href="{{(url('dashboard/admin/travels/subscribe/index'))}}" class="">
-                            <span class="title">  تفاصيل الرحلة بالمناديب  </span>
+                            <span class="title">مبيعات العميل </span>
                         </a>
                     </li>
 

@@ -12,8 +12,6 @@
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
-
-
                 <div class="page-header">
                     <h3>تكاليف الرحلات </h3>
                 </div>
@@ -32,12 +30,6 @@
                         <div class="panel-tools">
                             <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                             </a>
-
-
-                            <a class="btn btn-xs btn-link panel-expand" href="#">
-                                <i class="fa fa-resize-full"></i>
-                            </a>
-
                         </div>
                     </div>
                     <div class="panel-body">
@@ -50,69 +42,71 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                        </div>
+                        
                         @endif
-                        <form role="form" class="form-horizontal" action="{{url('dashboard/admin/costs/store')}}"
-                              method="post">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="form-field-1">
-                                    الرحلة
-                                </label>
-                                <div class="col-sm-4">
-                                    <select id="form-field-select-3" name="travel_id"
-                                            class="form-control search-select-trip">
-                                        @foreach($travels as $travel)
-                                            <option value="{{$travel->travel_id}}">{{$travel->travel_name}}</option>
+                            <form role="form" class="form-horizontal" action="{{url('dashboard/admin/costs/store')}}"
+                                  method="post">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="form-field-1">
+                                        الرحلة
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <select id="form-field-select-3" name="travel_id"
+                                                class="form-control search-select-trip">
+                                                <option value="">اختار  الرحله</option>
+                                            @foreach($travels as $travel)
+                                                <option value="{{$travel->travel_id}}">{{$travel->travel_name}}</option>
 
-                                        @endforeach
+                                            @endforeach
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="form-field-1">
-                                    البيان
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" name="name_costs" placeholder="البيان " id="form-field-1"
-                                           class="form-control">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="form-field-1">
+                                        البيان
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="name_costs" placeholder="البيان " id="form-field-1"
+                                               class="form-control">
+                                    </div>
+                                    <label class="col-sm-2 control-label" for="form-field-1">
+                                        العدد
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="number" name="count" placeholder="0 " id="form-field-1"
+                                               class="form-control">
+                                    </div>
                                 </div>
-                                <label class="col-sm-2 control-label" for="form-field-1">
-                                    العدد
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="number" name="count" placeholder="0 " id="form-field-1"
-                                           class="form-control">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="form-field-2">
+                                        السعر
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="number" name="unit_price" placeholder="0" id="form-field-2"
+                                               class="form-control">
+                                    </div>
+                                    <label class="col-sm-2 control-label" for="form-field-2">
+                                        سعر العملة بالمصرى
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="number" name="pound" placeholder="0" id="form-field-2"
+                                               class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="form-field-2">
-                                    السعر
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="number" name="unit_price" placeholder="0" id="form-field-2"
-                                           class="form-control">
-                                </div>
-                                <label class="col-sm-2 control-label" for="form-field-2">
-                                    سعر العملة بالمصرى
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="number" name="pound" placeholder="0" id="form-field-2"
-                                           class="form-control">
-                                </div>
-                            </div>
 
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <div class="form-group">
-                                <div class="col-sm-2 col-sm-offset-2">
-                                    <a href="#">
-                                        <button type="submit" class="btn btn-primary">
-                                            اضافة التكلفة
-                                        </button>
-                                    </a>
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <div class="form-group">
+                                    <div class="col-sm-2 col-sm-offset-2">
+                                        <a href="#">
+                                            <button type="submit" class="btn btn-primary">
+                                                اضافة التكلفة
+                                            </button>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <!-- end: TEXT FIELDS PANEL -->
@@ -127,10 +121,6 @@
                         <div class="panel-tools">
                             <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                             </a>
-                            <a class="btn btn-xs btn-link panel-expand" href="#">
-                                <i class="fa fa-resize-full"></i>
-                            </a>
-
                         </div>
                     </div>
                     <div class="panel-body">
@@ -173,10 +163,6 @@
                         <div class="panel-tools">
                             <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                             </a>
-                            <a class="btn btn-xs btn-link panel-expand" href="#">
-                                <i class="fa fa-resize-full"></i>
-                            </a>
-
                         </div>
                     </div>
                     <div class="panel-body">
@@ -215,7 +201,7 @@
                                 @endforeach
 
                                 </tbody>
-                                <tfoot>
+                                <!-- <tfoot>
                                 <tr>
                                     <th class="col-to-export text-right">الاجمالى</th>
                                     <td></td>
@@ -223,7 +209,7 @@
                                     <td> 11111</td>
                                     <td></td>
                                 </tr>
-                                </tfoot>
+                                </tfoot> -->
                             </table>
                         </div>
                     </div>
@@ -233,5 +219,47 @@
         </div>
     </div>
 
+@endsection
+@section('script')
+    <script type="text/javascript">
+        $("select[name='travel-selected']").change(function() {
+            var travel_id = $(this).val();
+            $.get('{{url("dashboard/admin/travels/subscribe/gettravel")}}/'+travel_id,function (data) {
+                $('#parrent_idhere').empty();
+                $.each(data,function (key, value) {
+                        console.log(key);
+                        console.log(value);
+                    $('#parrent_idhere').append(
+                        ' <option value="'+  value +'">'+ key+'</option>'
+                    );
+
+
+                })
+
+                }
+
+
+            );
+        });
+
+
+
+
+    </script>
+
+    <script>
+        jQuery(document).ready(function () {
+            $(".search-select-trip").select2({
+                placeholder: "اختر الرحلة ",
+                allowClear: true
+            });
+        });
+        jQuery(document).ready(function () {
+            $(".search-trip").select2({
+                placeholder: "اختر الرحلة ",
+                allowClear: true
+            });
+        });
     <!-- end: PAGE CONTENT-->
+    </script>
 @endsection

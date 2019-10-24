@@ -5,7 +5,17 @@
 
 @section('content')
 
+    <div class="row">
+        <div class="col-sm-12">
+            
+            <div class="page-header">
+                <h3>تعديل بيانات الرحلة </h3>
 
+            </div>
+            <!-- end: PAGE TITLE & BREADCRUMB -->
+        </div>
+    </div>
+    <!-- end: PAGE HEADER -->
     <div class="row">
         <div class="col-sm-12">
             <!-- start: TEXT FIELDS PANEL -->
@@ -14,11 +24,6 @@
                     <i class="fa fa-external-link-square"></i>ادخل بيانات الرحلة
                     <div class="panel-tools">
                         <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                        </a>
-
-
-                        <a class="btn btn-xs btn-link panel-expand" href="#">
-                            <i class="fa fa-resize-full"></i>
                         </a>
 
                     </div>
@@ -65,7 +70,7 @@
                             <div class="col-sm-2" >
                                 <div class="col-sm-2" >
                                     <button type="submit" class="btn btn-primary">
-                                        تعديل رحله
+                                        تعديل الرحلة 
                                     </button>
                                 </div>
 

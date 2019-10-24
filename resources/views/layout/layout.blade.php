@@ -73,7 +73,7 @@
                         <i class="clip-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                 <li>
+                    
                         <li>
                             <a href="{{url('logout')}}">
                                 <i class="clip-exit"></i> &nbsp;Log Out

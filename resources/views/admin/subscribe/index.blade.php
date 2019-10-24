@@ -24,16 +24,10 @@
             <!-- start: TEXT FIELDS PANEL -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-external-link-square"></i> ادخل التفاصيل
+                    <i class="fa fa-external-link-square"></i> اضافة مبيعات العميل  
                     <div class="panel-tools">
                         <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
                         </a>
-
-
-                        <a class="btn btn-xs btn-link panel-expand" href="#">
-                            <i class="fa fa-resize-full"></i>
-                        </a>
-
                     </div>
                 </div>
                 <div class="panel-body">
@@ -54,7 +48,7 @@
                                 </div>
                             @endif
                             <label class="col-sm-2 control-label" for="form-field-1">
-                                المندوب
+                                العميل 
                             </label>
                             @if(isset($partners))
                                 <div class="col-sm-4">
@@ -85,10 +79,10 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label"  for="form-field-2">
-                                سعر العملة بالجنيه
+                                نوع العميل 
                             </label>
                             <div class="col-sm-4">
-                                <input type="number" name="pound" step="0.01"  value="{{old('pound')}}" placeholder="0" id="form-field-2" class="form-control">
+                                <input type="text" name="type" value="{{old('type')}}" placeholder="نوع  العميل " id="form-field-2" class="form-control">
                             </div>
                             <label class="col-sm-2 control-label" for="form-field-2">
                                 المدفوع
@@ -119,14 +113,7 @@
                 <div class="panel-heading">
                     <i class="fa fa-external-link-square"></i> كشف حساب عميل فى رحلة
                     <div class="panel-tools">
-                        <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                        </a>
-
-
-                        <a class="btn btn-xs btn-link panel-expand" href="#">
-                            <i class="fa fa-resize-full"></i>
-                        </a>
-
+                        <a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -137,8 +124,8 @@
                             </label>
                             @if(isset($travels))
                                 <div class="col-sm-4">
-                                    <select id="form-field-select-3" name="travel-selected" class="form-control search-select-trip">
-                                        <option value="0">&nbsp;اختار الرحله</option>
+                                    <select id="form-field-select-3" name="travel-selected" class="form-control search-select-trip2">
+                                        <option value="">&nbsp;اختار الرحله</option>
                                         @foreach($travels as $tra)
                                             <option value="{{$tra->travel_id}}"> الاسم : {{$tra->travel_name }} التاريخ
                                                 || {{$tra->start_day}}</option>
@@ -147,10 +134,10 @@
                                 </div>
                             @endif
                             <label class="col-sm-2 control-label" for="form-field-1">
-                                المندوب
+                                العميل 
                             </label>
                                 <div class="col-sm-4">
-                                    <select id="parrent_idhere"  name="id_state" class="form-control search-select-sub">
+                                    <select id="parrent_idhere"  name="id_state" class="form-control search-select-sub2">
                                         <option value="">&nbsp;</option>
                                     </select>
                                 </div>
@@ -177,11 +164,6 @@
                     <i class="fa fa-external-link-square"></i> تفاصيل الرحلة بالمناديب
                     <div class="panel-tools">
                         <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
-                        <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i
-                                    class="fa fa-wrench"></i> </a>
-                        <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
-                        <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
-                        <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -195,7 +177,7 @@
                                 <th class=" text-right">اسم العميل</th>
                                 <th class=" text-right">عدد الافراد</th>
                                 <th class=" text-right">سعر الفرد</th>
-                                <th class=" text-right">سعر العملة</th>
+                                <th class=" text-right">نوع العميل </th>
                                 <th class=" text-right">الاجمالى</th>
                                 <th class=" text-right">الباقى</th>
                                 <th class=" text-right">&shy;</th>
@@ -210,27 +192,25 @@
                                         <td>{{$sub->name}}</td>
                                         <td>{{$sub->count_of_travel}}</td>
                                         <td>{{$sub->prices}}</td>
-                                        <td>{{$sub->pound == 1?'':$sub->pound}}</td>
+
                                         <td>{{$sub->total}}</td>
                                         <td>{{$sub->paid==0?'لم يستكمل الدفع':'تم الدفع'}}</td>
-                                        <td class="center">
+                                        <td class="text-left">
                                             <div class="">
                                                 <a href="{{url('dashboard/admin/travels/subscribe/reports/'.$sub->travel_id)}}" class="btn btn-xs tab-btn btn-teal tooltips"
-                                                   data-placement="top" data-original-title="Edit"><i
+                                                   data-placement="top" data-original-title="تقرير مجمع "><i
                                                             class="fa fa-edit"></i></a>
                                                 @if($sub->paid==0)
                                                 <a href="{{url('dashboard/admin/travels/subscribe/payment/'.$sub->travel_id.'/'.$sub->partner_id)}}" class="btn btn-xs btn-bricky2 tab-btn tooltips"
                                                    data-placement="top" data-original-title="اضافه دفع جديد"><i
-                                                            class=" clip-stackoverflow"></i></a>
+                                                            class=" clip-file"></i></a>
                                                     @endif
                                             </div>
 
                                         </td>
                                     </tr>
                                 @endforeach
-
                             @endif
-
                             </tbody>
                         </table>
                     </div>
@@ -255,20 +235,42 @@
                     $('#parrent_idhere').append(
                         ' <option value="'+  value +'">'+ key+'</option>'
                     );
-
+                    
 
                 })
 
                 }
-
-
             );
         });
 
-
-
-
     </script>
 
-
+    <script>
+        //function to initiate Select2
+        jQuery(document).ready(function () {
+            $(".search-select-trip").select2({
+                placeholder: "اختر الرحلة ",
+                allowClear: true
+            });
+        });
+        jQuery(document).ready(function () {
+            $(".search-select-sub").select2({
+                placeholder: "اختر العميل   ",
+                allowClear: true
+            });
+        });
+        //function to initiate Select2
+        jQuery(document).ready(function () {
+            $(".search-select-trip2").select2({
+                placeholder: "اختر الرحلة ",
+                allowClear: true
+            });
+        });
+        /*jQuery(document).ready(function () {
+            $(".search-select-sub2").select2({
+                placeholder: "اختر العميل   ",
+                allowClear: true
+            });
+        });*/
+    </script>
 @endsection

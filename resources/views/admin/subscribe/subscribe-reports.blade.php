@@ -41,7 +41,7 @@
         <div class="left-side">{{ date('Y-m-d')}}</div>
         <div class="right-side">الاراضى المقدسة </div>
         <div class="col-sm-2" >
-            <a href="{{url('dashboard/admin/travels/subscribe/index')}}"><button type="button"  class="btn btn-primary">
+            <a href="{{url('dashboard/admin/travels/subscribe/index')}}" onclick="return confirm('Are you sure?')"><button type="button"  class="btn btn-primary">
                     رجوع
                 </button></a>
         </div>

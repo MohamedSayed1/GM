@@ -43,7 +43,7 @@ class subscribeRepository extends Repositories
         $sub->partner_id      = $data['partner_id'];
         $sub->count_of_travel = $data['count_of_travel'];
         $sub->prices          = $data['prices'];
-        $sub->pound           = $data['pound'];
+        $sub->type            = $data['type'];
         $sub->total           = $data['total'];
         $sub->paid            = isset($data['paid'])?$data['paid']:0;
         $sub->current_paid    = isset($data['current_paid'])?$data['current_paid']:0;

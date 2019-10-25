@@ -192,7 +192,7 @@
                                         <td>{{$sub->name}}</td>
                                         <td>{{$sub->count_of_travel}}</td>
                                         <td>{{$sub->prices}}</td>
-
+                                        <td>{{$sub->type}}</td>
                                         <td>{{$sub->total}}</td>
                                         <td>{{$sub->paid==0?'لم يستكمل الدفع':'تم الدفع'}}</td>
                                         <td class="text-left">
@@ -240,8 +240,13 @@
                 })
 
                 }
+
+
             );
         });
+
+
+
 
     </script>
 

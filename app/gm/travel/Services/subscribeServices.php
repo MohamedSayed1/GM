@@ -30,7 +30,7 @@ class subscribeServices extends  Services
             'count_of_travel' => 'required|integer',
             'current_paid'    => 'nullable|numeric',
             'prices'          => 'required|numeric',
-            'pound'           => 'nullable|numeric',
+
 
         ];
         $messages = [
@@ -38,7 +38,6 @@ class subscribeServices extends  Services
             'partner_id.required' => ' برجاء ادخال الشريك',
             'count_of_travel.required' => 'عدد المسافرين',
             'prices.required' => 'يجب ادخال سعر الفرد',
-            'pound.numeric' => 'قيمه العمله يجب ان تكون رقما',
             'current_paid.numeric' => 'المدفوع يجب ان تكون رقما',
 
         ];
@@ -51,9 +50,7 @@ class subscribeServices extends  Services
             return false;
         }
 
-        // total =  count_of_travel * prices * pound
-        $data['pound'] = isset($data['pound'])?$data['pound'] :1;
-        $data['total'] = $data['count_of_travel'] * $data['prices'] *$data['pound'] ;
+        $data['total'] = $data['count_of_travel'] * $data['prices'] ;
 
         // check current paid
         if($data['current_paid']!=null) {

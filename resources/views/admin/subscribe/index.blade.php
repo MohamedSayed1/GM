@@ -175,11 +175,7 @@
                                 <th class=" text-right">اسم الرحلة</th>
                                 <th class=" text-right">تاريخ الرحلة</th>
                                 <th class=" text-right">اسم العميل</th>
-                                <th class=" text-right">عدد الافراد</th>
-                                <th class=" text-right">سعر الفرد</th>
-                                <th class=" text-right">نوع العميل </th>
-                                <th class=" text-right">الاجمالى</th>
-                                <th class=" text-right">الباقى</th>
+                                <th class=" text-right">حاله الدفع</th>
                                 <th class=" text-right">&shy;</th>
                             </tr>
                             </thead>
@@ -190,10 +186,6 @@
                                         <td>{{$sub->travel_name}}</td>
                                         <td>{{$sub->start_day}}</td>
                                         <td>{{$sub->name}}</td>
-                                        <td>{{$sub->count_of_travel}}</td>
-                                        <td>{{$sub->prices}}</td>
-                                        <td>{{$sub->type}}</td>
-                                        <td>{{$sub->total}}</td>
                                         <td>{{$sub->paid==0?'لم يستكمل الدفع':'تم الدفع'}}</td>
                                         <td class="text-left">
                                             <div class="">

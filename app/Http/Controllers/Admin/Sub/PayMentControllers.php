@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin\Sub;
 
 
 use App\gm\Partner_payment;
+use App\gm\travel\Model\Partner;
 use App\gm\travel\Model\Payment;
 use App\gm\travel\Model\travel;
 use App\gm\travel\Services\paymentServices;
+use App\gm\travel\Services\subscribeServices;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
@@ -23,6 +25,8 @@ class PayMentControllers extends Controller
     public function __construct()
     {
         $this->paymentSer = new paymentServices();
+
+        $this->subScribSer = new subscribeServices();
     }
 
     public function addView($travel=0 ,$partner=0)
@@ -145,6 +149,7 @@ class PayMentControllers extends Controller
         //check travel
         $travels = travel::find($id);
 
+        $rows = $this->subScribSer->getParnterByTraId($id);
         if(!empty($travels))
         {
             $subscribs = $this->getSubBytrid($id);
@@ -152,11 +157,28 @@ class PayMentControllers extends Controller
             return view('admin.subscribe.subscribe-reports')
                 ->with('subscribs',$subscribs)
                 ->with('travels',$travels)
+                ->with('rows',$rows)
                 ->with('title','تقرير عن العميل');
         }
 
         return redirect('dashboard/admin/travels/subscribe/index')
             ->withErrors([' لا يوجد شئ لعرضه']);
+    }
+
+    public function getAllPartSub($id = 0)
+    {
+        $partner = Partner::find($id);
+
+        if(!empty($partner))
+        {
+          $allTravel = $this->getSubBypartneridAll($id);
+          return view('admin.subscribe.partner-reports')
+          ->with('partner',$partner)
+          ->with('allTravel',$allTravel)
+          ->with('title','تقرير عن العميل');
+        }
+         return redirect()->back()
+        ->withErrors([' برجاء اختيار عميل موجود بالفعل حتي نتمكن من مساعدتك']);
     }
 
 }

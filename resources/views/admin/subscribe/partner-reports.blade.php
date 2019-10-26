@@ -41,48 +41,26 @@
         <div class="left-side">{{ date('Y-m-d')}}</div>
         <div class="right-side">الاراضى المقدسة </div>
         <div class="col-sm-2" >
-            <a href="{{url('dashboard/admin/travels/subscribe/index')}}" onclick="return confirm('Are you sure?')"><button type="button"  class="btn btn-primary">
+            <a href="{{url('dashboard/admin/partner/view')}}"><button type="button"  class="btn btn-primary">
                     رجوع
                 </button></a>
         </div>
     </div>
     <div class="header">
-        <h3>اسم الرحله </h3>
-        <h3>{{$travels->travel_name}} </h3>
-
+        <h3>اسم العميل </h3>
+        <h3>{{$partner->name}} </h3>
     </div>
+    <hr>
+    @if(count($allTravel)==0)
+        <h2 style="text-align: center;">لا يوجد شئ لعرضه</h2>
+    @else
     <div class="report-body">
         <table>
             <thead>
             <tr>
                 <th>اسم المندوب </th>
-                <th>النوع </th>
-                <th> عدد الافراض </th>
-                <th> السعر</th>
-                <th>المستحق</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($rows as $row)
-            <tr>
-                <td>{{$row->name}}</td>
-                <td>{{$row->type}} </td>
-                <td>{{$row->count_of_travel}} </td>
-                <td>{{$row->prices}} </td>
-                <td>{{$row->total}} </td>
-            </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <hr>
+                <th>اسم الرحله </th>
 
-    </div>
-    <div class="report-body">
-        <table>
-            <thead>
-            <tr>
-                <th>اسم المندوب </th>
-                <th></th>
                 <th>اجمالي عدد الافراض </th>
                 <th>اجمالي السعر</th>
                 <th>المستحق</th>
@@ -91,50 +69,33 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($subscribs as $sub)
-            <tr>
-                <td>{{$sub->name}}</td>
-                <td></td>
-                <td>{{$sub->count_of_travel_new}} </td>
-                <td>{{$sub->prices}} </td>
-                <td>{{$sub->amont}} </td>
-                <td>{{App\gm\Partner_payment::myPeyments($sub->travel_id,$sub->partner_id)}} </td>
-                <td>{{App\gm\Partner_payment::restMoney($sub->travel_id,$sub->partner_id)}} </td>
-            </tr>
-                @endforeach
+
+            @foreach($allTravel as $travel)
+                <tr>
+                    <td>{{$travel->name}}</td>
+                    <td>{{$travel->travel_name}}</td>
+                    <td>{{$travel->count_of_travel_new}} </td>
+                    <td>{{$travel->prices}} </td>
+                    <td>{{$travel->amont}} </td>
+                    <td>{{App\gm\Partner_payment::myPeyments($travel->travel_id,$travel->partner_id)}} </td>
+                    <td>{{App\gm\Partner_payment::restMoney($travel->travel_id,$travel->partner_id)}} </td>
+                </tr>
+            @endforeach
+
             </tbody>
         </table>
+    </div>
         <hr>
-        <table>
-            <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>اجمالي المستحق الحالي</th>
-                <th>اجمالي المدفوع الحالي</th>
-                <th>اجمالي الباقي</th>
+    @endif
 
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>{{App\gm\Partner_payment::totalToTravel($travels->travel_id)}}</td>
-                <td>{{App\gm\Partner_payment::TravelPaidall($travels->travel_id)}}</td>
-                <td>{{App\gm\Partner_payment::Travelremainder($travels->travel_id)}}</td>
-            </tr>
 
-            </tbody>
-        </table>
         <div class="col-sm-2" >
-            <a href="{{url('dashboard/admin/travels/subscribe/index')}}"><button type="button"  class="btn btn-primary">
+            <a href="{{url('dashboard/admin/partner/view')}}"><button type="button"  class="btn btn-primary">
                     رجوع
                 </button></a>
         </div>
-    </div>
+
+
 </div>
 </div>
 

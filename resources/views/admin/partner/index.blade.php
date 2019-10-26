@@ -62,7 +62,7 @@
                                     <td>{{$part->phone}}</td>
                                     <td class="text-left">
                                         <a href="{{url('dashboard/admin/partner/view/updated/'.$part->partner_id)}}" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="تعديل"><i class="fa fa-edit"></i></a>
-                                        <a href="#" class="btn btn-xs btn-bricky2 tooltips" data-placement="top" data-original-title="تقرير اجمالى مبيعاته "><i class="clip-file"></i></a>
+                                        <a href="{{url('dashboard/admin/travels/partner/get-all/subscribe/reports/'.$part->partner_id)}}" class="btn btn-xs btn-bricky2 tooltips" data-placement="top" data-original-title="تقرير اجمالى مبيعاته "><i class="clip-file"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

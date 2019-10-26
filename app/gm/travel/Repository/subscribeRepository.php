@@ -9,6 +9,7 @@
 namespace App\gm\travel\Repository;
 
 
+use App\gm\Partner_payment;
 use App\gm\Repositories;
 use App\gm\travel\Model\Payment;
 use App\gm\travel\Model\Subscribe;
@@ -19,6 +20,7 @@ use Carbon;
 class subscribeRepository extends Repositories
 {
 
+    use Partner_payment;
     /**
      * @return mixed
      *
@@ -58,6 +60,28 @@ class subscribeRepository extends Repositories
                 $payment->pay_new     = $data['current_paid'];
                 $payment->date        = Carbon\Carbon::parse(today());
                 $payment->save();
+
+                if($this->CheckRemaider($data['travel_id'],$data['partner_id']))
+                {
+                    $sub = Subscribe::where([
+                        ['travel_id',$data['travel_id']],
+                        ['partner_id',$data['partner_id']]])
+                        ->pluck('subscribe_id');
+
+                    if(DB::table('subscribe')->whereIn('subscribe_id', $sub)->update(['paid' => 0 ]))
+                        return true;
+
+                }else{
+                    $sub = Subscribe::where([
+                        ['travel_id',$data['travel_id']],
+                        ['partner_id',$data['partner_id']]])
+                        ->pluck('subscribe_id');
+
+                    if(DB::table('subscribe')->whereIn('subscribe_id', $sub)->update(['paid' => 1 ]))
+                        return true;
+                }
+
+
                 return true ;
             }
 

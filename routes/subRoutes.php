@@ -26,6 +26,8 @@ Route::group(['middleware' => ['CheckAuth']], function () {
 
             Route::get('/travels/subscribe/reports/{id?}', 'PayMentControllers@getSubReport');
 
+            Route::get('/travels/partner/get-all/subscribe/reports/{id?}', 'PayMentControllers@getAllPartSub');
+
 
         }); // end Prefix route
 

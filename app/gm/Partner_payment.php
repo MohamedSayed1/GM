@@ -5,7 +5,7 @@ namespace App\gm;
 
 
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 trait Partner_payment{
 
     private $partner ;
@@ -51,14 +51,31 @@ trait Partner_payment{
     {
         return DB::table('subscribe')
             ->join('travel','travel.travel_id','=','subscribe.travel_id')
-           ->join('partner','partner.partner_id','=','subscribe.partner_id')
+            ->join('partner','partner.partner_id','=','subscribe.partner_id')
             ->select(['subscribe.subscribe_id','subscribe.travel_id','subscribe.partner_id','travel.travel_name','travel.start_day','partner.name',
                 DB::raw("IFNULL(sum(subscribe.total),0) as amont"),
                 DB::raw("IFNULL(sum(subscribe.count_of_travel),0) as count_of_travel_new"),
                 DB::raw("IFNULL(sum(subscribe.prices),0) as prices "),
             ])
-            ->having('subscribe.travel_id',$id)
-            ->groupBy('subscribe.partner_id')
+            ->groupBy('partner.partner_id','subscribe.travel_id')
+            ->having('subscribe.travel_id','=',$id)
+            ->get();
+
+    }
+
+    public function getSubBypartneridAll($id)
+    {
+        return DB::table('subscribe')
+            ->join('travel','travel.travel_id','=','subscribe.travel_id')
+            ->join('partner','partner.partner_id','=','subscribe.partner_id')
+            ->select(['subscribe.subscribe_id','subscribe.travel_id','subscribe.created_at','subscribe.partner_id','travel.travel_name','travel.start_day','partner.name',
+                DB::raw("IFNULL(sum(subscribe.total),0) as amont"),
+                DB::raw("IFNULL(sum(subscribe.count_of_travel),0) as count_of_travel_new"),
+                DB::raw("IFNULL(sum(subscribe.prices),0) as prices "),
+            ])
+            ->groupBy('subscribe.partner_id','subscribe.travel_id')
+            ->having('subscribe.partner_id','=',$id)
+            ->whereYear('subscribe.created_at','=',Carbon::now()->year)
             ->get();
 
     }
@@ -86,6 +103,20 @@ trait Partner_payment{
 
          $remainder = $total - $mypay ;
          return $remainder;
+    }
+
+
+    // check if have remainder OR NO
+
+    public function CheckRemaider($tr_id,$per_id)
+    {
+        $remaider = self::restMoney($tr_id,$per_id);
+
+        if($remaider > 0 )
+            return true;
+
+
+        return false;
     }
 
 

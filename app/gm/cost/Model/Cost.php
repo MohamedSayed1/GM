@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cost extends Model
 {
     protected $fillable=[
-    	'costs_id', 'travel_id', 'unit_price', 'count', 'pound', 'total'
+    	 'travel_id','name_costs', 'unit_price', 'count', 'pound', 'total','type','night_number','room_num'
     ];
 
     protected $primaryKey='costs_id';

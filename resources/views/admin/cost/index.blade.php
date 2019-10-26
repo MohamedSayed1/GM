@@ -42,8 +42,8 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                        
-                        @endif
+
+                            @endif
                             <form role="form" class="form-horizontal" action="{{url('dashboard/admin/costs/store')}}"
                                   method="post">
                                 <div class="form-group">
@@ -51,9 +51,9 @@
                                         الرحلة
                                     </label>
                                     <div class="col-sm-4">
-                                        <select id="form-field-select-3" name="travel_id"
+                                        <select name="travel_id"
                                                 class="form-control search-select-trip">
-                                                <option value="">اختار  الرحله</option>
+                                            <option value="">اختار الرحله</option>
                                             @foreach($travels as $travel)
                                                 <option value="{{$travel->travel_id}}">{{$travel->travel_name}}</option>
 
@@ -61,6 +61,19 @@
 
                                         </select>
                                     </div>
+                                    <!-- new please add this -->
+                                    <label class="col-sm-2 control-label" for="form-field-1">
+                                        نوع التكلفة
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <select id="select_typeOfInput" name="type"
+                                                class="form-control search-select-cost">
+                                            <option value=""></option>
+                                            <option value="0">تكلفة عادية</option>
+                                            <option value="1">تكلفة سكن</option>
+                                        </select>
+                                    </div>
+                                    <!-- new please add this -->
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="form-field-1">
@@ -68,22 +81,6 @@
                                     </label>
                                     <div class="col-sm-4">
                                         <input type="text" name="name_costs" placeholder="البيان " id="form-field-1"
-                                               class="form-control">
-                                    </div>
-                                    <label class="col-sm-2 control-label" for="form-field-1">
-                                        العدد
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="number" name="count" placeholder="0 " id="form-field-1"
-                                               class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="form-field-2">
-                                        السعر
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="number" name="unit_price" placeholder="0" id="form-field-2"
                                                class="form-control">
                                     </div>
                                     <label class="col-sm-2 control-label" for="form-field-2">
@@ -94,7 +91,14 @@
                                                class="form-control">
                                     </div>
                                 </div>
+                                <!-- this is default cost -->
+                                <div class="form-group" id="typeOfInputAppend">
 
+                                </div>
+                                <!-- this is default cost -->
+
+
+                                <!-- this is hotel cost -->
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-group">
                                     <div class="col-sm-2 col-sm-offset-2">
@@ -124,7 +128,8 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="{{url('dashboard/admin/costs/search')}}" method="get" class="form-horizontal" >
+                        <form role="form" action="{{url('dashboard/admin/costs/search')}}" method="get"
+                              class="form-horizontal">
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="form-field-2">
@@ -134,7 +139,8 @@
                                     <select id="form-field-select-3" name="travel_id" class="form-control search-trip">
                                         <option name="travel_id">&nbsp;</option>
                                         @foreach($travels as $travel)
-                                        <option value="{{$travel->travel_id}}">{{$travel->travel_name}}|| التاريخ : {{$travel->start_day}}</option>
+                                            <option value="{{$travel->travel_id}}">{{$travel->travel_name}}|| التاريخ
+                                                : {{$travel->start_day}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -168,14 +174,15 @@
                     <div class="panel-body">
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover  table-full-width" id="sample-table-2">
+                            <table class="table table-striped table-hover  table-full-width" id="sample_1">
                                 <thead>
                                 <tr>
                                     <th class="col-to-export text-right">اسم الرحلة</th>
                                     <th class="col-to-export text-right">البيان</th>
-                                    <th class="col-to-export text-right">عدد</th>
+                                    <th class="col-to-export text-right">نوع التكلفة</th>
+                                    <!-- <th class="col-to-export text-right">عدد</th> -->
                                     <th class="col-to-export text-right">السعر</th>
-                                    <th class="col-to-export text-right">العملةبالمصرى</th>
+                                    <!-- <th class="col-to-export text-right">العملةبالمصرى</th> -->
                                     <th class="col-to-export text-right">الإجمالى</th>
                                     <th class=" text-right"></th>
                                 </tr>
@@ -185,17 +192,22 @@
                                     <tr>
                                         <td>{{$cost->travel_name}}</td>
                                         <td>{{$cost->name_costs}}</td>
-                                        <td>{{$cost->count}}</td>
-                                        <td>{{$cost->unit_price}}</td>
+
+                                        @if($cost->type==0)
+                                            <td>تكلفة عادية</td>
+                                        @elseif($cost->type==1)
+                                            <td>تكلفة سكن</td>
+                                        @endif
+
                                         <td>{{$cost->pound}}</td>
                                         <td>{{$cost->total}}</td>
-
-                                        <td class="text-center">
-                                            <a href="{{url('dashboard/admin/costs/update/'.$cost->costs_id)}}" class="btn btn-xs btn-teal tab-btn tooltips"
+                                        <td class="text-left">
+                                            <a href="{{url('dashboard/admin/costs/update/'.$cost->costs_id)}}"
+                                               class="btn btn-xs btn-teal tab-btn tooltips"
                                                data-placement="top"
-                                               data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                               data-original-title="تعديل "><i class="fa fa-edit"></i></a>
                                             <a href="#" class="btn btn-xs  btn-bricky tooltips" data-placement="top"
-                                               data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+                                               data-original-title="مسح "><i class="fa fa-times fa fa-white"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -222,31 +234,64 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        $("select[name='travel-selected']").change(function() {
-            var travel_id = $(this).val();
-            $.get('{{url("dashboard/admin/travels/subscribe/gettravel")}}/'+travel_id,function (data) {
-                $('#parrent_idhere').empty();
-                $.each(data,function (key, value) {
-                        console.log(key);
-                        console.log(value);
-                    $('#parrent_idhere').append(
-                        ' <option value="'+  value +'">'+ key+'</option>'
+
+
+        $(document).ready(function () {
+            $('#select_typeOfInput').on('change', function () {
+
+                var value = $('#select_typeOfInput').val();
+                $('#typeOfInputAppend').empty();
+
+                if (value == 0) {
+
+                    $('#typeOfInputAppend').append(
+                        '<label class="col-sm-2 control-label" for="form-field-1"> العدد </label>' +
+                        '<div class="col-sm-4">' +
+                        ' <input type="number" name="count" placeholder="0 " id="form-field-1"' +
+                        'class = "form-control" > ' +
+                        '</div>' +
+                        '<label class="col-sm-2 control-label" for="form-field-2">' + 'السعر' +
+                        '</label>' +
+                        '<div class="col-sm-4">' +
+                        '<input type="number" name="unit_price" placeholder="0" id="form-field-2"' +
+                        'class = "form-control" >' +
+                        '</div>'
+                    );
+                } else if (value == 1) {
+
+                    $('#typeOfInputAppend').append(
+                        ' <label class="col-sm-2 control-label" for="">' + ' عدد الغرف' +
+                        ' </label>' +
+                        '   <div class="col-sm-2">' +
+                        '  <input type="number" name="room_num" placeholder="0 " id="form-field-1"' +
+                        'class="form-control">' +
+                        ' </div>' +
+                        ' <label class="col-sm-2 control-label" for="">' +
+                        'عدد الليالى' +
+                        ' </label>' +
+                        '  <div class="col-sm-2">' +
+                        ' <input type="number" name="night_number" placeholder="0 " id="form-field-1"' +
+                        ' class="form-control">' +
+                        ' </div>' +
+                        '  <label class="col-sm-2 control-label" for="">' +
+                        'سعر الليلة' +
+                        ' </label>' +
+                        '<div class="col-sm-2">' +
+                        '<input type="number" name="unit_price" placeholder="0" id="form-field-2"' +
+                        ' class="form-control">' +
+                        '    </div>'
                     );
 
 
-                })
-
+                } else {
+                    $('#typeOfInputAppend').empty();
                 }
 
 
-            );
-        });
-
-
-
+            });
+        })
 
     </script>
-
     <script>
         jQuery(document).ready(function () {
             $(".search-select-trip").select2({
@@ -260,6 +305,14 @@
                 allowClear: true
             });
         });
-    <!-- end: PAGE CONTENT-->
+        jQuery(document).ready(function () {
+            $(".search-select-cost").select2({
+                placeholder: "اختر  نوع التكلفة  ",
+                allowClear: true
+            });
+        });
+
     </script>
+
+
 @endsection

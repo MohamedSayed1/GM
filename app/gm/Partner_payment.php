@@ -116,13 +116,7 @@ trait Partner_payment{
         return $rem = $total - $pay ;
     }
 
-    public function TotalAllCost($id){
-        return  $all =DB::table('costs')
-            ->where([
-                ['travel_id',$id],
-            ])
-            ->sum('total');
-    }
+  
 
 
 

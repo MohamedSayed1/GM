@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="{{url('dashboard/admin/costs/search')}}" method="get"
+                        <form role="form" action="{{url('dashboard/admin/costs/search')}}" method="post"
                               class="form-horizontal">
 
                             <div class="form-group">

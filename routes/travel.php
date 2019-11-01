@@ -28,7 +28,14 @@ Route::group(['middleware' => ['CheckAuth']], function () {
         Route::post('dashboard/admin/costs/store', 'adminCostsController@storeCost');
         Route::get('dashboard/admin/costs/update/{id}', 'adminCostsController@editCost');
         Route::put('dashboard/admin/costs/edit', 'adminCostsController@updateCost');
+        Route::get('dashboard/admin/costs/search', 'adminCostsController@returnToIndex');
+        Route::post('dashboard/admin/costs/search', 'adminCostsController@searchCostTravel');
+        
+
+        /*
         Route::any('dashboard/admin/costs/search', 'adminCostsController@searchCostTravel');
+        */
+        
 
 
 

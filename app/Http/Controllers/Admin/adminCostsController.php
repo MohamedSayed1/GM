@@ -146,6 +146,12 @@ class adminCostsController extends Controller
             ])
             ->sum('total');
     }
+     //if the search url route is get
+    public function returnToIndex()
+    {
+        return redirect('dashboard/admin/costs/index');
+
+    }
 
 
 }

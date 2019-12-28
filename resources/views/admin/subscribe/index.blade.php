@@ -90,6 +90,9 @@
                             <div class="col-sm-4">
                                 <input type="number" name="current_paid" step="0.01" value="{{old('current_paid')}}" placeholder="0" id="form-field-2" class="form-control">
                             </div>
+                            <div class="col-sm-6">
+                                <textarea  name="desc"  placeholder="الوصف" id="form-field-2" class="form-control">{{old('desc')}}</textarea>
+                            </div>
                         </div>
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -175,6 +178,7 @@
                                 <th class=" text-right">اسم الرحلة</th>
                                 <th class=" text-right">تاريخ الرحلة</th>
                                 <th class=" text-right">اسم العميل</th>
+                                <th class=" text-right">الوصف</th>
                                 <th class=" text-right">حاله الدفع</th>
                                 <th class=" text-right">&shy;</th>
                             </tr>
@@ -186,6 +190,7 @@
                                         <td>{{$sub->travel_name}}</td>
                                         <td>{{$sub->start_day}}</td>
                                         <td>{{$sub->name}}</td>
+                                        <td>{{$sub->desc}}</td>
                                         <td>{{$sub->paid==0?'لم يستكمل الدفع':'تم الدفع'}}</td>
                                         <td class="text-left">
                                             <div class="">

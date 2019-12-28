@@ -23,6 +23,7 @@ class CreateSubscribeTable extends Migration {
 			$table->float('total', 10, 0)->nullable();
 			$table->float('current_paid', 10, 0)->nullable();
 			$table->boolean('paid')->default(0);
+			$table->text('desc', 65535)->nullable();
 			$table->timestamps();
 		});
 	}

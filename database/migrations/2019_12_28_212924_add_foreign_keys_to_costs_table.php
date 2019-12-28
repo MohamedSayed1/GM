@@ -15,6 +15,7 @@ class AddForeignKeysToCostsTable extends Migration {
 		Schema::table('costs', function(Blueprint $table)
 		{
 			$table->foreign('travel_id', 'Travel_Costs_id')->references('travel_id')->on('travel')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('supplier_id', 'suppliers_id')->references('su_id')->on('suppliers')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 
@@ -29,6 +30,7 @@ class AddForeignKeysToCostsTable extends Migration {
 		Schema::table('costs', function(Blueprint $table)
 		{
 			$table->dropForeign('Travel_Costs_id');
+			$table->dropForeign('suppliers_id');
 		});
 	}
 

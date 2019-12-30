@@ -6,7 +6,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Al-Arady ElMokadasa Management System</title>
+    <title>{{$title}}</title>
     <link rel="shortcut icon" href="" />
     <!-- start: META -->
     <meta charset="utf-8" />
@@ -104,7 +104,29 @@
                 @endforeach
             </tbody>
         </table>
+        <h2>المصروفات للعملاء </h2>
+        <table>
+            <thead>
+            <tr>
+                <th>اسم المندوب </th>
+                <th></th>
+                <th>اجمالي الصرف</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($safe as $v)
+                <tr>
+                    <td>{{$v->name}}</td>
+                    <td></td>
+                    <td>{{$v->amont}} </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+
+
         <hr>
+        <h2>الاجمالي</h2>
         <table>
             <thead>
             <tr>
@@ -122,9 +144,39 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>{{App\gm\Partner_payment::totalToTravel($travels->travel_id)}}</td>
+                @php
+                 $total=   App\gm\Partner_payment::totalToTravel($travels->travel_id);
+                @endphp
+                <td>{{$total}}</td>
                 <td>{{App\gm\Partner_payment::TravelPaidall($travels->travel_id)}}</td>
                 <td>{{App\gm\Partner_payment::Travelremainder($travels->travel_id)}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+        <h2>الاجمالي المستحق مع المصروفات</h2>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>اجمالي المستحق الحالي</th>
+                <th>اجمالي المصروفات</th>
+                <th>المكسب النهائي</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>{{$total}}</td>
+                <td>{{$total_safe}}</td>
+                <td> {{$total - $total_safe}}</td>
+
             </tr>
 
             </tbody>

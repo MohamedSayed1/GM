@@ -23,6 +23,7 @@ class safeRepository
         $safe->type       = $data['type'];
         $safe->cash       = $data['cash'];
         $safe->date       = isset($data['date'])?$data['date']:Carbon::today();
+        $safe->comment    = isset($data['comment'])?$data['comment']:null;
 
         return $safe->save();
     }

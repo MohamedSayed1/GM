@@ -13,7 +13,9 @@ Route::group(['middleware' => ['CheckAuth']], function () {
         Route::prefix('dashboard/admin')->group(function () {
 
 
-            Route::get('/travels/subscribe/index', 'SubscribeControllers@index');
+            Route::get('/travels/subscribe/index/{id?}', 'SubscribeControllers@index');
+            //Route::post('/travels/subscribe/index/search', 'SubscribeControllers@searchIndex');
+            //Route::get('/travels/subscribe/index/search', 'SubscribeControllers@index');
             Route::get('/travels/subscribe/gettravel/{id?}', 'SubscribeControllers@getTravelByTravelID');
             Route::post('/travels/subscribe/add', 'SubscribeControllers@addNewSub');
 

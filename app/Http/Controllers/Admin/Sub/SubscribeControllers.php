@@ -34,15 +34,20 @@ use Partner_payment;
      *  View index
      */
 
-    public function index()
+    public function index($id = null)
     {
+
         // get all subscribe
-        $subscribe = $this->subSer->getSubscribes();
+        if($id == null)
+        {
+            $subscribe = $this->subSer->getSubscribes();
+        }
+        else{
+            $subscribe = $this->subSer->getParnterByTraId($id);
+        }
 
         // get all Travel
-
-        $travels = $this->travSer->getTravels();
-
+            $travels = $this->travSer->getTravels();
         // get all Partner
 
         $partners = $this->parSer->getAll();
@@ -50,6 +55,23 @@ use Partner_payment;
         return view('admin.subscribe.index')
             ->with('title', 'تفاصيل الرحلة بالمناديب')
             ->with('subscribe', $subscribe)
+            ->with('id', $id)
+            ->with('travels', $travels)
+            ->with('partners', $partners);
+    }
+
+    public function searchIndex(Request $request)
+    {
+        // get all subscribe
+        $subscribe = $this->subSer->getSubscribes();
+        // get all Travel
+        $travels = $this->travSer->getTravelById($request->get('id'));
+        // get all Partner
+        $partners = $this->parSer->getAll();
+        return view('admin.subscribe.index')
+            ->with('title', 'تفاصيل الرحلة بالمناديب')
+            ->with('subscribe', $subscribe)
+            ->with('id', $request->get('id'))
             ->with('travels', $travels)
             ->with('partners', $partners);
     }

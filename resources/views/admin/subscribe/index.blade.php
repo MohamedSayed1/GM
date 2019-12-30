@@ -160,6 +160,53 @@
             </div>
             <!-- end: TEXT FIELDS PANEL -->
         </div>
+        <div class="col-sm-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-external-link-square"></i> ابحث فى رحلة معينة
+            <div class="panel-tools">
+                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                </a>
+
+
+                <a class="btn btn-xs btn-link panel-expand" href="#">
+                    <i class="fa fa-resize-full"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="panel-body">
+            <form role="form" class="form-horizontal" method="get" >
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="form-field-1">
+                        الرحلة
+                    </label>
+                    @if(isset($travels))
+                        <div class="col-sm-4">
+                            <select id="form-field-select-3" name="id" class="form-control search-select-trip2">
+                                <option value="">&nbsp;اختار الرحله</option>
+                                @foreach($travels as $tra)
+                                    <option value="{{$tra->travel_id}}" {{$id == $tra->travel_id?'selected':''}}> الاسم : {{$tra->travel_name }} التاريخ
+                                        || {{$tra->start_day}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    @endif
+
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-2 col-sm-offset-2" >
+                        <button onclick="search_sub()" type="button" class="btn btn-primary">
+                                بحث  عن الرحله
+                            </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        </div>
         <div class="col-md-12">
             <!-- start: trip details with subscripers -->
             <div class="panel panel-default">
@@ -241,6 +288,17 @@
 
             );
         });
+
+        function search_sub() {
+          var id  = $("select[name='id']").val();
+
+          if(id == ' ')
+          {
+              alert('برجاء اختيار الرحله')
+          }
+            var url= '{{url('dashboard/admin/travels/subscribe/index/')}}';
+            window.location=url+'/'+id;
+        }
 
 
 

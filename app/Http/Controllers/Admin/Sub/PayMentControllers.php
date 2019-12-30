@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Sub;
 
 
 use App\gm\Partner_payment;
+use App\gm\safeTrait;
 use App\gm\travel\Model\Partner;
 use App\gm\travel\Model\Payment;
 use App\gm\travel\Model\travel;
@@ -18,6 +19,7 @@ class PayMentControllers extends Controller
 {
 
     use Partner_payment;
+    use safeTrait;
     private $subScribSer;
 
     private $paymentSer;
@@ -122,9 +124,14 @@ class PayMentControllers extends Controller
                 ['id_partner',$data['id_state']],
             ])->get();
 
+            $safe = $this->getExpensesSubscrib($data['travel-selected'],$data['id_state']);
+            $total_safe =$safe->sum('cash');
+
                 return view('admin.subscribe.paymentReports')
                     ->with('remainder',$remainder)
                     ->with('pay',$pay)
+                    ->with('safe',$safe)
+                    ->with('total_safe',$total_safe)
                     ->with('total',$total)
                     ->with('payment',$payment)
                     ->with('sub',$sub)
@@ -153,12 +160,16 @@ class PayMentControllers extends Controller
         if(!empty($travels))
         {
             $subscribs = $this->getSubBytrid($id);
+            $safe      = $this->getExpenToRtavel($id);
+            $total_safe = $safe->sum('amont');
 
             return view('admin.subscribe.subscribe-reports')
                 ->with('subscribs',$subscribs)
                 ->with('travels',$travels)
                 ->with('rows',$rows)
-                ->with('title','تقرير عن العميل');
+                ->with('safe',$safe)
+                ->with('total_safe',$total_safe)
+                ->with('title','تقرير مجمع عن '.$travels->travel_name);
         }
 
         return redirect('dashboard/admin/travels/subscribe/index')

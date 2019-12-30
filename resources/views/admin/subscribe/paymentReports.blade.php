@@ -88,6 +88,43 @@
             @endforeach
             </tbody>
         </table>
+        <hr>
+        <h2 style="text-align: center;">تواريخ الصرف</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>التاريخ </th>
+                <th>قيمه الصرف </th>
+                <th> التعليق </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($safe as $v)
+            <tr>
+                <td>{{$v->date}}</td>
+                <td>{{$v->cash}}</td>
+                <td>{{$v->comment}}</td>
+            </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <table>
+            <thead>
+            <tr>
+                <th>اجمالي المستحق </th>
+                <th>اجمالي الصرف </th>
+                <th>اجمالي المكسب </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{$total}}</td>
+                <td>{{$total_safe}} </td>
+                <td>{{$total - $total_safe }} </td>
+            </tr>
+            </tbody>
+        </table>
         <div class="col-sm-2" >
             <a href="{{url('dashboard/admin/travels/subscribe/index')}}"><button type="button"  class="btn btn-primary">
                     رجوع

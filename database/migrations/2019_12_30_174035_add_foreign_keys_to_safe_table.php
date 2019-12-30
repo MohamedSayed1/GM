@@ -16,7 +16,6 @@ class AddForeignKeysToSafeTable extends Migration {
 		{
 			$table->foreign('coust_id', 'cost_id_with_cash')->references('costs_id')->on('costs')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('partner_id', 'partner_id_with_cash')->references('partner_id')->on('partner')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-			$table->foreign('supp_id', 'supp_id_with_cash')->references('su_id')->on('suppliers')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('travel_id', 'travel_id_with_cash')->references('travel_id')->on('travel')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
@@ -33,7 +32,6 @@ class AddForeignKeysToSafeTable extends Migration {
 		{
 			$table->dropForeign('cost_id_with_cash');
 			$table->dropForeign('partner_id_with_cash');
-			$table->dropForeign('supp_id_with_cash');
 			$table->dropForeign('travel_id_with_cash');
 		});
 	}

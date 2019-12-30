@@ -23,6 +23,7 @@ class CreateSafeTable extends Migration {
 			$table->integer('type')->nullable();
 			$table->float('cash', 10, 0)->nullable();
 			$table->date('date')->nullable();
+			$table->text('comment', 65535)->nullable();
 			$table->timestamps();
 		});
 	}

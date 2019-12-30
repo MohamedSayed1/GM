@@ -28,6 +28,11 @@ Route::group(['middleware' => ['CheckAuth']], function () {
 
             Route::get('/travels/partner/get-all/subscribe/reports/{id?}', 'PayMentControllers@getAllPartSub');
 
+            // cashing Route
+            Route::get('travels/subscribe/expenses', 'CashingController@view');
+            Route::get('travels/subscribe/expenses/get/details/{tavel_id}/{partner_id}', 'CashingController@getPartnerWithCash');
+            Route::post('travels/subscribe/expenses/add/new/payment', 'CashingController@addprocess');
+
 
         }); // end Prefix route
 

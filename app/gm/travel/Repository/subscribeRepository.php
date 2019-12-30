@@ -11,6 +11,7 @@ namespace App\gm\travel\Repository;
 
 use App\gm\Partner_payment;
 use App\gm\Repositories;
+use App\gm\safe\Repository\safeRepository;
 use App\gm\travel\Model\Payment;
 use App\gm\travel\Model\Subscribe;
 use Illuminate\Support\Facades\DB;
@@ -61,6 +62,18 @@ class subscribeRepository extends Repositories
                 $payment->pay_new     = $data['current_paid'];
                 $payment->date        = Carbon\Carbon::parse(today());
                 $payment->save();
+                // add in safe
+                $safe_data =[
+                    'travel_id'=>$data['travel_id'],
+                    'payment_id'=>$payment->id,
+                    'partner_id'=>$data['partner_id'],
+                    'type'=>1,
+                    'cash'=>$data['current_paid'],
+                    'date'=>$payment->date
+                ];
+
+                $add_safe = new safeRepository();
+                $safe = $add_safe->addNew($safe_data);
 
                 if($this->CheckRemaider($data['travel_id'],$data['partner_id']))
                 {

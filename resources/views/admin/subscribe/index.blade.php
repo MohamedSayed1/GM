@@ -11,7 +11,7 @@
         <div class="col-sm-12">
 
             <div class="page-header">
-                <h3>دليل الرحلات</h3>
+                <h3>مبيعات العميل</h3>
 
             </div>
             <!-- end: PAGE TITLE & BREADCRUMB -->

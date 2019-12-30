@@ -43,6 +43,11 @@
                             <span class="title">مبيعات العميل </span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('dashboard/admin/travels/subscribe/expenses*') ? 'active' : '' }}">
+                        <a href="{{(url('dashboard/admin/travels/subscribe/expenses'))}}" class="">
+                            <span class="title">مصروفات لعميل</span>
+                        </a>
+                    </li>
 
                     <!--<li>
                         <a href="">

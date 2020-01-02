@@ -28,9 +28,8 @@ Route::group(['middleware' => ['CheckAuth']], function () {
         // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
 
-        Route::get('dashboard/admin', function () {
-            return view('admin.index');
-        });
+        Route::get('dashboard/admin','HomeController@index');
+        Route::post('dashboard/admin','HomeController@searchProcess');
 
         // users
         Route::get('dashboard/admin/users', 'adminUsersController@viewUser');

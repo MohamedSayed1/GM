@@ -35,7 +35,7 @@ class CashingController extends Controller
     {
         $total = $this->getTotal($tavel_id,$partner_id);
 
-        $paid = self::restMoney($tavel_id,$partner_id);
+        $paid = self::getPayment($tavel_id,$partner_id);
 
         $data =[
             'totla'=>$total,

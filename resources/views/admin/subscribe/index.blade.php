@@ -248,7 +248,10 @@
                                                 <a href="{{url('dashboard/admin/travels/subscribe/payment/'.$sub->travel_id.'/'.$sub->partner_id)}}" class="btn btn-xs btn-bricky2 tab-btn tooltips"
                                                    data-placement="top" data-original-title="اضافه دفع جديد"><i
                                                             class=" clip-file"></i></a>
-                                                    @endif
+                                                @endif
+                                                <a onclick="confermDelet({{$sub->subscribe_id}})">
+                                                    <button>حذف </button>
+                                                </a>
                                             </div>
 
                                         </td>
@@ -332,5 +335,24 @@
                 allowClear: true
             });
         });*/
+        function confermDelet(id)
+        {
+            swal({
+                title: "هل انت متاكد من الحذف ؟؟",
+                text: 'الحذف سوف تخسر جميع البيانات الخاصه بالصرف والدفع يمكنك عمل اجراء تصحيح اذا لم تريد خسارتها',
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        var url= '{{url('dashboard/admin/travels/subscribe/deleted')}}';
+                        window.location =url+'/'+id;
+                    } else {
+                        swal("حسنا لن يتم الحذف ");
+                    }
+                });
+        }
+
     </script>
 @endsection

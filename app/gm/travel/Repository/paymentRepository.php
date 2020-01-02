@@ -26,7 +26,7 @@ class paymentRepository
             // add in safe
             $safe_data =[
                 'travel_id'=>$data['travel_id'],
-                'payment_id'=>$payment->id,
+                'payment_id'=>$payment->pay_id,
                 'partner_id'=>$data['partner_id'],
                 'type'=>1,
                 'cash'=>$data['payment'],

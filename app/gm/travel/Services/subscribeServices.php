@@ -10,6 +10,7 @@ namespace App\gm\travel\Services;
 
 
 use App\gm\Services;
+use App\gm\travel\Model\Subscribe;
 use App\gm\travel\Repository\subscribeRepository;
 use Validator;
 
@@ -97,5 +98,28 @@ class subscribeServices extends  Services
     public function getParnterNameAndId($id)
     {
         return $this->subRepo->getParnterNameAndId($id);
+    }
+
+    public function del($id)
+    {
+        $sub = $this->subRepo->getSubById($id);
+         if(!empty($sub))
+         {
+             if($this->subRepo->checkCount($sub->travel_id,$sub->partner_id) == 1)
+             {
+                if($this->subRepo->del($id))
+                    return true;
+
+
+
+                $this->setError('عفوا حدث خطاء برجاء المحاوله مره اخري ');
+                return false;
+             }
+                 $this->setError(['لا يمكنك الحذف لان العميل لديه كذا مبيعات في هذه الرحله يمكنك صرف قيمه المبيعات بدل من الحذف ']);
+             return false;
+         }
+
+         $this->setError(['اختار عنصر موجود حتي !!']);
+         return false;
     }
 }

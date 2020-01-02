@@ -20,6 +20,9 @@ Route::group(['middleware' => ['CheckAuth']], function () {
             Route::post('/travels/subscribe/add', 'SubscribeControllers@addNewSub');
 
 
+            Route::get('/travels/subscribe/deleted/{id?}', 'SubscribeControllers@deleted');
+
+
             // payment
             Route::get('/travels/subscribe/payment/{travel?}/{partner?}', 'PayMentControllers@addView');
             Route::post('/travels/subscribe/payment', 'PayMentControllers@addProcess');

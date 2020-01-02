@@ -111,5 +111,17 @@ use Partner_payment;
         return response()->json($travel);
     }
 
+    public function deleted($id =0)
+    {
+         if($this->subSer->del($id))
+         {
+             alert()->success('تم الحذف بنجاح ');
+             return redirect()->back();
+         }
+
+        $errors = $this->subSer->errors();
+        return redirect()->back()->withErrors($errors);
+    }
+
 
 }

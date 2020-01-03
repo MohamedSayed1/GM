@@ -20,7 +20,7 @@ class HomeController extends Controller
         $travels = travel::orderBy('updated_at',' DESC')->get();
         $partners = Partner::orderBy('updated_at',' DESC')->get();
         $supps    = DB::table('suppliers')->orderBy('updated_at',' DESC')->get();
-        return view('admin.index')
+        return view('admin.home')
             ->with('travels',$travels)
             ->with('supps',$supps)
             ->with('partners',$partners);
@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function searchProcess(Request $request)
     {
-
+         $request->all();
         $pertner = $request->get('partner');
         $type = $request->get('type');
         $travel = $request->get('travel');
@@ -38,28 +38,24 @@ class HomeController extends Controller
 
 
          $results = safe::with('parnter_get','getCost')
-            ->when($pertner, function ($q) use ($pertner) {
-              return  $q->where('partner_id', $pertner);
-            })
-            ->when($type, function ($q) use ($type) {
-              return  $q->where('type', $type);
-            })
-            ->when($travel, function ($q) use ($travel) {
-               return $q->where('travel_id', $travel);
-            })
-            ->when($supp, function ($q) use ($supp) {
-               return $q->where('supp_id', $supp);
-            })
-            ->when($from, function ($q) use ($from, $to) {
-               return $q->where('date', '>=', $from)
-                    ->orwhere('date', '<=', $to);
-            })->get();
+          ->when($from, function ($q) use ($from, $to) {
+               $q->whereBetween('date', [$from,$to]);
+
+          })->when($pertner, function ($q) use ($pertner) {
+                $q->where('partner_id', $pertner);
+            })->when($travel, function ($q) use ($travel) {
+                $q->where('travel_id', $travel);
+            })->when($supp, function ($q) use ($supp) {
+                $q->where('supp_id', $supp);
+            })->when($type, function ($q) use ($type) {
+                   $q->where('type', $type);
+             })->get();
 
 
         $travels = travel::orderBy('updated_at',' DESC')->get();
         $partners = Partner::orderBy('updated_at',' DESC')->get();
         $supps    = DB::table('suppliers')->orderBy('updated_at',' DESC')->get();
-        return view('admin.index')
+        return view('admin.home')
             ->with('travels',$travels)
             ->with('supps',$supps)
             ->with('results',$results)

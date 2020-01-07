@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 class AdminOutlayController extends Controller
 {
-    // connected with Outlay Services
+    // connected with Outlay Service
     private $outayServices;
 
     public function __construct()

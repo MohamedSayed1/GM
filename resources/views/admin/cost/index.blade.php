@@ -50,12 +50,27 @@
                                     <label class="col-sm-2 control-label" for="form-field-1">
                                         الرحلة
                                     </label>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-2">
                                         <select name="travel_id"
                                                 class="form-control search-select-trip">
-                                            <option value="">اختار الرحله</option>
+                                            <option value="">اختار المورد</option>
                                             @foreach($travels as $travel)
                                                 <option value="{{$travel->travel_id}}">{{$travel->travel_name}}</option>
+
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                    <label class="col-sm-2 control-label" for="form-field-1">
+                                        المورد
+                                    </label>
+                                    <div class="col-sm-2">
+                                        <select name="supplier_id"
+                                                class="form-control search-select-trip">
+                                            <option value="">اختار الرحله</option>
+                                            @foreach(\App\gm\cost\Model\Supplier::get() as $sup)
+
+                                                <option value="{{$sup->su_id}}">{{$sup->su_name}}</option>
 
                                             @endforeach
 
@@ -65,8 +80,8 @@
                                     <label class="col-sm-2 control-label" for="form-field-1">
                                         نوع التكلفة
                                     </label>
-                                    <div class="col-sm-4">
-                                        <select id="select_typeOfInput" name="type"
+                                    <div class="col-sm-2">
+                                        <select id="select_typeOfInput" name="t_type"
                                                 class="form-control search-select-cost">
                                             <option value=""></option>
                                             <option value="0">تكلفة عادية</option>
@@ -206,8 +221,9 @@
                                                class="btn btn-xs btn-teal tab-btn tooltips"
                                                data-placement="top"
                                                data-original-title="تعديل "><i class="fa fa-edit"></i></a>
-                                            <a href="#" class="btn btn-xs  btn-bricky tooltips" data-placement="top"
-                                               data-original-title="مسح "><i class="fa fa-times fa fa-white"></i></a>
+                                            <a onclick="confermDelet({{$cost->costs_id}})">
+                                                <button>حذف </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -311,6 +327,25 @@
                 allowClear: true
             });
         });
+
+        function confermDelet(id)
+        {
+            swal({
+                title: "هل انت متاكد من الحذف ؟؟",
+                text: 'الحذف سوف تخسر جميع البيانات الخاصه بالصرف والدفع يمكنك عمل اجراء تصحيح اذا لم تريد خسارتها',
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        var url= '{{url('dashboard/admin/costs/delete')}}';
+                        window.location =url+'/'+id;
+                    } else {
+                        swal("حسنا لن يتم الحذف ");
+                    }
+                });
+        }
 
     </script>
 

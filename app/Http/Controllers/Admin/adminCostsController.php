@@ -152,6 +152,17 @@ class adminCostsController extends Controller
         return redirect('dashboard/admin/costs/index');
 
     }
+    public function delete($id =0)
+    {
+        if($this->costService->del($id))
+        {
+            alert()->success('تم الحذف بنجاح ');
+            return redirect()->back();
+        }
+
+        $errors = $this->costService->errors();
+        return redirect()->back()->withErrors($errors);
+    }
 
 
 }

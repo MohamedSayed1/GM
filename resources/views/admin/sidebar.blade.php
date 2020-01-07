@@ -24,6 +24,13 @@
                     <span class="selected"></span>
                 </a>
             </li>
+            <li class="{{ Request::is('dashboard/admin/supplier/view*') ? 'active' : '' }}">
+                <a href="{{url('dashboard/admin/supplier/view')}}">
+                    <i class="clip-spinner"></i>
+                    <span class="title">إدارة الموردين</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
             <li class="{{ Request::is('dashboard/admin/travels*') ? 'active' : '' }}">
                 <a href="javascript:void(0)">
                     <i class="clip-link"></i>

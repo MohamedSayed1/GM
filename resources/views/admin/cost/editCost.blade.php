@@ -68,7 +68,27 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <label class="col-sm-2 control-label" for="form-field-1">
+                                    المورد
+                                </label>
+                                <div class="col-sm-4">
+                                    <select name="supplier_id"
+                                            class="form-control search-select-trip">
+                                        <option value="">اختار المورد</option>
+                                        @foreach(\App\gm\cost\Model\Supplier::get() as $sup)
+                                            @if($sup->su_id==$cost->supplier_id)
+                                                <option value="{{$sup->su_id}}" selected>{{$sup->su_name}}</option>
+                                            @else
+                                                <option value="{{$sup->su_id}}">{{$sup->su_name}}</option>
+                                            @endif
+
+
+                                        @endforeach
+
+                                    </select>
+                                </div>
                             </div>
+
                             <div class="form-group">
 
                                 <label class="col-sm-2 control-label" for="form-field-1">
@@ -145,7 +165,7 @@
                             </div>
 
                             <input type="hidden" name="costs_id" value="{{$cost->costs_id}}">
-                            <input type="hidden" name="type" value="{{$cost->type}}">
+                            <input type="hidden" name="t_type" value="{{$cost->type}}">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
                                 <div class="col-sm-2 col-sm-offset-2">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\gm\cost\service;
+namespace App\gm\cost\Service;
 
 
 use App\gm\cost\Repository\CostRepository;
@@ -28,9 +28,10 @@ class CostService extends Services
     public function addCost($data)
     {
         //تحديد نوع التكلفه
-        if ($data['type'] == 0) {
+        if ($data['t_type'] == 0) {
             $rules = [
                 'travel_id' => 'required|integer',
+                'supplier_id' => 'required',
                 'name_costs' => 'required',
                 'unit_price' => 'required|numeric',
                 'count' => 'required|integer',
@@ -39,6 +40,7 @@ class CostService extends Services
             ];
             $messages = [
                 'travel_id.required' => ' برجاء ادخال الرحله ',
+                'supplier_id.required' => ' برجاء ادخال المورد ',
                 'name_costs.required' => ' برجاء ادخال إسم الوحده',
                 'unit_price.required' => 'يجب ادخال سعر الوحده',
                 'unit_price.numeric' => 'يجب ادخال سعر الوحده',
@@ -46,9 +48,10 @@ class CostService extends Services
                 'pound.numeric' => 'العملة يجب ان تكون رقما',
 
             ];
-        } elseif ($data['type'] == 1) {
+        } elseif ($data['t_type'] == 1) {
             $rules = [
                 'travel_id' => 'required|integer',
+                'supplier_id' => 'required',
                 'name_costs' => 'required',
                 'unit_price' => 'required|numeric',
                 'pound' => 'nullable|numeric',
@@ -58,6 +61,7 @@ class CostService extends Services
             ];
             $messages = [
                 'travel_id.required' => ' برجاء ادخال الرحله ',
+                'supplier_id.required' => ' برجاء ادخال المورد ',
                 'name_costs.required' => ' برجاء ادخال إسم الوحده',
                 'unit_price.required' => 'يجب ادخال سعر الوحده',
                 'pound.numeric' => 'العملة يجب ان تكون رقما',
@@ -79,12 +83,12 @@ class CostService extends Services
         }
 
         // total
-        if ($data['type'] == 0){
-        $data['pound'] = isset($data['pound']) ? $data['pound'] : 1;
-        $data['total'] = $data['unit_price'] * $data['count'] * $data['pound'];}
-        elseif ($data['type'] == 1) {
+        if ($data['t_type'] == 0) {
             $data['pound'] = isset($data['pound']) ? $data['pound'] : 1;
-            $data['total'] = $data['night_number']* $data['unit_price'] * $data['room_num'] * $data['pound'];
+            $data['total'] = $data['unit_price'] * $data['count'] * $data['pound'];
+        } elseif ($data['t_type'] == 1) {
+            $data['pound'] = isset($data['pound']) ? $data['pound'] : 1;
+            $data['total'] = $data['night_number'] * $data['unit_price'] * $data['room_num'] * $data['pound'];
         }
 
 
@@ -99,9 +103,10 @@ class CostService extends Services
 
 
         //تحديد نوع التكلفه
-        if ($data['type'] == 0) {
+        if ($data['t_type'] == 0) {
             $rules = [
                 'travel_id' => 'required|integer',
+                'supplier_id' => 'required',
                 'name_costs' => 'required',
                 'unit_price' => 'required|numeric',
                 'count' => 'required|integer',
@@ -110,6 +115,7 @@ class CostService extends Services
             ];
             $messages = [
                 'travel_id.required' => ' برجاء ادخال الرحله ',
+                'supplier_id.required' => ' برجاء ادخال المورد ',
                 'name_costs.required' => ' برجاء ادخال إسم الوحده',
                 'unit_price.required' => 'يجب ادخال سعر الوحده',
                 'unit_price.numeric' => 'يجب ادخال سعر الوحده',
@@ -117,9 +123,10 @@ class CostService extends Services
                 'pound.numeric' => 'العملة يجب ان تكون رقما',
 
             ];
-        } elseif ($data['type'] == 1) {
+        } elseif ($data['t_type'] == 1) {
             $rules = [
                 'travel_id' => 'required|integer',
+                'supplier_id' => 'required',
                 'name_costs' => 'required',
                 'unit_price' => 'required|numeric',
                 'pound' => 'nullable|numeric',
@@ -129,6 +136,7 @@ class CostService extends Services
             ];
             $messages = [
                 'travel_id.required' => ' برجاء ادخال الرحله ',
+                'supplier_id.required' => ' برجاء ادخال المورد ',
                 'name_costs.required' => ' برجاء ادخال إسم الوحده',
                 'unit_price.required' => 'يجب ادخال سعر الوحده',
                 'pound.numeric' => 'العملة يجب ان تكون رقما',
@@ -138,7 +146,6 @@ class CostService extends Services
                 'room_num.integer' => 'يجب أن يكون عدد الغرف رقما'
 
             ];
-
         }
 
 
@@ -150,14 +157,13 @@ class CostService extends Services
         }
 
         // total
-        if ($data['type'] == 0){
+        if ($data['t_type'] == 0) {
             $data['pound'] = isset($data['pound']) ? $data['pound'] : 1;
-            $data['total'] = $data['unit_price'] * $data['count'] * $data['pound'];}
-        elseif ($data['type'] == 1) {
+            $data['total'] = $data['unit_price'] * $data['count'] * $data['pound'];
+        } elseif ($data['t_type'] == 1) {
             $data['pound'] = isset($data['pound']) ? $data['pound'] : 1;
-            $data['total'] = $data['night_number']* $data['unit_price'] * $data['room_num'] * $data['pound'];
+            $data['total'] = $data['night_number'] * $data['unit_price'] * $data['room_num'] * $data['pound'];
         }
-
 
 
         if ($this->costRepository->updateCost($data))
@@ -173,20 +179,26 @@ class CostService extends Services
         $this->setError('غير موجود');
         return false;
     }
-    public function getCostByType($type,$travelID){
-        if($cost=$this->costRepository->getCostByType($type,$travelID))
+
+    public function getCostByType($type, $travelID)
+    {
+        if ($cost = $this->costRepository->getCostByType($type, $travelID))
             return $cost;
         $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
         return false;
     }
-   public function getCostByTypeHotelAndTravel($type,$travelID){
-       if($cost=$this->costRepository->getCostByTypeHotelAndTravel($type,$travelID))
-           return $cost;
-       $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
-       return false;
-   }
-    public function getCostByTypeNormalAndTravel($type,$travelID){
-        if($cost=$this->costRepository->getCostByTypeNormalAndTravel($type,$travelID))
+
+    public function getCostByTypeHotelAndTravel($type, $travelID)
+    {
+        if ($cost = $this->costRepository->getCostByTypeHotelAndTravel($type, $travelID))
+            return $cost;
+        $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
+        return false;
+    }
+
+    public function getCostByTypeNormalAndTravel($type, $travelID)
+    {
+        if ($cost = $this->costRepository->getCostByTypeNormalAndTravel($type, $travelID))
             return $cost;
         $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
         return false;
@@ -196,6 +208,16 @@ class CostService extends Services
     {
         return $this->costRepository->getCostsToTravelByTravelID($id);
 
+    }
+
+    public function del($id)
+    {
+        if ($this->costRepository->del($id))
+            return true;
+
+
+        $this->setError('عفوا حدث خطاء برجاء المحاوله مره اخري ');
+        return false;
     }
 
 

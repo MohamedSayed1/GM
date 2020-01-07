@@ -19,7 +19,7 @@ class safeRepository
         $safe->coust_id   = isset($data['coust_id'])?$data['coust_id']:null;
         $safe->payment_id = isset($data['payment_id'])?$data['payment_id']:null;
         $safe->partner_id = isset($data['partner_id'])?$data['partner_id']:null;
-        $safe->supp_id    = isset($data['supp_id'])?$data['supp_id']:null;
+        $safe->supp_id    = isset($data['supplier_id'])?$data['supplier_id']:null;
         $safe->type       = $data['type'];
         $safe->cash       = $data['cash'];
         $safe->date       = isset($data['date'])?$data['date']:Carbon::today();

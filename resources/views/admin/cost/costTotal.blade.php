@@ -36,6 +36,7 @@
                         <th class="col-to-export text-right">البيان</th>
                         <th class="col-to-export text-right">عدد</th>
                         <th class="col-to-export text-right">السعر</th>
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
 
@@ -49,6 +50,7 @@
                             <td>{{$cost->name_costs}}</td>
                             <td>{{$cost->count}}</td>
                             <td>{{$cost->unit_price}}</td>
+                            <td>{{$cost->su_name}}</td>
                             <td>{{$cost->pound}}</td>
                             <td>{{$cost->total}}</td>
 
@@ -64,6 +66,7 @@
                         <th class="col-to-export text-right">البيان</th>
                         <th class="col-to-export text-right">عدد</th>
                         <th class="col-to-export text-right">السعر</th>
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
                     </tr>
@@ -82,7 +85,7 @@
     <!-- /////////////  تقرير التكاليف االسكن/////////////////////// -->
 
     <div class="page-container"><h2> تكاليف السكن</h2></div>
-    @if(isset($descCostNormal)&& $descCostNormal!=null)
+    @if(isset($descCostNormal)&& $descCostNormal!=null )
     <div class="col-sm-12">
 
         <!-- start: TEXT FIELDS PANEL -->
@@ -95,6 +98,7 @@
                         <th class="col-to-export text-right">عدد الليالى</th>
                         <th class="col-to-export text-right">عدد الغرف</th>
                         <th class="col-to-export text-right">سعر الغرفة</th>
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
 
@@ -108,6 +112,7 @@
                             <td>{{$cost->night_number}}</td>
                             <td>{{$cost->room_num}}</td>
                             <td>{{$cost->unit_price}}</td>
+                            <td>{{$cost->su_name}}</td>
                             <td>{{$cost->pound}}</td>
                             <td>{{$cost->total}}</td>
 
@@ -124,6 +129,7 @@
                         <th class="col-to-export text-right">عدد الليالى</th>
                         <th class="col-to-export text-right">عدد الغرف</th>
                         <th class="col-to-export text-right">سعر الغرفة</th>
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
                     </tr>

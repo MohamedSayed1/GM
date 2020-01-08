@@ -11,11 +11,11 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="page-header">
-                <h3> تقارير تكاليف رحلة: {{$travel->travel_name}}</h3>
+                <h3>  تقارير حساب المورد  {{$supplier->su_name}} لرحلة {{$travel->travel_name}} </h3>
             </div>
-            <div class="right-side"><h3>{{ date('Y-m-d')}}</h3></div>
-            <div class="col-sm-4" >
-                <a href="{{url('dashboard/admin/costs/index')}}" onclick="return confirm('هل أنت متأكد ؟')"><button type="button"  class="btn btn-primary">
+            <div class="left-side">{{ date('Y-m-d')}}</div>
+            <div class="col-sm-2" >
+                <a href="{{url('dashboard/admin/costs/index')}}" onclick="return confirm('Are you sure?')"><button type="button"  class="btn btn-primary">
                         رجوع
                     </button></a>
             </div>
@@ -30,19 +30,20 @@
 
 
     <div class="page-container"><h2> التكاليف العادية</h2></div>
-    @if(isset($descCostNormal)&& $descCostNormal!=null)
-    <div class="col-sm-12">
+    @if(isset($normalCostToSup)&& !empty($normalCostToSup))
+        <div class="col-sm-12">
 
-        <!-- start: TEXT FIELDS PANEL -->
+            <!-- start: TEXT FIELDS PANEL -->
             <div class="table-responsive">
                 <table class="table table-striped table-hover  table-full-width" id="sample-table-2">
                     <thead>
                     <tr>
+
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">اسم الرحلة</th>
                         <th class="col-to-export text-right">البيان</th>
                         <th class="col-to-export text-right">عدد</th>
                         <th class="col-to-export text-right">السعر</th>
-                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
 
@@ -50,13 +51,15 @@
                     </thead>
                     <tbody>
 
-                    @foreach($descCostNormal as $cost)
+
+                    @foreach($normalCostToSup as $cost)
                         <tr>
+                            <td>{{$cost->su_name}}</td>
                             <td>{{$cost->travel_name}}</td>
                             <td>{{$cost->name_costs}}</td>
                             <td>{{$cost->count}}</td>
                             <td>{{$cost->unit_price}}</td>
-                            <td>{{$cost->su_name}}</td>
+
                             <td>{{$cost->pound}}</td>
                             <td>{{$cost->total}}</td>
 
@@ -68,11 +71,11 @@
                     </tbody>
                     <tfoot>
                     <tr style="border-bottom: 3px solid #aaa;">
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">اسم الرحلة</th>
                         <th class="col-to-export text-right">البيان</th>
                         <th class="col-to-export text-right">عدد</th>
                         <th class="col-to-export text-right">السعر</th>
-                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
                     </tr>
@@ -81,7 +84,7 @@
             </div>
             <!-- end: TEXT FIELDS PANEL -->
 
-    </div>
+        </div>
     @else
         <h2>لا يوجد تكاليف عادية </h2>
     @endif
@@ -91,10 +94,10 @@
     <!-- /////////////  تقرير التكاليف االسكن/////////////////////// -->
 
     <div class="page-container"><h2> تكاليف السكن</h2></div>
-    @if(isset($descCostNormal)&& $descCostNormal!=null )
-    <div class="col-sm-12">
+    @if(isset($Hotel)&& !empty($Hotel))
+        <div class="col-sm-12">
 
-        <!-- start: TEXT FIELDS PANEL -->
+            <!-- start: TEXT FIELDS PANEL -->
             <div class="table-responsive">
                 <table class="table table-striped table-hover  table-full-width" id="sample-table-2">
                     <thead>
@@ -111,14 +114,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($descCostHotel as $cost)
+                    @foreach($Hotel as $cost)
                         <tr>
+                            <td>{{$cost->su_name}}</td>
                             <td>{{$cost->travel_name}}</td>
                             <td>{{$cost->name_costs}}</td>
                             <td>{{$cost->night_number}}</td>
                             <td>{{$cost->room_num}}</td>
                             <td>{{$cost->unit_price}}</td>
-                            <td>{{$cost->su_name}}</td>
                             <td>{{$cost->pound}}</td>
                             <td>{{$cost->total}}</td>
 
@@ -130,12 +133,13 @@
                     </tbody>
                     <tfoot>
                     <tr style="border-bottom: 3px solid #aaa;">
+                        <th class="col-to-export text-right">اسم المورد</th>
                         <th class="col-to-export text-right">اسم الرحلة</th>
                         <th class="col-to-export text-right">البيان</th>
                         <th class="col-to-export text-right">عدد الليالى</th>
                         <th class="col-to-export text-right">عدد الغرف</th>
                         <th class="col-to-export text-right">سعر الغرفة</th>
-                        <th class="col-to-export text-right">اسم المورد</th>
+
                         <th class="col-to-export text-right">العملةبالمصرى</th>
                         <th class="col-to-export text-right">الإجمالى</th>
                     </tr>
@@ -143,8 +147,8 @@
                 </table>
             </div>
 
-    <!-- end: TEXT FIELDS PANEL -->
-    </div>
+            <!-- end: TEXT FIELDS PANEL -->
+        </div>
     @else
         <h2 class="box-title">لا يوجد تكاليف عادية </h2>
     @endif
@@ -152,17 +156,17 @@
 
     <!-- /////////////  تقرير الربح /////////////////////// -->
 
-    <div class="page-container"><h2> التقرير النهائى لمصاريف الرحلة</h2></div>
-    @if(isset($netProfit)&& $netProfit!=null)
+    <div class="page-container"><h2> ما تم صرفه للمورد {{$supplier->su_name}}</h2></div>
+    @if(isset($totalAllCost)&& $totalAllCost!=null)
 
-    <div class="col-sm-12">
+        <div class="col-sm-12">
 
-        <!-- start: TEXT FIELDS PANEL -->
+            <!-- start: TEXT FIELDS PANEL -->
             <div class="table-responsive">
                 <table class="table table-striped table-hover  table-full-width" id="sample-table-2">
                     <thead>
                     <tr>
-                        <th class="col-to-export text-right">كل تكاليف الشركة</th>
+                        <th class="col-to-export text-right">تكاليف الرحله للمورد: {{$supplier->su_namr}}</th>
                         <th class="col-to-export text-right"></th>
                         <th class="col-to-export text-right"></th>
                         <th class="col-to-export text-right">الأجمالى</th>
@@ -175,7 +179,7 @@
 
 
                     <tr>
-                        <td>ما تم صرفة</td>
+                        <td> ما تم صرفه للمورد </td>
                         <td></td>
                         <td></td>
                         <td>{{$totalAllCost}}</td>
@@ -185,10 +189,10 @@
 
                     </tr>
                     <tr>
-                        <td>الإجمالى</td>
+                        <td>إجمالى دخل الرحلة</td>
                         <td></td>
                         <td></td>
-                        <td>{{ $totalAll}}</td>
+                        <td>{{$totalAll}}</td>
                         <td></td>
                         <td></td>
 
@@ -197,22 +201,13 @@
 
 
                     </tbody>
-                    <tfoot>
-                    <tr style="border-bottom: 3px solid #aaa;">
-                        <th class="col-to-export text-right">الربح</th>
-                        <th class="col-to-export text-right"></th>
-                        <th class="col-to-export text-right"></th>
-                        <th class="col-to-export text-right">{{$netProfit}}</th>
-                        <th class="col-to-export text-right"></th>
-                        <th class="col-to-export text-right"></th>
-                    </tr>
-                    </tfoot>
+
                 </table>
             </div>
             <!-- end: TEXT FIELDS PANEL -->
 
-    </div>
-@endif
+        </div>
+    @endif
 
 
 @endsection

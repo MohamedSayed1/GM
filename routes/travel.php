@@ -31,6 +31,15 @@ Route::group(['middleware' => ['CheckAuth']], function () {
         Route::get('dashboard/admin/costs/search', 'adminCostsController@returnToIndex');
         Route::post('dashboard/admin/costs/search', 'adminCostsController@searchCostTravel');
         Route::get(' dashboard/admin/costs/delete/{id?}', 'adminCostsController@delete');
+        Route::get('dashboard/admin/costs/getSuppliersBTravel/{id?}','adminCostsController@getSuppliersByTravelId');
+        Route::post('dashboard/admin/travels/cost/supplier/report','adminCostsController@searchTravelBySupplier');
+        Route::get('dashboard/admin/travels/cost/supplier/reportSup/{id?}','adminCostsController@getAllTravelBySupplier');
+
+
+        Route::get('total/{id?}','adminCostsController@TotalAllCostBySupplierGroupTotal');
+
+
+
 
 
 

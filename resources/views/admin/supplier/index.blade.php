@@ -62,7 +62,7 @@
                                     <td>{{$sup->su_phone}}</td>
                                     <td class="text-left">
                                         <a href="{{url('dashboard/admin/supplier/view/updated/'.$sup->su_id)}}" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="تعديل"><i class="fa fa-edit"></i></a>
-                                        <a href="{{url('dashboard/admin/travels/supplier/get-all/subscribe/reports/'.$sup->partner_id)}}" class="btn btn-xs btn-bricky2 tooltips" data-placement="top" data-original-title="تقرير اجمالى مبيعاته "><i class="clip-file"></i></a>
+                                        <a href="{{url('dashboard/admin/travels/cost/supplier/reportSup/'.$sup->su_id)}}" class="btn btn-xs btn-bricky2 tooltips" data-placement="top" data-original-title="تقرير اجمالى مدفوعاته لكل الرحلات "><i class="clip-file"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

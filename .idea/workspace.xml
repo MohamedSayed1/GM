@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d0df837-4ac8-4ecb-a84f-7bb7feec2fdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/gm/cost/Service/SuppliersServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminOutlayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminOutlayController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/adminCostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/adminCostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckAuth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAuth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gm/cost/Repository/CostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/gm/cost/Repository/CostRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gm/cost/Service/CostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/gm/cost/Service/CostService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gm/safe/Repository/safeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/gm/safe/Repository/safeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gm/travel/Services/PartnerServices.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/cost/costTotal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cost/costTotal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cost/editCost.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cost/editCost.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/cost/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cost/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/supplier/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/supplier/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/travel.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/travel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +128,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/cost" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -157,6 +149,7 @@
       <recent name="E:\mywork2\htdocs\GM\resources\views\admin\supplier" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\mywork2\htdocs\GM\resources\views\admin\cost" />
       <recent name="E:\mywork2\htdocs\GM\resources\views\admin\supplier" />
       <recent name="E:\mywork2\htdocs\GM\app\gm\travel\Services" />
       <recent name="E:\mywork2\htdocs\GM\app\gm\cost\Model" />
@@ -238,6 +231,8 @@
       <workItem from="1578315333402" duration="21525000" />
       <workItem from="1578391973460" duration="1135000" />
       <workItem from="1578395164803" duration="6931000" />
+      <workItem from="1578403972734" duration="24711000" />
+      <workItem from="1578473874670" duration="9464000" />
     </task>
     <servers />
   </component>
@@ -249,17 +244,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="277" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1578131337593" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578402644947">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578478544931">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578402644947" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578478544931" />
+    <state x="518" y="288" key="NewPhpFileDialog" timestamp="1578430615381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="518" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1578430615381" />
     <state x="288" y="20" key="SettingsEditor" timestamp="1578395352185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="288" y="20" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1578395352185" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578340248111">
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1578473982452">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578340248111" />
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578473982452" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578407420935">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578407420935" />
   </component>
 </project>

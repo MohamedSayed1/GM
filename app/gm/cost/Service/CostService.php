@@ -179,6 +179,11 @@ class CostService extends Services
         $this->setError('غير موجود');
         return false;
     }
+    public function getSupplierNameAndIdFromCost($travel_id){
+     return   $this->costRepository->getSupplierNameAndIdFromCost($travel_id);
+
+
+    }
 
     public function getCostByType($type, $travelID)
     {
@@ -203,6 +208,40 @@ class CostService extends Services
         $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
         return false;
     }
+    public function getCostByTypeHotelAndTravelAndSupplier($type, $travelID,$sup_id)
+    {
+        if ($cost = $this->costRepository->getCostByTypeHotelAndTravelAndSupplier($type, $travelID,$sup_id))
+            return $cost;
+        $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
+        return false;
+    }
+    public function getCostByTypeNormalAndTravelAndSupplier($type, $travelID,$sup_id)
+    {
+        if ($cost = $this->costRepository->getCostByTypeNormalAndTravelAndSupplier($type, $travelID,$sup_id))
+            return $cost;
+        $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
+        return false;
+    }
+
+    ///////////
+    public function getCostByTypeHotelAndSupplier($type,$sup_id)
+    {
+        if ($cost = $this->costRepository->getCostByTypeHotelAndSupplier($type,$sup_id))
+            return $cost;
+        $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
+        return false;
+    }
+    public function getCostByTypeNormalAndSupplier($type,$sup_id)
+    {
+        if ($cost = $this->costRepository->getCostByTypeNormalAndSupplier($type,$sup_id))
+            return $cost;
+        $this->setError('    عفوا ! هناك خطأ ما فى نوع التكلفه');
+        return false;
+    }
+
+    /// ////////
+
+
 
     public function getCostsToTravelByTravelID($id)
     {

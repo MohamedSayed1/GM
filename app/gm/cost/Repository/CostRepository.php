@@ -3,6 +3,7 @@
 namespace App\gm\cost\Repository;
 
 use App\gm\cost\Model\Cost;
+use App\gm\cost\Model\Supplier;
 use App\gm\safe\Model\safe;
 use App\gm\safe\Repository\safeRepository;
 use App\gm\travel\Model\travel;
@@ -117,7 +118,7 @@ class CostRepository
         return false;
     }
 
- //check if id of cost exist in safe table
+    //check if id of cost exist in safe table
     public function getSafeByCostId($cost_id)
     {
         $h = new safe();
@@ -128,7 +129,8 @@ class CostRepository
             return false;
 
     }
-   //update row of table if cost updated
+
+    //update row of table if cost updated
     public function updateIntoSafeTableByCostId($data)
     {
         $cost_id = $data['costs_id'];
@@ -157,9 +159,20 @@ class CostRepository
         $f = Cost::findOrFail($id);
         return DB::table('costs')
             ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
-            ->join('suppliers','suppliers.su_id','=','costs.supplier_id')
+            ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
             ->where('costs.costs_id', $id)
             ->get();
+
+
+    }
+
+    public function getSupplierNameAndIdFromCost($travel_id)
+    {
+        return DB::table('costs')
+            ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
+            ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+            ->where('costs.travel_id', $travel_id)
+            ->pluck('suppliers.su_id', 'suppliers.su_name');
 
 
     }
@@ -180,25 +193,82 @@ class CostRepository
         $cost = travel::findOrFail($travelID);
         return DB::table('costs')
             ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
-            ->join('suppliers','suppliers.su_id','=','costs.supplier_id')
-            ->select('costs.name_costs', 'costs.unit_price', 'costs.pound','suppliers.su_name', 'costs.night_number', 'costs.room_num', 'costs.total', 'travel.travel_name')
+            ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+            ->select('costs.name_costs', 'costs.unit_price', 'costs.pound', 'costs.created_at', 'suppliers.su_name', 'costs.night_number', 'costs.room_num', 'costs.total', 'travel.travel_name')
             ->where('costs.travel_id', $travelID)->where('costs.type', $type)
             ->get();
 
     }
+
 
     public function getCostByTypeNormalAndTravel($type, $travelID)
     {
         $cost = Cost::findOrFail($travelID);
         return DB::table('costs')
             ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
-            ->join('suppliers','suppliers.su_id','=','costs.supplier_id')
-            ->select('costs.name_costs', 'costs.unit_price', 'costs.pound','suppliers.su_name', 'costs.count', 'costs.total', 'travel.travel_name')
+            ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+            ->select('costs.name_costs', 'costs.unit_price', 'costs.created_at', 'costs.pound', 'suppliers.su_name', 'costs.count', 'costs.total', 'travel.travel_name')
             ->where('costs.travel_id', $travelID)->where('costs.type', $type)
             ->get();
 
     }
 
+    ///////////
+    public function getCostByTypeHotelAndTravelAndSupplier($type, $travelID, $sub_id)
+    {
+        return DB::table('costs')
+            ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
+            ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+            ->select('costs.name_costs', 'costs.unit_price', 'costs.pound', 'suppliers.su_name', 'costs.night_number', 'costs.created_at', 'costs.room_num', 'costs.total', 'travel.travel_name')
+            ->where('costs.travel_id', $travelID)->where('costs.supplier_id', $sub_id)->where('costs.type', $type)
+            ->get();
+
+    }
+
+    public function getCostByTypeNormalAndTravelAndSupplier($type, $travelID, $sub_id)
+    {
+        return DB::table('costs')
+            ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
+            ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+            ->select('costs.name_costs', 'costs.unit_price', 'costs.created_at', 'costs.pound', 'suppliers.su_name', 'costs.count', 'costs.total', 'travel.travel_name')
+            ->where('costs.travel_id', $travelID)->where('costs.supplier_id', $sub_id)->where('costs.type', $type)
+            ->get();
+
+    }
+
+    /// ///////
+    public function getCostByTypeHotelAndSupplier($type, $supID)
+    {
+        $sup = Supplier::findOrFail($supID);
+        if (!empty($sup)) {
+            return DB::table('costs')
+                ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
+                ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+                ->select('costs.name_costs', 'costs.unit_price', 'costs.pound', 'costs.created_at', 'suppliers.su_name', 'costs.night_number', 'costs.room_num', 'costs.total', 'travel.travel_name')
+                ->where('costs.supplier_id', $supID)->where('costs.type', $type)
+                ->get();
+        }
+        return false;
+
+    }
+
+
+    public function getCostByTypeNormalAndSupplier($type, $sup_id)
+    {
+        $sup = Supplier::findOrFail($sup_id);
+        if (!empty($sup)) {
+            return DB::table('costs')
+                ->join('travel', 'travel.travel_id', '=', 'costs.travel_id')
+                ->join('suppliers', 'suppliers.su_id', '=', 'costs.supplier_id')
+                ->select('costs.name_costs', 'costs.unit_price', 'costs.created_at', 'costs.pound', 'suppliers.su_name', 'costs.count', 'costs.total', 'travel.travel_name')
+                ->where('costs.supplier_id', $sup_id)->where('costs.type', $type)
+                ->get();
+        }
+        return false;
+
+    }
+
+    /// //////////
 
 
     public function getCostsToTravelByTravelID($id)
@@ -212,23 +282,22 @@ class CostRepository
             ->get();
 
     }
+
     public function del($id)
     {
 
         $cost = Cost::findOrFail($id);
         // delete
 
-        $safe = safe::where('coust_id',$cost->costs_id)->pluck('safe_id')->toArray();
-        $deleteSafe = safe::whereIn('safe_id',$safe)->delete();
+        $safe = safe::where('coust_id', $cost->costs_id)->pluck('safe_id')->toArray();
+        $deleteSafe = safe::whereIn('safe_id', $safe)->delete();
 
-        if(Cost::where('costs_id',$id)->delete())
+        if (Cost::where('costs_id', $id)->delete())
             return true;
-        
+
         return false;
 
     }
-
-
 
 
 }

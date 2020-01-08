@@ -130,6 +130,56 @@
                 </div>
                 <!-- end: TEXT FIELDS PANEL -->
             </div>
+            <div class="col-sm-12">
+                <!-- start: TEXT FIELDS PANEL -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-external-link-square"></i> كشف حساب مورد فى رحلة
+                        <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" action="{{url('dashboard/admin/travels/cost/supplier/report')}}" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="form-field-1">
+                                    الرحلة
+                                </label>
+                                @if(isset($travels))
+                                    <div class="col-sm-4">
+                                        <select id="form-field-select-3" name="travel-selected" class="form-control search-select-trip2">
+                                            <option value="">&nbsp;اختار الرحله</option>
+                                            @foreach($travels as $tra)
+                                                <option value="{{$tra->travel_id}}"> الاسم : {{$tra->travel_name }} التاريخ
+                                                    || {{$tra->start_day}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
+                                <label class="col-sm-2 control-label" for="form-field-1">
+                                   المورد
+                                </label>
+                                <div class="col-sm-4">
+                                    <select id="supplier_idhere"  name="id_state" class="form-control search-select-sub2">
+                                        <option value="">&nbsp;</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <div class="form-group">
+                                <div class="col-sm-2 col-sm-offset-2">
+                                    <a href="#">
+                                        <button type="submit" class="btn btn-primary">
+                                            بحث
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end: TEXT FIELDS PANEL -->
+            </div>
             <!-- // cost-Report -->
             <div class="col-sm-12">
                 <!-- start: TEXT FIELDS PANEL -->
@@ -306,8 +356,31 @@
 
             });
         })
+        $(document).ready(function () {
+        $("select[name='travel-selected']").change(function() {
+            var travel_id = $(this).val();
+            $.get('{{url("dashboard/admin/costs/getSuppliersBTravel")}}/'+travel_id,function (data) {
+                    $('#supplier_idhere').empty();
+                    $.each(data,function (key, value) {
+                        console.log(key);
+                        console.log(value);
+                        $('#supplier_idhere').append(
+                            ' <option value="'+  value +'">'+ key+'</option>'
+                        );
+
+
+                    })
+
+                }
+
+
+            );
+        }); });
+
 
     </script>
+
+
     <script>
         jQuery(document).ready(function () {
             $(".search-select-trip").select2({
